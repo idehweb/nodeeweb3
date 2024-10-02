@@ -8,10 +8,11 @@ import IRANSansWeb_font_ttf from "../assets/fonts/ttf/IRANSansWeb.ttf";
 import { dateFormat } from "@/functions";
 import API, { BASE_URL } from "@/functions/API";
 import { useSelector } from "react-redux";
-
+import CircularProgress from '@mui/material/CircularProgress';
 export default (props) => {
   
   console.log('psssssssssssssssssssssssss',props);
+  let {setStart}=props;
   const themeData = useSelector((st) => st.themeData);
 
   const divRef = React.useRef();
@@ -101,15 +102,38 @@ export default (props) => {
       //   setValue(d, data[d]);
       // });
       // console.log(d);
+      //   setTimeOut(()=>{
+      //       document.getElementById('now-print-1').click();
+      //   },1000)
       SetShopData({ ...data });
       if (data.factore_shop_phoneNumber)
         Stel(data.factore_shop_phoneNumber);
+      console.log("e")
       // setValue("title",data.title);
       // setTheData(true);
+      //   handleClick()
+        setTimeout(()=>{
+            handleClick();
+        },500);
+      setTimeout(()=>{
+          setStart();
+        },1000);
+          // setStart();
+
+
       return data;
     }).catch(e => {
       // setLoading(false);
-      // setTheData(true);
+      //   handleClick()
+        setTimeout(()=>{
+            handleClick();
+        },500);
+        setTimeout(()=>{
+            setStart();
+        },1000);
+        // setStart();
+
+        // setTheData(true);
     });
   };
   useEffect(() => {
@@ -287,6 +311,10 @@ export default (props) => {
       "        }\n" +
       "\n" +
       "\n" +
+        "\n" +
+        "        .MuiCircularProgress-root {\n" +
+        "            display: none;\n" +
+        "        }\n" +
       "        table {\n" +
       "            width: 100%;\n" +
       "            text-align: center;\n" +
@@ -467,7 +495,7 @@ export default (props) => {
   let { factore_shop_name, factore_shop_phoneNumber, factore_shop_site_address, factore_shop_address, factore_shop_site_name, factore_shop_internationalCode, factore_shop_submitCode } = shopData;
   return (
     <div id={"theprint"} ref={divRef}>
-      <button onClick={handleClick} className={"no-print"}>print</button>
+      <CircularProgress onClick={handleClick} className={"no-print"} id={'now-print-1'}>print</CircularProgress>
       <table className="head container">
         <tbody>
         <tr>
@@ -759,6 +787,8 @@ export default (props) => {
 
       <div className="bottom-spacer "></div>
       {/*{handleClick()}*/}
+<script>            document.getElementById('now-print-1').click();
+</script>
     </div>
   );
 };

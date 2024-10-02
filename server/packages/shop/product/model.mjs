@@ -44,6 +44,7 @@ export default (mongoose)=>{
             required: true,
             trim: true
         },
+        access: { type: String, default: "public" },
         thumbnail: String,
         status: { type: String, default: "processing" },
         transaction: [{ type: mongoose.Schema.Types.ObjectId, ref: "Transaction" }],

@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Field, Form } from 'react-final-form';
-import { Button, Col, Row } from 'shards-react';
-import { useSelector } from 'react-redux';
+import {useEffect, useState} from 'react';
+import {useTranslation} from 'react-i18next';
+import {Field, Form} from 'react-final-form';
+import {Button, Col, Row} from 'shards-react';
+import {useSelector} from 'react-redux';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import clsx from 'clsx';
 
-import { MainUrl, uploadMedia } from '@/functions';
+import {MainUrl, uploadMedia} from '@/functions';
 import {
   FieldArray,
   FieldBoolean,
@@ -16,9 +16,10 @@ import {
   FieldNumber,
   FieldObject,
   FieldPrice,
+  FieldQuestion,
+  FieldRadio,
   FieldSelect,
   FieldServer,
-  FieldRadio,
   FieldTextarea,
   FieldUploadDocument,
   FieldUploadMedia,
@@ -38,7 +39,7 @@ function isPromise(p) {
   return false;
 }
 
-const TheField = ({ field, t, fields, onSubmit }) => {
+const TheField = ({field, t, fields, onSubmit, rerender}) => {
   if (!field) return <>no field</>;
 
   const {
@@ -52,6 +53,7 @@ const TheField = ({ field, t, fields, onSubmit }) => {
     placeholder,
     required,
   } = field;
+  const [qw, setQW] = useState(0)
 
   // if ((type==='radiobuttonitem')) {
   //   return <Col
@@ -94,10 +96,10 @@ const TheField = ({ field, t, fields, onSubmit }) => {
             <label for="radioApple">Apple</label>
           </div>
           {/*
-  
-  
-  
-  
+
+
+
+
         <Field
           name={fields.name}
           component="button"
@@ -106,14 +108,14 @@ const TheField = ({ field, t, fields, onSubmit }) => {
           className="mb-2 form-control"
           disabled={disabled}
           style={dynamicStyle}
-  
+
         /> */}
         </Col>
       );
     case 'document':
-      return <FieldUploadDocument field={field} />;
+      return <FieldUploadDocument field={field}/>;
     case 'media':
-      return <FieldUploadMedia field={field} />;
+      return <FieldUploadMedia field={field}/>;
 
     case 'button':
       return (
@@ -153,37 +155,81 @@ const TheField = ({ field, t, fields, onSubmit }) => {
       );
 
     case 'steps':
-      return <DemoSteps field={field} onSubmit={onSubmit} />;
+      return <DemoSteps field={field} onSubmit={onSubmit}/>;
 
     case 'price':
-      return <FieldPrice field={field} />;
+      return <FieldPrice field={field}/>;
 
     case 'json':
-      return <FieldJson field={field} />;
-
+      return <FieldJson field={field}/>;
+    case 'slider':
+      return (
+        <SWIPERWrapper element={element} content={content} params={params}/>
+      );
     case 'object':
-      return <FieldObject field={field} />;
+      return <FieldObject field={field}/>;
 
     case 'array':
-      return <FieldArray field={field} />;
+      return <FieldArray field={field}/>;
 
     case 'checkbox':
-      return <FieldCheckbox field={field} />;
+      return <FieldCheckbox field={field}/>;
 
     case 'checkboxes':
-      return <FieldCheckboxes field={field} />;
+      return <FieldCheckboxes field={field}/>;
 
     case 'radio':
-      return <FieldRadio field={field} />;
+      return <FieldRadio field={field}/>;
+
+    case 'question':
+      // return JSON.stringify(field);
+      return <FieldRadio field={field}/>;
+
+    case 'questions':
+      return <div className={'questions-wrapper-main'}>
+        <div className={'questions-wrapper cw-' + qw}
+             style={{transform: "translate(-" + (qw) + "px)"}}>
+          {field?.children?.map((item, index) => {
+            let f = item?.settings?.general?.fields;
+            let lastObj = {
+              id: index,
+              type: "question",
+              label: f.name,
+              name: f.name,
+              size: {
+                sm: 12,
+                lg: 12,
+              },
+              onChange: (text) => {
+                document.getElementsByClassName("per-question-q" + index)[0].className += " mightFaded";
+                document.getElementsByClassName("per-question-q" + (index + 1))[0]?.classList.remove("mightFaded");
+                let wi = document.getElementsByClassName("per-question-q" + index)[0]?.offsetWidth;
+                console.log('text', index, text, wi, ((index + 1) * parseInt(wi)))
+                if (index + 1 < field?.children?.length)
+                  setQW(((index + 1) * parseInt(wi)))
+              },
+              className: 'rtl',
+              placeholder: '',
+              child: [],
+              ...f,
+            };
+            return <div className={'per-question ' + (index !== 0 ? 'mightFaded' : '') + ' per-question-q' + index}>
+              <FieldQuestion field={lastObj}/>
+              {index == field?.children?.length && <Button>پایان</Button>}
+            </div>
+
+          })}
+        </div>
+      </div>;
 
     case 'select':
-      return <FieldSelect field={field} style={style} />;
+      return <FieldSelect field={field} style={style}/>;
 
     case 'server':
-      return <FieldServer field={field} />;
+      return <FieldServer field={field}/>;
 
     case 'number':
-      return <FieldNumber field={field} />;
+      return <FieldNumber field={field}/>;
 
     case 'string':
     case 'input':
@@ -233,7 +279,7 @@ const TheField = ({ field, t, fields, onSubmit }) => {
       );
 
     case 'boolean':
-      return <FieldBoolean field={field} />;
+      return <FieldBoolean field={field}/>;
 
     case 'image':
       return (
@@ -249,14 +295,14 @@ const TheField = ({ field, t, fields, onSubmit }) => {
                   <img
                     loading="lazy"
                     alt="img"
-                    style={{ width: '100px' }}
+                    style={{width: '100px'}}
                     src={MainUrl + '/' + props.input.value}
                   />
                   {!props.input.value && (
                     <input
                       name={props.input.name}
                       onChange={(props) => {
-                        let { target } = props;
+                        let {target} = props;
                         console.log(props);
                         console.log(target.files[0]);
                         uploadMedia(target.files[0], (e) => {
@@ -284,7 +330,7 @@ const TheField = ({ field, t, fields, onSubmit }) => {
                           field.setValue(name, '');
                         }}
                         className={'removeImage'}>
-                        <RemoveCircleOutlineIcon />
+                        <RemoveCircleOutlineIcon/>
                       </Button>
                     </div>
                   )}
@@ -310,7 +356,7 @@ const TheField = ({ field, t, fields, onSubmit }) => {
                     <input
                       name={props.input.name}
                       onChange={(props) => {
-                        let { target } = props;
+                        let {target} = props;
                         uploadMedia(target.files[0], (e) => {
                           console.log('e', e);
                         }).then((x) => {
@@ -341,18 +387,19 @@ const TheField = ({ field, t, fields, onSubmit }) => {
 };
 
 export default function CreateForm({
-  fields,
-  rules = { fields: [] },
-  theFields = undefined,
-  formFieldsDetail = {},
-  ...props
-}) {
-  const { t } = useTranslation();
+                                     fields,
+                                     rules = {fields: []},
+                                     theFields = undefined,
+                                     formFieldsDetail = {},
+                                     ...props
+                                   }) {
+  const {t} = useTranslation();
 
   const themeData = useSelector((st) => st.store.themeData);
 
   const [loading, setLoading] = useState(false);
-  const [theRules, setTheRules] = useState({ ...{ fields: rules.fields } });
+  const [render, setrender] = useState(1);
+  const [theRules, setTheRules] = useState({...{fields: rules.fields}});
 
   useEffect(() => {
     if (
@@ -378,6 +425,10 @@ export default function CreateForm({
 
   if (!themeData) return;
 
+  const rerender = (e) => {
+    console.log("hi")
+    setrender(render + 1)
+  }
   const onSubmit = (v, form) => {
     if (!props.onSubmit) return;
 
@@ -413,15 +464,16 @@ export default function CreateForm({
 
   return (
     <LoadingContainer loading={loading}>
+      {/*{render}*/}
       <Form
         onSubmit={onSubmit}
         initialValues={fields}
         mutators={{
-          setValue: ([field, value], state, { changeValue }) => {
+          setValue: ([field, value], state, {changeValue}) => {
             changeValue(state, field, () => value);
           },
         }}
-        render={({ handleSubmit, form }) => (
+        render={({handleSubmit, form}) => (
           <form
             onSubmit={handleSubmit}
             className="container"
@@ -429,69 +481,75 @@ export default function CreateForm({
             <Row>
               {theFields
                 ? theFields.map((field, index) => {
-                    if (fields[field.name]) field.value = fields[field.name];
+                  if (fields[field.name]) field.value = fields[field.name];
 
-                    let lastObj = {
-                      id: index,
-                      type: field.type,
-                      label: field.name,
-                      name: field.name,
-                      size: {
-                        sm: 6,
-                        lg: 6,
-                      },
-                      onChange: (text) => {},
-                      className: 'rtl',
-                      placeholder: '',
-                      child: [],
-                      setValue: form.mutators.setValue,
-                      ...field,
-                    };
-                    if (field.value) lastObj['value'] = field.value;
+                  let lastObj = {
+                    id: index,
+                    type: field.type,
+                    children: field.children,
+                    label: field.name,
+                    name: field.name,
+                    size: {
+                      sm: 6,
+                      lg: 6,
+                    },
+                    onChange: (text) => {
+                    },
+                    className: 'rtl',
+                    placeholder: '',
+                    child: [],
+                    setValue: form.mutators.setValue,
+                    ...field,
+                  };
+                  if (field.value) lastObj['value'] = field.value;
 
-                    return (
-                      <TheField
-                        t={t}
-                        fields={fields}
-                        onSubmit={onSubmit}
-                        key={index}
-                        field={lastObj}
-                      />
-                    );
-                  })
+                  return (
+                    <TheField
+                      t={t}
+                      fields={fields}
+                      onSubmit={onSubmit}
+                      key={index}
+                      rerender={(e) => rerender(e)}
+
+                      field={lastObj}
+                    />
+                  );
+                })
                 : theRules?.fields?.map((field, index) => {
-                    if (fields[field.name]) {
-                      field.value = fields[field.name];
-                    }
-                    let lastObj = {
-                      id: index,
-                      type: field.type,
-                      label: field.name,
-                      name: field.name,
-                      size: {
-                        sm: 6,
-                        lg: 6,
-                      },
-                      onChange: (text) => {},
-                      className: 'rtl',
-                      placeholder: '',
-                      child: [],
-                      setValue: form.mutators.setValue,
-                      ...field,
-                    };
-                    if (field.value) {
-                      lastObj['value'] = field.value;
-                    }
-                    return (
-                      <TheField
-                        t={t}
-                        fields={fields}
-                        onSubmit={onSubmit}
-                        key={index}
-                        field={lastObj}
-                      />
-                    );
-                  })}
+                  if (fields[field.name]) {
+                    field.value = fields[field.name];
+                  }
+                  let lastObj = {
+                    id: index,
+                    type: field.type,
+                    label: field.name,
+                    name: field.name,
+                    size: {
+                      sm: 6,
+                      lg: 6,
+                    },
+                    onChange: (text) => {
+                    },
+                    className: 'rtl',
+                    placeholder: '',
+                    child: [],
+                    setValue: form.mutators.setValue,
+                    ...field,
+                  };
+                  if (field.value) {
+                    lastObj['value'] = field.value;
+                  }
+                  return (
+                    <TheField
+                      t={t}
+                      fields={fields}
+                      onSubmit={onSubmit}
+                      rerender={(e) => rerender(e)}
+                      key={index}
+                      field={lastObj}
+                    />
+                  );
+                })}
               {formFieldsDetail.showSubmitButton && (
                 <div className="buttons">
                   <Button type="submit">{t('Submit')}</Button>

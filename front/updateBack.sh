@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-rm -rf ../nodeeweb-server/theme/* && cp -r ./build/ ../nodeeweb-server/theme
-# && cp -r ./build/ ../nodeeweb-server/admin
+#cp -r ./build/ ../nodeeweb-server/theme &&
+rm -rf ../server/front/* && cp -r ./build/ ../server/front && rm -rf ../server/packages/server/front/* && cp -r ./build/ ../server/packages/server/front/

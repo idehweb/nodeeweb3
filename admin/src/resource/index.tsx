@@ -33,6 +33,7 @@ export { default as Settings } from './setting';
 export { default as Dynamic } from './dynamic';
 export { default as Gateway } from './gateway';
 export { default as InItem } from './InItem';
+export { default as Accounting } from './accounting';
 export { default as Template } from './template';
 export { default as Logout } from './logout';
 

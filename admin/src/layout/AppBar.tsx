@@ -117,12 +117,12 @@ export default function CustomAppBar(props) {
       <span className={classes.spacer} />
       {/**/}
       <ToggleThemeButton />
-      <LocalesMenuButton
-        languages={[
-          { locale: 'en', name: 'English' },
-          { locale: 'fa', name: 'Persian' },
-        ]}
-      />
+      {/*<LocalesMenuButton*/}
+        {/*languages={[*/}
+          {/*{ locale: 'en', name: 'English' },*/}
+          {/*{ locale: 'fa', name: 'Persian' },*/}
+        {/*]}*/}
+      {/*/>*/}
       {/*<ToggleConfigButton />*/}
     </AppBar>
   );

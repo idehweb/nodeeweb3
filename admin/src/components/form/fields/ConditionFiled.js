@@ -24,7 +24,7 @@ function ConditionFiled(props) {
   const [condition, setCondition] = React.useState(false);
   const [showError, setShowError] = React.useState(false);
   const [selectOptionValue, setSelectOptionValue] = React.useState('');
-  if (type !== 'radio' && type !== 'select' && type !== 'checkbox') {
+  if (type !== 'radio' && type !== 'select' && type !== 'checkbox' && type !== 'question') {
     return;
   }
   let bindData = [];

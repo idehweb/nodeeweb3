@@ -2,17 +2,19 @@ import {
   Datagrid,
   DeleteButton,
   EditButton,
-  Filter,
+  Filter,Link,
   FunctionField,
   Pagination,
   TextField,
   TopToolbar,
   ExportButton,
-
+    SimpleList,
   SearchInput,
   useTranslate
 } from "react-admin";
+import EditIcon from '@mui/icons-material/Edit';
 import { ImportButton } from "react-admin-import-csv";
+import {Button, useMediaQuery} from '@mui/material';
 
 import API, { BASE_URL } from "@/functions/API";
 import { dateFormat } from "@/functions";
@@ -30,7 +32,6 @@ import {
   SimpleImageField,
   UploaderField
 } from "@/components";
-import { Button } from "@mui/material";
 import PendingActionsIcon from '@mui/icons-material/PendingActions';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import NoteAltIcon from '@mui/icons-material/NoteAlt';
@@ -282,39 +283,121 @@ const ListActions = (props) => {
   );
 };
 const list = (props) => {
-  const translate = useTranslate();
+  const t = useTranslate();
   // rowStyle={postRowStyle}
-  return (
+    const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
+
+    return (
 
     <List  {...props} filters={<PostFilter/>} pagination={<PostPagination/>} actions={<ListActions/>}>
-      <Datagrid optimized>
+        {isSmall ? (
+            <SimpleList
+                primaryText={record => <div>
+                    <div className={"d-dfgfd"}>
+                        <div className="ph">
+                            {record?.slug && <div>
+                                <div>
+                                    {/*<span>{t('resources.post.slug')}: </span>*/}
+                                    <ShowLink source={"title." + t("lan")} label={t("resources.post.title")}
+                                              sortable={false} base={"post"}/>
+                                </div>
+                                <div>
+                                    <span>{t('resources.post.slug')}: </span>
+                                    <TextField
+                                        source="slug"
+                                        label="resources.post.slug"
+                                    />
+                                </div>
 
-        <ShowLink source={"title." + translate("lan")} label={translate("resources.post.title")}
+                                <div className="theDate">
+
+                                    <div>
+                                        {t('resources.post.updatedAt') +
+                                        ': ' +
+                                        `${dateFormat(record.updatedAt)}`}
+                                    </div>
+
+                                    {record.views && (
+                                        <div>
+                                            {t('resources.post.viewsCount') +
+                                            ': ' +
+                                            `${record.views.length}`}
+                                        </div>
+                                    )}
+                                </div>
+
+                            </div>}
+                        </div>
+                    </div>
+                </div>}
+                secondaryText={record => <div className="ph">
+                    <div className={'d-flex'}>
+
+                        <div  className={'d-flex-child'}>
+                            <Link
+                                className={"link-with-icon"}
+                                rel="noopener noreferrer"
+                                to={'/post/' + record._id}>
+                                <EditIcon/>
+                                <span className={'ml-2 mr-2'}>
+                                        {t('resources.post.edit')}
+                                    </span>
+                            </Link>
+                        </div>
+
+                        <div>
+                            <Link
+                                to={
+                                    '/action?filter=%7B%post"%3A"' +
+                                    record._id +
+                                    '"%7D&order=ASC&page=1&perPage=10&sort=id/'
+                                }
+                                className={"link-with-icon"}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <PendingActionsIcon/>
+                                <span className={'ml-2 mr-2'}>
+                    {t('resources.post.activities')}
+                  </span>
+                            </Link>
+                        </div>
+                        {/*<div>*/}
+                        {/*<DeleteButton/>*/}
+                        {/*</div>*/}
+                    </div>
+
+                </div>}
+                linkType={false}
+
+            />
+        ) : (<Datagrid optimized>
+
+        <ShowLink source={"title." + t("lan")} label={t("resources.post.title")}
                   sortable={false} base={"post"}/>
-        <TextField source="slug" label={translate("resources.page.slug")}/>
+        <TextField source="slug" label={t("resources.page.slug")}/>
 
 
-        <FunctionField label={translate("resources.post.date")}
+        <FunctionField label={t("resources.post.date")}
                        render={record => (
                          <div className='theDate'>
                            <div>
-                             {translate("resources.post.createdAt") + ": " + `${dateFormat(record.createdAt)}`}
+                             {t("resources.post.createdAt") + ": " + `${dateFormat(record.createdAt)}`}
                            </div>
                            <div>
-                             {translate("resources.post.updatedAt") + ": " + `${dateFormat(record.updatedAt)}`}
+                             {t("resources.post.updatedAt") + ": " + `${dateFormat(record.updatedAt)}`}
                            </div>
 
                            {record.views && <div>
-                             {translate("resources.post.viewsCount") + ": " + `${(record.views.length)}`}
+                             {t("resources.post.viewsCount") + ": " + `${(record.views.length)}`}
                            </div>}
                          </div>
                        )}/>
-        <FunctionField label={translate("resources.post.actions")}
+        <FunctionField label={t("resources.post.actions")}
                        render={record => (<div>
                          <div>
                            <a target={"_blank"}
                               href={"/admin/#/builder" + "/page/" + record._id}>
-                             <NoteAltIcon/><span  className={'ml-2 mr-2'}>{translate("resources.page.pagebuilder")}</span>
+                             <NoteAltIcon/><span  className={'ml-2 mr-2'}>{t("resources.page.pagebuilder")}</span>
                            </a>
                          </div>
                          <div>
@@ -336,7 +419,7 @@ const list = (props) => {
                                    console.log("error", err);
                                  });
                              }}>
-                             <ContentCopyIcon /><span className={'ml-2 mr-2'}>{translate("resources.page.copy")}</span>
+                             <ContentCopyIcon /><span className={'ml-2 mr-2'}>{t("resources.page.copy")}</span>
                            </Button>
                          </div>
                          <div>
@@ -348,7 +431,7 @@ const list = (props) => {
                              onClick={() => {
 
                              }}>
-                             <PendingActionsIcon /><span className={'ml-2 mr-2'}>{translate("resources.page.activities")}</span>
+                             <PendingActionsIcon /><span className={'ml-2 mr-2'}>{t("resources.page.activities")}</span>
 
                            </a>
                          </div>
@@ -356,7 +439,7 @@ const list = (props) => {
                            <DeleteButton/>
                          </div>
                        </div>)}/>
-      </Datagrid>
+      </Datagrid>)}
     </List>
   );
 };

@@ -8,6 +8,7 @@ import {
 } from '#c/functions/index';
 import { store } from '#c/functions/store';
 import { useSelector } from 'react-redux';
+import _ from 'lodash';
 
 import { dFormat, NormalizePrice, PriceFormat } from '#c/functions/utils';
 

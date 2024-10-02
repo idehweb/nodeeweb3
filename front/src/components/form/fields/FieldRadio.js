@@ -51,7 +51,7 @@ function FieldRadio(props) {
       >
         {({ input, meta }) => {
           return (
-            <div>
+            <>
               <label htmlFor={name}>{label}</label>
               <div className={'d-flex '}>
                 {radios &&
@@ -70,7 +70,7 @@ function FieldRadio(props) {
                     );
                   })}
               </div>
-            </div>
+            </>
           );
         }}
       </Field>

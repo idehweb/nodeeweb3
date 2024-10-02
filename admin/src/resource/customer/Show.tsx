@@ -34,13 +34,13 @@ export default function CustomerShow(props) {
   const translate = useTranslate();
 
   return (
-    <Show {...props}>
+    <Show {...props} className={"the-container-grid"} >
       <SimpleShowLayout>
         <Grid container spacing={2}>
-          <Grid item lg={9} md={8} xs={12}>
+          <Grid className={"the-main-grid"} item lg={9} md={8} xs={12}>
             <Box sx={{ flexGrow: 1 }} style={{ marginBottom: '20px' }}>
               <Grid container spacing={2}>
-                <Grid item lg={6} md={6} xs={6}>
+                <Grid item lg={6} md={6} xs={12}>
                   <Item>
                     {translate('resources.customers.updatedAt') + ': '}{' '}
                     <FunctionField
@@ -51,7 +51,7 @@ export default function CustomerShow(props) {
                     />
                   </Item>
                 </Grid>
-                <Grid item lg={6} md={6} xs={6}>
+                <Grid item lg={6} md={6} xs={12}>
                   <Item>
                     {translate('resources.customers.createdAt') + ': '}{' '}
                     <FunctionField

@@ -34,7 +34,7 @@ export default function OptionBox({ onClose, open, onAdd, exclude }) {
       SetOptions(newItems);
     }
   }, [themeData]);
-
+// console.log("Options",Options)
   return (
     <ModalOptions
       Options={Options}

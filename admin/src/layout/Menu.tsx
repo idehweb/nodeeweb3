@@ -310,25 +310,25 @@ export default function Menu({ onMenuClick, dense = false }) {
         />
 
       </SubMenu>
-        <SubMenu
-        name="link"
-        label={translate('pos.menu.link')}
-        icon={<RSList.Link.icon />}
-        dense={dense}>
-        <MenuItemLink
-          to={{ pathname: '/link/create' }}
-          primaryText={translate('pos.menu.createLink')}
-          leftIcon={<RSList.Link.createIcon />}
-          dense={dense}
-        />
-        <MenuItemLink
-          to={{ pathname: '/link' }}
-          primaryText={translate('pos.menu.allLink')}
-          leftIcon={<RSList.Link.icon />}
-          dense={dense}
-        />
+        {/*<SubMenu*/}
+        {/*name="link"*/}
+        {/*label={translate('pos.menu.link')}*/}
+        {/*icon={<RSList.Link.icon />}*/}
+        {/*dense={dense}>*/}
+        {/*<MenuItemLink*/}
+          {/*to={{ pathname: '/link/create' }}*/}
+          {/*primaryText={translate('pos.menu.createLink')}*/}
+          {/*leftIcon={<RSList.Link.createIcon />}*/}
+          {/*dense={dense}*/}
+        {/*/>*/}
+        {/*<MenuItemLink*/}
+          {/*to={{ pathname: '/link' }}*/}
+          {/*primaryText={translate('pos.menu.allLink')}*/}
+          {/*leftIcon={<RSList.Link.icon />}*/}
+          {/*dense={dense}*/}
+        {/*/>*/}
 
-      </SubMenu>
+      {/*</SubMenu>*/}
       <SubMenu
         name="sms"
         label={translate('pos.menu.post')}
@@ -360,6 +360,38 @@ export default function Menu({ onMenuClick, dense = false }) {
           dense={dense}
         />
       </SubMenu>
+
+        <SubMenu
+            name="accounting"
+            label={translate('pos.menu.accounting')}
+            icon={<RSList.Accounting.icon />}
+            dense={dense}>
+            <MenuItemLink
+                to={{ pathname: '/Payments' }}
+                primaryText={translate('pos.menu.Payments')}
+                leftIcon={<RSList.Accounting.createIcon />}
+                dense={dense}
+            />
+            <MenuItemLink
+                to={{ pathname: '/receipts' }}
+                primaryText={translate('pos.menu.Receipts')}
+                leftIcon={<RSList.Accounting.createIcon />}
+                dense={dense}
+            />
+            <MenuItemLink
+                to={{ pathname: '/salesInvoice' }}
+                primaryText={translate('pos.menu.salesInvoice')}
+                leftIcon={<RSList.Accounting.createIcon />}
+                dense={dense}
+            />
+            <MenuItemLink
+                to={{ pathname: '/purchaseInvoice' }}
+                primaryText={translate('pos.menu.purchaseInvoice')}
+                leftIcon={<RSList.Post.createIcon />}
+                dense={dense}
+            />
+
+        </SubMenu>
       <SubMenu
         name="more"
         label={translate('pos.menu.more')}

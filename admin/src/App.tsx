@@ -66,6 +66,11 @@ export default function App() {
       layout={MainLayout}
       i18nProvider={i18nProvider}>
       <Resource
+        name="accounting"
+        options={{ label: 'pos.menu.accounting' }}
+        {...RSList.Accounting}
+      />
+        <Resource
         name="attributes"
         options={{ label: 'pos.menu.attributes' }}
         {...RSList.Attributes}

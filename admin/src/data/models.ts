@@ -7,6 +7,7 @@ export const ExcludeList = [
   'action',
   'attributes',
   'customergroup',
+  'topproduct',
   'entry',
   'form',
   'gateway',

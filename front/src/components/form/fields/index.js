@@ -11,6 +11,7 @@ import FieldTextarea from './FieldTextarea';
 import FieldJson from './FieldJson';
 import FieldNumber from './FieldNumber';
 import FieldRadio from './FieldRadio';
+import FieldQuestion from './FieldQuestion';
 import FieldUploadMedia from './FieldUploadMedia';
 import FieldUploadDocument from './FieldUploadDocument';
 
@@ -28,6 +29,7 @@ export {
   FieldCheckboxes,
   FieldServer,
   FieldRadio,
+  FieldQuestion,
   FieldUploadDocument,
   FieldUploadMedia,
 };
@@ -52,6 +54,8 @@ export const getField = (type) => {
       return FieldCheckbox;
     case 'boolean':
       return FieldBoolean;
+    case 'question':
+      return FieldQuestion;
     default:
       return FieldText;
   }

@@ -50,7 +50,7 @@ export default function Orders() {
   return (
     <TableContainer component={Paper}>
       <div className={'label-top-table'}>{translate('orders')}</div>
-      <Table sx={{ minWidth: '100%', marginBottom: '20px' }}>
+      <Table sx={{ maxWidth: '100%', marginBottom: '20px' }}>
         <TableHead>
           <TableRow>
             <TableCell>{translate('resources.order._id')}</TableCell>

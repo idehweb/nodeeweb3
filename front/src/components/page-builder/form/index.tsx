@@ -63,8 +63,10 @@ export default function Form({ element, formFields }) {
             formFields[name] = value;
             let theChildren = [];
             if (children) {
+              console.log("children",children)
               children.forEach((ch) => {
-                theChildren.push(lastObj);
+                // theChildren.push(lastObj);
+                theChildren.push(ch);
               });
             }
             let lastObj = {

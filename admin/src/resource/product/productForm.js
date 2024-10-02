@@ -445,8 +445,10 @@ const Form = ({ children, ...props }) => {
   return (
 
     <SimpleForm
+
       {...props}
       transform={transform}
+      className={"this-is-product"}
       onSubmit={v => save(v)}
       toolbar={<CustomToolbar record={props.record}/>}
     >
@@ -535,7 +537,7 @@ const Form = ({ children, ...props }) => {
               }}/>];
           if (formData.type == "normal")
             return [<div className={"row mb-20"}>
-              <div className={"col-md-4"}>
+              <div className={"col-md-4 col-xs-12 col-sm-12"}>
                 <SelectInput
                   fullWidth
 

@@ -55,7 +55,7 @@ export default function EntryShow() {
                   }}>
                   {Object.keys(data).map((i) => (
                     <span dir="ltr">
-                      {t('resources.entry.' + i)} :{' '}
+                      {(i)} :{' '}
                       <CustomImageField value={data[i]} />
                     </span>
                   ))}

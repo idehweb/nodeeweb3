@@ -37,7 +37,7 @@ export default function OrderEdit(props) {
   });
   const PostEditActions = ({ basePath, data, resource }) => (
     <CardActions>
-      <TransactionCreate record={record} />
+      {/*<TransactionCreate record={record} />*/}
       <Button
         color="primary"
         icon={<HelpRounded />}
@@ -130,11 +130,11 @@ export default function OrderEdit(props) {
               </ArrayField>
             </Box>,
           ]}
-          {state == 'print' && <PrintOrder record={record} />}
-          {state == 'printpack' && <PrintPack record={record} />}
+          {state == 'print' && <PrintOrder record={record} setStart={(e)=>setState('start')}/>}
+          {state == 'printpack' && <PrintPack record={record} setStart={(e)=>setState('start')} />}
         </SimpleShowLayout>
       </Show>
-      <Edit {...props}>
+        {state == 'start' && <Edit {...props}>
         <SimpleForm>
           {state == 'start' && [
             ,
@@ -251,7 +251,7 @@ export default function OrderEdit(props) {
           {/*<DateField source="updatedAt"/>*/}
         </SimpleForm>
         <Transactions isEdit />
-      </Edit>
+      </Edit>}
     </>
   );
 }

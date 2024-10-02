@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "./static/css/main.5ac5cf31.css",
-    "main.js": "./static/js/main.5d1b1682.js",
-    "runtime.js": "./static/js/runtime.61d14576.js",
+    "main.css": "./static/css/main.db3cfc09.css",
+    "main.js": "./static/js/main.9390b72b.js",
+    "runtime.js": "./static/js/runtime.8c3bc0d5.js",
     "static/css/531.6b85ca92.chunk.css": "./static/css/531.6b85ca92.chunk.css",
-    "static/js/531.e07f1941.chunk.js": "./static/js/531.e07f1941.chunk.js",
+    "static/js/531.2736d60f.chunk.js": "./static/js/531.2736d60f.chunk.js",
     "static/js/455.ea88d544.chunk.js": "./static/js/455.ea88d544.chunk.js",
-    "static/js/665.4f64f005.js": "./static/js/665.4f64f005.js",
+    "static/js/365.491c5e8a.js": "./static/js/365.491c5e8a.js",
     "static/css/626.92783a6e.chunk.css": "./static/css/626.92783a6e.chunk.css",
     "static/js/626.d41cf6b5.chunk.js": "./static/js/626.d41cf6b5.chunk.js",
     "static/media/IRANSansWebLight.ttf": "./static/media/IRANSansWebLight.3e99a4d54d76ef687a4f.ttf",
@@ -33,9 +33,9 @@
     "index.html": "./index.html"
   },
   "entrypoints": [
-    "static/js/runtime.61d14576.js",
-    "static/js/665.4f64f005.js",
-    "static/css/main.5ac5cf31.css",
-    "static/js/main.5d1b1682.js"
+    "static/js/runtime.8c3bc0d5.js",
+    "static/js/365.491c5e8a.js",
+    "static/css/main.db3cfc09.css",
+    "static/js/main.9390b72b.js"
   ]
 }

@@ -49,6 +49,7 @@ const Component = ({
           </IconButton>
 
           <p>{`${item.name} ${index + 1}: ${item.id}`}</p>
+            {(item?.settings?.general?.fields?.label) && <p>{item?.settings?.general?.fields?.label}</p>}
 
           <IconButton title="Edit" onClick={() => onEdit(item)}>
             <EditRounded />

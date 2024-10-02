@@ -8,7 +8,6 @@ import {
     FunctionField,
   useTranslate
 } from 'react-admin';
-
 import {List, SimpleForm,ShowLink} from '@/components';
 
 export const campaignList = (props) => {

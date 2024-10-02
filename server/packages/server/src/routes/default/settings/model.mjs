@@ -11,6 +11,7 @@ export default (mongoose) => {
         settings: {},
         siteActive: {type: Boolean, default: true},
         tax: {type: Boolean, default: true},
+        passwordAuthentication: {type: Boolean, default: true},
         taxAmount: Number,
         defaultLanguage: String,
         factore_shop_name: String,

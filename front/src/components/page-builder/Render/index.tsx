@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import _get from 'lodash/get';
-import { memo } from 'react';
+import {memo} from 'react';
+import {Link} from "react-router-dom";
 
 import Swiper from '@/components/swiper';
 import ProductsSlider from '@/components/components-overview/ProductsSlider';
@@ -10,7 +11,7 @@ import NavbarSearchItem from '@/components/layout/MainNavbar/NavbarSearchItem';
 import NavbarSearchInItem from '@/components/layout/MainNavbar/NavbarSearchInItem';
 import NavbarSearchTsc from '@/components/layout/MainNavbar/NavbarSearchTsc';
 import MainNavbar from '@/components/layout/MainNavbar/MainNavbar';
-import { MainUrl, setStyles } from '@/functions';
+import {getLinkType, MainUrl, setStyles} from '@/functions';
 import PostCard from '@/components/Home/PostCard';
 import PaymentCalc from '@/components/page-builder/PaymentCalc';
 import Advertises from '@/components/page-builder/advertises';
@@ -33,23 +34,14 @@ import Chatgpt from '@/components/page-builder/chatgpt';
 import Flights from '@/components/page-builder/flights';
 
 import AdBanner from './components/AdBanner';
-import {
-  Currency,
-  TITLE,
-  Hr,
-  Header,
-  Button,
-  Carousel,
-  SWIPER,
-  TextNode,
-} from './components';
+import {Button, Carousel, Currency, Header, Hr, SWIPER, TextNode, TITLE} from './components';
 
-import { ElementTypes } from './types';
+import {ElementTypes} from './types';
 
-function HtmlTag({ element }) {
+function HtmlTag({element}) {
   const fields = _get(element, 'settings.general.fields', {});
 
-  const { tag = 'div', content } = fields;
+  const {tag = 'div', content} = fields;
   const style = setStyles({
     ...fields,
   });
@@ -57,14 +49,14 @@ function HtmlTag({ element }) {
   const Component = tag;
 
   return (
-    <Component style={style} dangerouslySetInnerHTML={{ __html: content }} />
+    <Component style={style} dangerouslySetInnerHTML={{__html: content}}/>
   );
 }
 
-function TheNavbarSearch({ element, params, content }) {
+function TheNavbarSearch({element, params, content}) {
   const fields = _get(element, 'settings.general.fields', {});
 
-  const { direction, display, classes, entity = 'products' } = fields;
+  const {direction, display, classes, entity = 'products'} = fields;
   const style = setStyles({
     ...fields,
     direction,
@@ -80,10 +72,11 @@ function TheNavbarSearch({ element, params, content }) {
     />
   );
 }
-function TheNavbarSearchTsc({ element }) {
+
+function TheNavbarSearchTsc({element}) {
   const fields = _get(element, 'settings.general.fields', {});
 
-  const { direction, display, classes } = fields;
+  const {direction, display, classes} = fields;
   const style = setStyles({
     ...fields,
     direction,
@@ -99,27 +92,11 @@ function TheNavbarSearchTsc({ element }) {
     />
   );
 }
-function TheChatgpt({ element }) {
-  let { type, components, settings } = element;
-  let { general } = settings;
-  let { fields } = general;
-  let {
-    text,
-    iconFont,
-    direction,
-    link,
-    display,
-    target = '_blank',
-    classes,
-  } = fields;
-  let style = setStyles({ ...fields, direction: direction, display: display });
 
-  return <Chatgpt type={'append'} style={style} classes={classes} />;
-}
-function TheFlights({ element }) {
-  let { type, components, settings } = element;
-  let { general } = settings;
-  let { fields } = general;
+function TheChatgpt({element}) {
+  let {type, components, settings} = element;
+  let {general} = settings;
+  let {fields} = general;
   let {
     text,
     iconFont,
@@ -129,14 +106,33 @@ function TheFlights({ element }) {
     target = '_blank',
     classes,
   } = fields;
-  let style = setStyles({ ...fields, direction: direction, display: display });
+  let style = setStyles({...fields, direction: direction, display: display});
+
+  return <Chatgpt type={'append'} style={style} classes={classes}/>;
+}
+
+function TheFlights({element}) {
+  let {type, components, settings} = element;
+  let {general} = settings;
+  let {fields} = general;
+  let {
+    text,
+    iconFont,
+    direction,
+    link,
+    display,
+    target = '_blank',
+    classes,
+  } = fields;
+  let style = setStyles({...fields, direction: direction, display: display});
   // return 'hi'
-  return <Flights type={'append'} style={style} classes={classes} />;
+  return <Flights type={'append'} style={style} classes={classes}/>;
 }
-function TheNavbarSearchInItem({ element }) {
-  let { type, components, settings } = element;
-  let { general } = settings;
-  let { fields } = general;
+
+function TheNavbarSearchInItem({element}) {
+  let {type, components, settings} = element;
+  let {general} = settings;
+  let {fields} = general;
   let {
     text,
     iconFont,
@@ -146,15 +142,15 @@ function TheNavbarSearchInItem({ element }) {
     target = '_blank',
     classes,
   } = fields;
-  let style = setStyles({ ...fields, direction: direction, display: display });
+  let style = setStyles({...fields, direction: direction, display: display});
   // @ts-ignore
-  return <NavbarSearchInItem type={'append'} style={style} classes={classes} />;
+  return <NavbarSearchInItem type={'append'} style={style} classes={classes}/>;
 }
 
-function TheNavbarSearchItem({ element }) {
-  let { type, components, settings } = element;
-  let { general } = settings;
-  let { fields } = general;
+function TheNavbarSearchItem({element}) {
+  let {type, components, settings} = element;
+  let {general} = settings;
+  let {fields} = general;
   let {
     text,
     iconFont,
@@ -164,39 +160,39 @@ function TheNavbarSearchItem({ element }) {
     target = '_blank',
     classes,
   } = fields;
-  let style = setStyles({ ...fields, direction: direction, display: display });
+  let style = setStyles({...fields, direction: direction, display: display});
 
   // @ts-ignore
-  return <NavbarSearchItem type={'append'} style={style} classes={classes} />;
+  return <NavbarSearchItem type={'append'} style={style} classes={classes}/>;
 }
 
-function TheMainNavbar({ element }) {
-  let { type, components, classes, settings } = element;
-  let { general } = settings;
-  let { fields } = general;
-  let { text, iconFont, direction, link, display, target = '_blank' } = fields;
-  let style = setStyles({ ...fields, direction: direction, display: display });
+function TheMainNavbar({element}) {
+  let {type, components, classes, settings} = element;
+  let {general} = settings;
+  let {fields} = general;
+  let {text, iconFont, direction, link, display, target = '_blank'} = fields;
+  let style = setStyles({...fields, direction: direction, display: display});
 
   // @ts-ignore
-  return <MainNavbar element={element} style={style} setStyles={setStyles} />;
+  return <MainNavbar element={element} style={style} setStyles={setStyles}/>;
 
   // }
   // return <div style={style}>{text}</div>
 }
 
 const SWIPERWrapper = memo<any>(function SWIPERWrapper({
-  element,
-  content,
-  params,
-}) {
-  const { children } = element;
+                                                         element,
+                                                         content,
+                                                         params,
+                                                       }) {
+  const {children} = element;
   const fields = _get(element, 'settings.general.fields');
   if (!fields) return;
 
   let {
     entity,
     classes,
-    arrows = true,
+    arrows = false,
     pagination = false,
     autoplay = true,
     perPage = 1,
@@ -245,15 +241,24 @@ const SWIPERWrapper = memo<any>(function SWIPERWrapper({
           type={type || 'slide'}
           breakpoints={
             breakpoints || {
-              1024: { perPage: 1 },
-              768: { perPage: 1 },
-              640: { perPage: 1 },
-              320: { perPage: 1 },
+              1024: {perPage: 1},
+              768: {perPage: 1},
+              640: {perPage: 1},
+              320: {perPage: 1},
             }
           }
           className={clsx('p-0 m-0', classes)}>
           {children && children[0] instanceof Array
             ? children[0].map((i, idx) => (
+              <ShowElement
+                params={params}
+                key={idx}
+                element={i}
+                content={content}
+              />
+            ))
+            : children instanceof Array
+              ? children.map((i, idx) => (
                 <ShowElement
                   params={params}
                   key={idx}
@@ -261,15 +266,6 @@ const SWIPERWrapper = memo<any>(function SWIPERWrapper({
                   content={content}
                 />
               ))
-            : children instanceof Array
-              ? children.map((i, idx) => (
-                  <ShowElement
-                    params={params}
-                    key={idx}
-                    element={i}
-                    content={content}
-                  />
-                ))
               : ''}
         </Swiper>
       </div>
@@ -277,74 +273,75 @@ const SWIPERWrapper = memo<any>(function SWIPERWrapper({
 });
 
 function TheLoadMore(props) {
-  let { element, content } = props;
-  let { type, children, settings, classes } = element;
-  let { general } = settings;
-  let { fields } = general;
+  let {element, content} = props;
+  let {type, children, settings, classes} = element;
+  let {general} = settings;
+  let {fields} = general;
   if (!fields) {
     return;
   }
-  let { entity, arrows = true, perPage = 1 } = fields;
+  let {entity, arrows = true, perPage = 1} = fields;
 
   if (arrows == 'false') {
     arrows = false;
   }
   // return JSON.stringify(element.data)
-  return <LoadMore element={element} />;
+  return <LoadMore element={element}/>;
 }
 
-function ThePagination({ element, params, content }) {
+function ThePagination({element, params, content}) {
   const fields = _get(element, 'settings.general.fields');
   if (!fields) return;
 
-  return <Pagination element={element} params={params} />;
+  return <Pagination element={element} params={params}/>;
 }
-function TheAdBanner({ element, params, content }) {
+
+function TheAdBanner({element, params, content}) {
   const fields = _get(element, 'settings.general.fields');
   if (!fields) return;
 
-  return <AdBanner element={element} params={params} />;
+  return <AdBanner element={element} params={params}/>;
 }
 
 function TheGrid(props) {
-  let { element, content, params } = props;
-  let { type, children, settings, classes } = element;
-  let { general } = settings;
-  let { fields } = general;
+  let {element, content, params} = props;
+  let {type, children, settings, classes} = element;
+  let {general} = settings;
+  let {fields} = general;
   if (!fields) {
     return;
   }
-  let { entity, arrows = true, perPage = 1 } = fields;
+  let {entity, arrows = true, perPage = 1} = fields;
   if (arrows == 'false') {
     arrows = false;
   }
 
-  return <Grid element={element} params={params} />;
+  return <Grid element={element} params={params}/>;
 }
 
-function TheForm({ element }) {
+function TheForm({element}) {
   const fields = _get(element, 'settings.general.fields');
   if (!fields) return;
 
-  return <Form element={element} formFields={fields} />;
+  return <Form element={element} formFields={fields}/>;
 }
 
 function TheDescription(props) {
-  let { element, content } = props;
-  let { type, children, settings, classes } = element;
-  let { general } = settings;
-  let { fields } = general;
+  let {element, content} = props;
+  let {type, children, settings, classes} = element;
+  let {general} = settings;
+  let {fields} = general;
   if (!fields) {
     return;
   }
-  let { entity } = fields;
+  let {entity} = fields;
 
-  return <Description element={element} />;
+  return <Description element={element}/>;
 }
 
 function SWIPERSlide(props) {
-  let { element, content, params } = props;
-  let { type, children, classes, kind, text, src } = element;
+  let {element, content, params} = props;
+  let {type, children, classes, kind, text, src} = element;
 
   if (children)
     return children.map((com, index) => {
@@ -382,17 +379,18 @@ function SWIPERSlide(props) {
             : '')
         }>
         {kind === 'text' && text}
-        {kind === 'image' && <img src={src} alt={text} loading="lazy" />}
+        {kind === 'image' && <img src={src} alt={text} loading="lazy"/>}
       </div>
     );
 }
 
 function ProductElement(props) {
-  return <PostCard item={props} onClick={() => {}} method={undefined} />;
+  return <PostCard item={props} onClick={() => {
+  }} method={undefined}/>;
 }
 
 function TEXTBOX(element) {
-  let { type, fields } = element;
+  let {type, fields} = element;
 
   return <>TEXTBOX</>;
 }
@@ -414,15 +412,15 @@ function TEXTBOX(element) {
 
 function IMAGE(props) {
   // let {settings, classes} = element;
-  const { element } = props;
+  const {element} = props;
 
-  let { type, components, classes, settings } = element;
-  let { general } = settings;
-  let { fields } = general;
+  let {type, components, classes, settings} = element;
+  let {general} = settings;
+  let {fields} = general;
   if (!fields) {
     return;
   }
-  let { link, title, src, showInDesktop, showInMobile, target } = fields;
+  let {link, title, src, showInDesktop, showInMobile, target} = fields;
   let style = setStyles(fields);
 
   if (link) {
@@ -462,25 +460,48 @@ function IMAGE(props) {
 }
 
 function SLIDER(props) {
-  let { element, content } = props;
-  let { type, components, classes } = element;
+  let {element, content} = props;
+  let {type, components, classes} = element;
   return <>SLIDER</>;
 }
 
 function GRID_LAYOUT(props) {
-  let { element, content, params } = props;
+  let {element, content, params} = props;
   // let {type, components, children, classes, handleCard, card} = element;
 
-  let { type, components, classess, children, settings, handleCard, card } =
+  let {type, components, classess, children, settings, handleCard, card} =
     element;
-  let { general } = settings;
-  let { fields } = general;
+  let {general} = settings;
+  let {fields} = general;
   if (!fields) {
     return;
   }
-  let { link, title, src, classes, showInDesktop, showInMobile } = fields;
+  let {link, title, src, classes, showInDesktop, showInMobile} = fields;
   let style = setStyles(fields);
-
+  if (link) {
+    return (
+      <Link
+        to={link}
+        className={
+          'posrel row grid-layout ' +
+          (classes ? classes : '') +
+          (showInDesktop ? ' showInDesktop ' : '') +
+          (showInMobile ? ' showInMobile ' : '')
+        }
+        style={style}>
+        {children &&
+        children.map((item, k) => {
+          return (
+            <ShowElement
+              params={params}
+              key={k}
+              element={{...item, handleCard: handleCard, card: card}}
+            />
+          );
+        })}
+      </Link>
+    );
+  }
   return (
     <div
       className={
@@ -491,30 +512,30 @@ function GRID_LAYOUT(props) {
       }
       style={style}>
       {children &&
-        children.map((item, k) => {
-          return (
-            <ShowElement
-              params={params}
-              key={k}
-              element={{ ...item, handleCard: handleCard, card: card }}
-            />
-          );
-        })}
+      children.map((item, k) => {
+        return (
+          <ShowElement
+            params={params}
+            key={k}
+            element={{...item, handleCard: handleCard, card: card}}
+          />
+        );
+      })}
     </div>
   );
 }
 
 function THE_TABS(props) {
-  let { element, content, params } = props;
+  let {element, content, params} = props;
 
-  let { type, components, classess, children, settings, handleCard, card } =
+  let {type, components, classess, children, settings, handleCard, card} =
     element;
-  let { general } = settings;
-  let { fields } = general;
+  let {general} = settings;
+  let {fields} = general;
   if (!fields) {
     return;
   }
-  let { link, title, src, classes, showInDesktop, showInMobile } = fields;
+  let {link, title, src, classes, showInDesktop, showInMobile} = fields;
   let style = setStyles(fields);
 
   return (
@@ -527,32 +548,32 @@ function THE_TABS(props) {
       )}
       style={style}>
       {children &&
-        children.map((item, k) => {
-          return (
-            <ShowElement
-              params={params}
-              key={k}
-              element={{ ...item, handleCard: handleCard, card: card }}
-            />
-          );
-        })}
+      children.map((item, k) => {
+        return (
+          <ShowElement
+            params={params}
+            key={k}
+            element={{...item, handleCard: handleCard, card: card}}
+          />
+        );
+      })}
     </div>
   );
 }
 
 function THE_STEPS(props) {
-  let { element, content, params } = props;
+  let {element, content, params} = props;
 
-  let { type, components, classess, children, settings, handleCard, card } =
+  let {type, components, classess, children, settings, handleCard, card} =
     element;
-  let { general } = settings;
-  let { fields } = general;
+  let {general} = settings;
+  let {fields} = general;
   if (!fields) {
     return;
   }
-  let { link, title, src, classes, showInDesktop, showInMobile } = fields;
+  let {link, title, src, classes, showInDesktop, showInMobile} = fields;
   let style = setStyles(fields);
-  return <Stepper />;
+  return <Stepper/>;
   return (
     <div
       className={
@@ -563,29 +584,29 @@ function THE_STEPS(props) {
       }
       style={style}>
       {children &&
-        children.map((item, k) => {
-          return (
-            <ShowElement
-              params={params}
-              key={k}
-              element={{ ...item, handleCard: handleCard, card: card }}
-            />
-          );
-        })}
+      children.map((item, k) => {
+        return (
+          <ShowElement
+            params={params}
+            key={k}
+            element={{...item, handleCard: handleCard, card: card}}
+          />
+        );
+      })}
     </div>
   );
 }
 
 function THE_STEP(props) {
-  const { element, content, params } = props;
+  const {element, content, params} = props;
 
-  const { payload, type, components, children, settings, handleCard, card } =
+  const {payload, type, components, children, settings, handleCard, card} =
     element;
-  let { general } = settings;
-  let { fields } = general;
-  let { showInDesktop, showInMobile, direction, display, classess, classes } =
+  let {general} = settings;
+  let {fields} = general;
+  let {showInDesktop, showInMobile, direction, display, classess, classes} =
     fields;
-  let style = setStyles({ ...fields, direction: direction, display: display });
+  let style = setStyles({...fields, direction: direction, display: display});
   return (
     <div
       style={style}
@@ -601,27 +622,81 @@ function THE_STEP(props) {
             : '')
       }>
       {children &&
-        children.map((child, ch) => {
-          return (
-            <ShowElement
-              params={params}
-              element={{ ...child, handleCard: handleCard, card: card }}
-              key={ch}
-              content={{}}
-            />
-          );
-        })}
+      children.map((child, ch) => {
+        return (
+          <ShowElement
+            params={params}
+            element={{...child, handleCard: handleCard, card: card}}
+            key={ch}
+            content={{}}
+          />
+        );
+      })}
     </div>
   );
 }
 
-function GRID_COL({ element, params }) {
-  const { children, handleCard, card } = element;
+function GRID_COL({element, params}) {
+  const {children, handleCard, card} = element;
   const fields = _get(element, 'settings.general.fields', {});
 
-  let { showInDesktop, showInMobile, classess, classes } = fields;
+  let {showInDesktop, showInMobile, classess, classes, link} = fields;
   const style = setStyles(fields);
-
+  if (link) {
+    let linkType = getLinkType(link);
+    // return linkType;
+    if (linkType == 'internal')
+      return (
+        <Link
+          to={link}
+          style={style}
+          className={clsx(
+            'col',
+            classess,
+            showInDesktop && 'showInDesktop',
+            showInMobile && 'showInMobile',
+            typeof classes == 'string'
+              ? classes
+              : classes
+              ? classes.map((ob) => (ob.name ? ob.name : ob)).join(' ')
+              : ''
+          )}>
+          {children?.map((child, idx) => (
+            <ShowElement
+              params={params}
+              element={{...child, handleCard: handleCard, card: card}}
+              key={idx}
+              content={{}}
+            />
+          ))}
+        </Link>
+      );
+    else return (
+      <a
+        href={link}
+        style={style}
+        className={clsx(
+          'col',
+          classess,
+          showInDesktop && 'showInDesktop',
+          showInMobile && 'showInMobile',
+          typeof classes == 'string'
+            ? classes
+            : classes
+            ? classes.map((ob) => (ob.name ? ob.name : ob)).join(' ')
+            : ''
+        )}>
+        {children?.map((child, idx) => (
+          <ShowElement
+            params={params}
+            element={{...child, handleCard: handleCard, card: card}}
+            key={idx}
+            content={{}}
+          />
+        ))}
+      </a>
+    );
+  }
   return (
     <div
       style={style}
@@ -633,13 +708,13 @@ function GRID_COL({ element, params }) {
         typeof classes == 'string'
           ? classes
           : classes
-            ? classes.map((ob) => (ob.name ? ob.name : ob)).join(' ')
-            : ''
+          ? classes.map((ob) => (ob.name ? ob.name : ob)).join(' ')
+          : ''
       )}>
       {children?.map((child, idx) => (
         <ShowElement
           params={params}
-          element={{ ...child, handleCard: handleCard, card: card }}
+          element={{...child, handleCard: handleCard, card: card}}
           key={idx}
           content={{}}
         />
@@ -649,15 +724,15 @@ function GRID_COL({ element, params }) {
 }
 
 function THE_TAB(props) {
-  const { element, content, params } = props;
+  const {element, content, params} = props;
 
-  const { payload, type, components, children, settings, handleCard, card } =
+  const {payload, type, components, children, settings, handleCard, card} =
     element;
-  let { general } = settings;
-  let { fields } = general;
-  let { showInDesktop, showInMobile, direction, display, classess, classes } =
+  let {general} = settings;
+  let {fields} = general;
+  let {showInDesktop, showInMobile, direction, display, classess, classes} =
     fields;
-  let style = setStyles({ ...fields, direction: direction, display: display });
+  let style = setStyles({...fields, direction: direction, display: display});
   return (
     <div
       style={style}
@@ -673,22 +748,22 @@ function THE_TAB(props) {
             : '')
       }>
       {children &&
-        children.map((child, ch) => {
-          return (
-            <ShowElement
-              params={params}
-              element={{ ...child, handleCard: handleCard, card: card }}
-              key={ch}
-              content={{}}
-            />
-          );
-        })}
+      children.map((child, ch) => {
+        return (
+          <ShowElement
+            params={params}
+            element={{...child, handleCard: handleCard, card: card}}
+            key={ch}
+            content={{}}
+          />
+        );
+      })}
     </div>
   );
 }
 
 function Content(props) {
-  const { element, content } = props;
+  const {element, content} = props;
 
   if (element && element.content && content && content[element.content])
     return content[element.content];
@@ -700,38 +775,38 @@ function Content(props) {
 }
 
 export default function ShowElement(p) {
-  let { element, content, params, condition, handleStep } = p;
+  let {element, content, params, condition, handleStep} = p;
 
   if (!element) return;
 
-  let { name = '' as string, type } = element;
+  let {name = '' as string, type} = element;
   if (element['custom-name']) name = element['custom-name'];
-
+  console.log("params", params)
   switch (type) {
     case 'text':
-      return <TITLE element={element} />;
+      return <TITLE element={element}/>;
     case 'textnode':
-      return <TextNode element={element} />;
+      return <TextNode element={element}/>;
     case 'swiper-wrapper':
-      return <SWIPERWrapper element={element} />;
+      return <SWIPERWrapper element={element}/>;
     case 'swiper-slide':
-      return <SWIPERSlide element={element} />;
+      return <SWIPERSlide element={element}/>;
     case 'swiper-container':
-      return <SWIPER element={element} />;
+      return <SWIPER element={element}/>;
   }
 
   switch (name as ElementTypes) {
     case 'html':
-      return <HtmlTag element={element} />;
+      return <HtmlTag element={element}/>;
     case 'text':
-      return <TITLE element={element} />;
+      return <TITLE element={element}/>;
     case 'conditionsteps':
       return (
-        <ConditionSteps element={element} content={content} params={params} />
+        <ConditionSteps element={element} content={content} params={params}/>
       );
     case 'conditionstep':
       return (
-        <ConditionStep element={element} content={content} params={params} />
+        <ConditionStep element={element} content={content} params={params}/>
       );
     case 'button':
       return (
@@ -744,114 +819,114 @@ export default function ShowElement(p) {
         />
       );
     case 'hr':
-      return <Hr element={element} />;
+      return <Hr element={element}/>;
     case 'header':
-      return <Header element={element} />;
+      return <Header element={element}/>;
 
     case 'TEXTBOX':
-      return <TEXTBOX element={element} content={content} params={params} />;
+      return <TEXTBOX element={element} content={content} params={params}/>;
     case 'swiper-container':
-      return <SLIDER element={element} content={content} params={params} />;
+      return <SLIDER element={element} content={content} params={params}/>;
     case 'slider':
       return (
-        <SWIPERWrapper element={element} content={content} params={params} />
+        <SWIPERWrapper element={element} content={content} params={params}/>
       );
     case 'advertises':
-      return <Advertises element={element} params={params} />;
+      return <Advertises element={element} params={params}/>;
     case 'addadvertises':
-      return <AddAdvertises />;
+      return <AddAdvertises/>;
     case 'currency':
-      return <Currency />;
+      return <Currency/>;
     case 'calculation':
-      return <PaymentCalc />;
+      return <PaymentCalc/>;
     case 'packing':
-      return <Packing />;
+      return <Packing/>;
     case 'invoice':
-      return <Invoice />;
+      return <Invoice/>;
     case 'fastcheckout':
       return (
-        <FastCheckout element={element} content={content} params={params} />
+        <FastCheckout element={element} content={content} params={params}/>
       );
 
     case 'loadmore':
       return (
-        <TheLoadMore element={element} content={content} params={params} />
+        <TheLoadMore element={element} content={content} params={params}/>
       );
     case 'description':
       return (
-        <TheDescription element={element} content={content} params={params} />
+        <TheDescription element={element} content={content} params={params}/>
       );
     case 'pagination':
       return (
-        <ThePagination element={element} content={content} params={params} />
+        <ThePagination element={element} content={content} params={params}/>
       );
     case 'adbanner':
       return (
-        <TheAdBanner element={element} content={content} params={params} />
+        <TheAdBanner element={element} content={content} params={params}/>
       );
     case 'grid':
-      return <TheGrid element={element} content={content} params={params} />;
+      return <TheGrid element={element} content={content} params={params}/>;
     case 'form':
-      return <TheForm element={element} />;
+      return <TheForm element={element}/>;
     case 'Slide':
       return (
-        <SWIPERSlide element={element} content={content} params={params} />
+        <SWIPERSlide element={element} content={content} params={params}/>
       );
     case 'ProductSlider':
       return (
         // @ts-ignore
-        <ProductsSlider content={content} params={params} />
+        <ProductsSlider content={content} params={params}/>
       );
     case 'ProductElement':
       return (
-        <ProductElement element={element} content={content} params={params} />
+        <ProductElement element={element} content={content} params={params}/>
       );
     case 'TEXTNODE':
-      return <TextNode element={element} />;
+      return <TextNode element={element}/>;
     case 'PostSlider':
       // @ts-ignore
-      return <PostSlider element={element} content={content} params={params} />;
+      return <PostSlider element={element} content={content} params={params}/>;
     case 'row':
       return (
-        <GRID_LAYOUT element={element} content={content} params={params} />
+        <GRID_LAYOUT element={element} content={content} params={params}/>
       );
     case 'tabs':
-      return <THE_TABS element={element} content={content} params={params} />;
+      return <THE_TABS element={element} content={content} params={params}/>;
     case 'tab':
-      return <THE_TAB element={element} content={content} params={params} />;
+      return <THE_TAB element={element} content={content} params={params}/>;
 
     case 'Cell':
     case 'col':
-      return <GRID_COL element={element} params={params} />;
+      return <GRID_COL element={element} params={params}/>;
     case 'Content':
-      return <Content {...p} element={element} content={content} />;
+      return <Content {...p} element={element} content={content}/>;
     case 'CAROUSEL':
-      return <Carousel element={element} />;
+      return <Carousel element={element}/>;
     case 'image':
-      return <IMAGE element={element} content={content} params={params} />;
+      return <IMAGE element={element} content={content} params={params}/>;
     case 'navigation':
-      return <TheMainNavbar element={element} />;
+      return <TheMainNavbar element={element}/>;
     case 'searchbar':
       return (
-        <TheNavbarSearch element={element} content={content} params={params} />
+        <TheNavbarSearch element={element} content={content} params={params}/>
       );
     case 'searchbarinitem':
-      return <TheNavbarSearchInItem element={element} />;
+      return <TheNavbarSearchInItem element={element}/>;
     case 'searchbaritem':
-      return <TheNavbarSearchItem element={element} />;
+      return <TheNavbarSearchItem element={element}/>;
     case 'searchbartsc':
-      return <TheNavbarSearchTsc element={element} />;
+      return <TheNavbarSearchTsc element={element}/>;
 
     case 'sidemenu':
-      return <SideMenu element={element} params={params} />;
+      return <SideMenu element={element} params={params}/>;
     case 'tsc':
-      return <Tsc element={element} content={content} params={params} />;
+      return <Tsc element={element} content={content} params={params}/>;
     case 'backButton':
-      return <BackButton element={element} content={content} params={params} />;
+      return <BackButton element={element} content={content} params={params}/>;
     case 'chatgpt':
-      return <TheChatgpt element={element} />;
+      return <TheChatgpt element={element}/>;
     case 'flights':
-      return <TheFlights element={element} />;
+      return <TheFlights element={element}/>;
     default:
       return <></>;
   }

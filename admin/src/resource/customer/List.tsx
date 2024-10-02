@@ -8,6 +8,7 @@ import {
   EditButton,
   EmailField,
   ExportButton,
+    SimpleList,
   FilterList,
     ReferenceInput,
   Filter,
@@ -17,13 +18,14 @@ import {
   SingleFieldList,
   TextField,
   FilterListItem,
+    useTranslate,
   TextInput,
   TopToolbar,
     SelectInput,
-  useRefresh,
-  useTranslate,
+  useRefresh
 } from 'react-admin';
 import { Card, CardContent } from '@mui/material';
+import {Chip, useMediaQuery} from '@mui/material';
 
 import MailIcon from '@mui/icons-material/MailOutline';
 import { ImportButton } from 'react-admin-import-csv';
@@ -277,14 +279,107 @@ export default function CustomerList(props) {
     if (rd && rd[0] && rd[0].title) return rd[0].title;
     else return JSON.stringify(st);
   };
+    const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
+    const t = useTranslate();
 
   return (
     <List
       exporter={exporter}
       {...props}
-      aside={<PostFilterSidebar childs={DATA} />}
+      aside={isSmall ? false :(<PostFilterSidebar childs={DATA} />)}
       filters={<PostFilter />}
       actions={<ListActions />}>
+        {isSmall ? (
+            <SimpleList
+                primaryText={record => <div>
+                    <div className={"d-dfgfd"}>
+                        <div className="ph">
+                            {record?.phoneNumber && <div className={'wh'}><span>{translate('resources.customers.phoneNumber')}: </span><TextField
+                                source="phoneNumber"
+                                label="resources.customers.phoneNumber"
+                            /></div>}
+                            {record?.companyTelNumber && <div className={'wh'}>
+                                <span>{translate('resources.customers.companyTelNumber')}: </span>
+                                <TextField
+                                    source="companyTelNumber"
+                                    label="resources.customers.companyTelNumber"
+                                /></div>}
+                            {record?.email && <div className={'wh'}>
+                                <span>{translate('resources.customers.email')}: </span>
+                                <EmailField source="email" label="resources.customers.email" />
+
+                            </div>}
+                            {record?.activationCode && <div className={'wh'}>
+                                <span>{translate('resources.customers.activationCode')}: </span>
+                                <TextField
+                                    source="activationCode"
+                                    label="resources.customers.activationCode"
+                                />
+                            </div>}
+                        </div>
+
+
+                    </div>
+                    {/*<div>{record?.customer?.firstName + ' ' + record?.customer?.lastName}</div>*/}
+                    <div>{record?.customer?.phoneNumber}</div>
+                    {(record?.firstName || record?.lastName) && <div className={'wh'}>
+                        <div>{record?.firstName + ' ' + record?.lastName}</div>
+
+                    </div>}
+
+                    {(record?.companyName) && <div className={'wh'}>
+                        <span>{translate('resources.customers.companyName')}: </span>
+                        <TextField
+                            source="companyName"
+                            label="resources.customers.companyName"
+                        /></div>}
+                </div>}
+                secondaryText={record => <div className="ph">
+                    <div className={'m-2'}>
+                    <Chip
+                        className={record.source}
+                        label={record.source}
+                    />
+                    </div>
+
+
+                    {record?.customerGroup && <>
+                    {JSON.str}
+                    </>}
+
+                    <ReferenceArrayField
+                        label="resources.customers.customerGroup"
+                        reference="customerGroup"
+                        source="customerGroup">
+                        <SingleFieldList>
+                            <ChipField source="slug" />
+                        </SingleFieldList>
+                    </ReferenceArrayField>
+                    <div>
+                        {translate('resources.customers.createdAt')}:
+                        <span dir="ltr"> {dateFormat(record.createdAt)}</span>
+                    </div>
+                    <div>
+                        {translate('resources.customers.updatedAt')}:
+                        <span dir="ltr"> {dateFormat(record.updatedAt)}</span>
+                    </div>
+                </div>
+                }
+                // tertiaryText={record => <>
+                //     <div>
+                //         {translate('resources.customers.createdAt')}:
+                //         <span dir="ltr"> {dateFormat(record.createdAt)}</span>
+                //     </div>
+                //     <div>
+                //         {translate('resources.customers.updatedAt')}:
+                //         <span dir="ltr"> {dateFormat(record.updatedAt)}</span>
+                //     </div>
+                //
+                //
+                //     </>}
+                linkType={"edit"}
+            />
+        ) : (
       <Datagrid>
           <FunctionField
               label="resources.customers.contactData"
@@ -346,8 +441,21 @@ export default function CustomerList(props) {
                   );
               }}
           />
+          <FunctionField
+              label="resources.customers.source"
+              render={(record) => {
 
-        <TextField source="source" label="resources.customers.source" />
+                  return (
+                      <Chip
+                          className={record.source}
+                          label={record.source}
+                      />
+                  );
+              }}
+          />
+
+        {/*<TextField source="source" label="resources.customers.source" />*/}
+
         <ReferenceArrayField
           label="resources.customers.customerGroup"
           reference="customerGroup"
@@ -418,7 +526,7 @@ export default function CustomerList(props) {
             </>
           )}
         />
-      </Datagrid>
+      </Datagrid>)}
     </List>
   );
 }

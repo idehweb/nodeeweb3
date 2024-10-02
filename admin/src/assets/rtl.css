@@ -64,7 +64,17 @@
       format('truetype');
 }
 
-body .layout.rtl * {
+body .layout.rtl button[title="Go to next page"]{
+  transform: rotate(180deg);
+}
+body .layout.rtl button[title="Go to previous page"]{
+  transform: rotate(180deg);
+}
+body .layout.rtl .RaSidebar-paper {
+  right:0;
+  left: auto;
+}
+body .layout.rtl *,p,.MuiMenuItem-root {
   font-family: IRANSans, 'Roboto', sans-serif !important;
   direction: rtl;
   text-align: right;

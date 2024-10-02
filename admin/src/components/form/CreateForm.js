@@ -75,7 +75,7 @@ function CreateForm(props) {
     }
     
     const { type, removeField, kind, size, className, options, disabled = false, name, label, placeholder } = field;
-   
+   // return type;
     if (type === "date") {
     
       return <Col
@@ -149,6 +149,12 @@ function CreateForm(props) {
 
     }
     if (type === "radio") {
+      // console.clear()
+      // console.log(field)
+      return <FieldCheckbox field={field}/>;
+
+    }
+    if (type === "question") {
       // console.clear()
       // console.log(field)
       return <FieldCheckbox field={field}/>;
@@ -375,6 +381,7 @@ const [optionInputs,setOptionInputs] = useState(null)
 
     setTheRules(px);
   };
+  // return(JSON.stringify(theRules?.fields))
   if (themeData)
     return (
       <div className="fields pt-2" >

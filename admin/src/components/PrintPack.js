@@ -8,10 +8,13 @@ import IRANSansWeb_font_ttf from "../assets/fonts/ttf/IRANSansWeb.ttf";
 import { dateFormat } from "@/functions";
 // export const logo = require('../assets/img/logo.svg');
 import API, { BASE_URL } from "@/functions/API";
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default (props) => {
   // console.log(props.record);
-  const divRef = React.useRef();
+    let {setStart}=props;
+
+    const divRef = React.useRef();
   const [tel, Stel] = React.useState("");
   // const [cfirstName, ScfirstName] = React.useState(props.record.customer.firstName+' '+props.record.customer.lastName);
 
@@ -71,10 +74,22 @@ export default (props) => {
         Stel(data.factore_shop_phoneNumber);
       // setValue("title",data.title);
       // setTheData(true);
+        setTimeout(()=>{
+            handleClick();
+        },500);
+        setTimeout(()=>{
+            setStart();
+        },1000);
       return data;
     }).catch(e => {
       // setLoading(false);
       // setTheData(true);
+        setTimeout(()=>{
+            handleClick();
+        },500);
+        setTimeout(()=>{
+            setStart();
+        },1000);
     });
   };
   useEffect(() => {
@@ -141,6 +156,11 @@ export default (props) => {
       "        table {\n" +
       "            width: 100%;\n" +
       "            text-align: center;\n" +
+      "        }\n" +
+      "\n" +
+        "\n" +
+      "        .MuiCircularProgress-root {\n" +
+      "            display: none;\n" +
       "        }\n" +
       "\n" +
       "        body {\n" +
@@ -279,7 +299,7 @@ export default (props) => {
 
   return (
     <div id={"theprint"} ref={divRef}>
-      <button onClick={handleClick} className={"no-print"}>print</button>
+        <CircularProgress onClick={handleClick} className={"no-print"} id={'now-print-1'}>print</CircularProgress>
       <table className="head container ">
         <tr>
           <td className="header">

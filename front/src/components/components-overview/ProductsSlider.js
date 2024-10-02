@@ -95,7 +95,7 @@ const ProductsSlider = ({
         {tracks && tracks.length > 0 && (
           <Swiper
             arrows={arrows}
-            breakpoints={breakpoints}
+            breakpoints={breakpoints || defaultBreakPoints}
             perPage={perPage}
             autoplay={autoplay}
             pagination={pagination}>

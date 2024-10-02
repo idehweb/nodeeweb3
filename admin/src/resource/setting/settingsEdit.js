@@ -92,6 +92,7 @@ const Form = ({ children, ...props }) => {
     <SimpleForm {...props} onSubmit={save}>
       <BooleanInput source="siteActive" label={translate("resources.settings.siteActive")}/>
       <BooleanInput source="tax" label={translate("resources.settings.tax")}/>
+      <BooleanInput source="passwordAuthentication" label={translate("resources.settings.passwordAuthentication")}/>
       <NumberInput source="taxAmount" label={translate("resources.settings.taxAmount")}/>
 
       {/*<SelectArrayInput label={translate("resources.settings.activeCategory")} source="activeCategory" optionValue="_id" choices={[{*/}

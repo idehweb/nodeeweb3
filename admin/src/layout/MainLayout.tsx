@@ -16,7 +16,7 @@ function MainLayout(props) {
   const translate = useTranslate();
 
   return (
-    <>
+    <div>
       <Layout
         {...props}
         className={translate('dir')}
@@ -24,7 +24,7 @@ function MainLayout(props) {
         appBar={AppBar}
       />
       {isDev && <ReactQueryDevtools initialIsOpen={false} />}
-    </>
+    </div>
   );
 }
 

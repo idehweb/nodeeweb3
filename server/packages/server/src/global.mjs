@@ -200,7 +200,7 @@ let global = {
             let Settings = mongoose.model('Settings');
             let Template = mongoose.model('Template');
             let Page = mongoose.model('Page');
-            Settings.findOne({}, 'currency tax taxAmount', function (err, setting) {
+            Settings.findOne({}, 'currency tax taxAmount passwordAuthentication', function (err, setting) {
                 // console.log('setting', setting)
                 Template.findOne({type: 'header'}, function (err, header) {
                     Template.findOne({type: 'footer'}, function (err, footer) {
@@ -233,6 +233,10 @@ let global = {
                             if (setting && setting.tax) {
                                 tax = setting.tax;
                             }
+                            let passwordAuthentication = false;
+                            if (setting && setting.passwordAuthentication) {
+                                passwordAuthentication = setting.passwordAuthentication;
+                            }
                             let taxAmount = 0;
                             if (setting && setting.taxAmount) {
                                 taxAmount = setting.taxAmount;
@@ -240,6 +244,7 @@ let global = {
                             let lastObj = {
                                 taxAmount: taxAmount,
                                 tax: tax,
+                                passwordAuthentication: passwordAuthentication,
                                 currency: currency,
                                 header: {
                                     maxWidth:

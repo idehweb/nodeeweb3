@@ -2,6 +2,8 @@ import {
   Datagrid,
   DeleteButton,
   EditButton,
+    SimpleList,
+    Link,
   ShowButton,
   Filter,
   FunctionField,
@@ -34,7 +36,8 @@ import {
   SimpleImageField,
   UploaderField
 } from "@/components";
-import { Button } from "@mui/material";
+import { Button,useMediaQuery,Chip } from "@mui/material";
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 import React from "react";
 
@@ -113,35 +116,110 @@ React.useEffect(()=>{
 
 
 const list = (props) => {
-  const translate = useTranslate();
-  
+  const t = useTranslate();
+    const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
 
-  return (
+
+    return (
 
     <>
     <List  {...props} filters={<PostFilter/>} pagination={<PostPagination/>}>
-      <Datagrid optimized>
-        <TextField source="trackingCode" label={translate("resources.entry.trackingCode")}/>
+        {isSmall ? (<SimpleList
+            primaryText={record => <div>
+                <div className={"d-dfgf"}>
+                    {/*{JSON.stringify(record)}*/}
+                    {record?.trackingCode && <TextField source="trackingCode" label={t("resources.entry.trackingCode")}/>}
+                    <div>
+                    <Chip
+                        className={record.status}
+                        label={record?.form?.title.fa}
+                    />
+                        <div className='theDate'>
+                            <div>
+                                {t("resources.post.createdAt") + ": " + `${dateFormat(record.createdAt)}`}
+                            </div>
+                            <div>
+                                {t("resources.post.updatedAt") + ": " + `${dateFormat(record.updatedAt)}`}
+                            </div>
 
-        <TextField source={"form.title." + translate("lan")} label={translate("resources.form.title")}/>
+                            {record.views && <div>
+                                {t("resources.post.viewsCount") + ": " + `${(record.views.length)}`}
+                            </div>}
+                        </div>
+                    </div>
+                    {/*{record?.form?.title?.fa && */}
+                    {/*<TextField source={"form.title." + t("lan")} label={t("resources.form.title")}/>*/}
+
+                  {/*<span className={'gap-10'}><Chip*/}
+                          {/*className={record.status}*/}
+                          {/*label={t('pos.OrderStatus.' + record.status)}*/}
+                      {/*/>*/}
+                      {/*<Chip*/}
+                          {/*className={record.paymentStatus}*/}
+                          {/*label={t('pos.OrderPaymentStatus.' + record.paymentStatus)}*/}
+                      {/*/></span>*/}
+                    {/*<span>#{record?.orderNumber}</span>*/}
+                </div>
+
+            </div>}
+            // tertiaryText={record =>   <div className='theDate'>
+            //     <div>
+            //         {t("resources.post.createdAt") + ": " + `${dateFormat(record.createdAt)}`}
+            //     </div>
+            //     <div>
+            //         {t("resources.post.updatedAt") + ": " + `${dateFormat(record.updatedAt)}`}
+            //     </div>
+            //
+            //     {record.views && <div>
+            //         {t("resources.post.viewsCount") + ": " + `${(record.views.length)}`}
+            //     </div>}
+            // </div>}
+            secondaryText={record => <div className="ph">
+                <div className={'d-flex'}>
+
+                    <div  className={'d-flex-child'}>
+                        <Link
+                            className={"link-with-icon"}
+                            rel="noopener noreferrer"
+                            to={'/entry/' + record._id+'/show'}>
+                            <VisibilityIcon/>
+                            <span className={'ml-2 mr-2'}>
+                                        {t('resources.entry.show')}
+                                    </span>
+                        </Link>
+                    </div>
 
 
-        <FunctionField label={translate("resources.post.date")}
+                    {/*<div>*/}
+                    {/*<DeleteButton/>*/}
+                    {/*</div>*/}
+                </div>
+
+            </div>}
+
+            linkType={false}
+        />) : (<Datagrid optimized>
+        <TextField source="trackingCode" label={t("resources.entry.trackingCode")}/>
+
+        <TextField source={"form.title." + t("lan")} label={t("resources.form.title")}/>
+
+
+        <FunctionField label={t("resources.post.date")}
                        render={record => (
                          <div className='theDate'>
                            <div>
-                             {translate("resources.post.createdAt") + ": " + `${dateFormat(record.createdAt)}`}
+                             {t("resources.post.createdAt") + ": " + `${dateFormat(record.createdAt)}`}
                            </div>
                            <div>
-                             {translate("resources.post.updatedAt") + ": " + `${dateFormat(record.updatedAt)}`}
+                             {t("resources.post.updatedAt") + ": " + `${dateFormat(record.updatedAt)}`}
                            </div>
 
                            {record.views && <div>
-                             {translate("resources.post.viewsCount") + ": " + `${(record.views.length)}`}
+                             {t("resources.post.viewsCount") + ": " + `${(record.views.length)}`}
                            </div>}
                          </div>
                        )}/>
-        <FunctionField label={translate("resources.post.actions")}
+        <FunctionField label={t("resources.post.actions")}
                        render={record => (<div>
                          <div>
                            <ShowButton/>
@@ -153,7 +231,7 @@ const list = (props) => {
                            <DeleteButton/>
                          </div>
                        </div>)}/>
-      </Datagrid>
+      </Datagrid>)}
     </List>
     </>
   );
