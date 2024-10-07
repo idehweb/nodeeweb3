@@ -10,7 +10,7 @@ import Loading from '@/components/common/Loading';
 import { parseData } from '@/components/page-builder/add-advertise/SidebarCategories';
 
 const MenuItems = ({ items, filterParameter }) =>
-  items && items.map((i, idx) => (
+  items.map((i, idx) => (
     <Collapsible
       key={idx}
       item={i}
@@ -71,50 +71,46 @@ function SideMenu({ element = {} as any, params = {} as any }) {
       .finally(() => setLoading(false));
   };
   const loadProductCategories = async (page, filter = {}) => {
-    // setcats([])
-    // settheload2(true)
+    setCats([]);
+    setLoading2(true);
     let query = {};
 
     if (customQuery)
       Object.keys(customQuery).forEach((item) => {
         let main = customQuery[item];
-        main = main.replace('params._id', JSON.stringify(params._id))
-        query[item] = JSON.parse(main)
-      })
-    if (query) {
-      filter = JSON.stringify(query)
-    }
-    getEntitiesWithCount('productCategory', params.offset, params.limit, "", filter, JSON.stringify(populateQuery)).then((resp) => {
-      afterGetDataPC(resp);
-    });
-  };
-  const afterGetDataPC = (resp, tracks = []) => {
-    console.log('afterGetData', resp, tracks)
-    let trackss = [...tracks],
-      {items, count} = resp;
-    // if (resp.length < 24) sethasMoreItems(false);
-    // console.log("resp", resp);
-    if (items && items.length) {
-      items.forEach((item) => {
-        trackss.push(item);
+
+        main = main.replace('params._id', JSON.stringify(params._id));
+
+        query[item] = JSON.parse(main);
       });
-      console.log('set data:set data:set data:set data:set data:', trackss)
-      setCats([...trackss]);
-      // setcount(count);
-      // settheload2(false)
 
-      // if (resp && resp.length < 1) sethasMoreItems(false);
-    } else {
-      // sethasMoreItems(false);
-      // setLoad(false);
-      // settheload2(false)
+    if (query) filter = JSON.stringify(query);
 
-    }
+    getEntitiesWithCount(
+      'adscategory',
+      params.offset,
+      10000,
+      false,
+      filter,
+      JSON.stringify(populateQuery)
+    )
+      .then(({ items = [] }) => {
+        if (items && items.length) {
+          // remove disabled items
+          let temp = items
+            .filter((i) => i.active)
+            .sort((a, b) => a.order - b.order);
+
+          temp = parseData(temp);
+          setCats(temp);
+        }
+      })
+      .finally(() => setLoading2(false));
   };
 
   useEffect(() => {
     loadProductItems(0);
-    loadProductCategories(0);
+    // loadProductCategories(0);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -139,8 +135,6 @@ function SideMenu({ element = {} as any, params = {} as any }) {
 
       {!loading && (
         <Col className="main-content2 iuytfghj pb-5" sm="12" tag="nav">
-          <MenuItems items={tracks} filterParameter={Filter_Parameter} />
-
           {isMobile && openFilter && (
             <MenuItems items={cats} filterParameter={Filter_Parameter} />
           )}

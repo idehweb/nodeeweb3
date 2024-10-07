@@ -48,7 +48,7 @@ export default function Collapsible({
   if (!children.length)
     return (
       <MenuItem
-        title={item.name}
+        title={item.name?.fa}
         isActive={ActiveItem === item.slug}
         onToggle={() => handleToggle(item.slug)}
       />
@@ -57,7 +57,7 @@ export default function Collapsible({
   return (
     <List sx={{ width: '100%', bgcolor: 'background.paper', py: 0.5 }}>
       <ListItemButton onClick={handleClick}>
-        <ListItemText primary={item.name} />
+        <ListItemText primary={item.name?.fa} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
@@ -65,7 +65,7 @@ export default function Collapsible({
           {children?.map((i, idx) => (
             <MenuItem
               key={idx}
-              title={i.name}
+              title={i.name?.fa}
               isActive={ActiveItem === i.slug}
               onToggle={() => handleToggle(i.slug)}
             />

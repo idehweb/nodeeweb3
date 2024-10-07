@@ -265,9 +265,9 @@ let self = ({
         console.log("submitToOther")
         req.httpRequest({
             method: "post",
-            url: "https://mrgamestore.com/admin/settings/update-product-prices",
+            url: process.env.SITE_TO_SUBMIT,
             data: req.body,
-            headers: {token:"0kkz04xgwlo9l3nqympeqak72ui4gq5o"},
+            headers: {token:process.env.TOKEN_TO_SUBMIT},
             json: true
         }).then(function (parsedBody) {
             // console.log("parsedBody",parsedBody['data'])
