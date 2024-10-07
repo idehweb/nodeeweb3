@@ -1,9 +1,11 @@
-import { useCallback } from 'react';
+import React , { useCallback } from 'react';
 import { Button } from 'shards-react';
 import clsx from 'clsx';
 import { useLocation, useNavigate } from 'react-router-dom';
+import * as Icons from "@mui/icons-material";
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
-import { MainUrl, setStyles, toggleSidebar } from '#c/functions';
+import { MainUrl, setStyles, toggleSidebar ,toggleContact} from '#c/functions';
 import LazyMuiIcon from '@/components/common/LazyMuiIcon';
 
 import Link from './Link';
@@ -78,6 +80,15 @@ export default function TheButton(p) {
           {Text}
         </Button>
       );
+    else if (action == 'toggleContact') {
+      return <Button onClick={() => {
+        // console.clear()
+        toggleContact();
+      }} className={' posrel ' + classess + (showInMobile ? ' showInMobile ' : '')} style={style}>{Icons[iconFont] &&
+      <span>{React.createElement(Icons[iconFont])}</span>}<span>{text}</span><span
+        className={'arrow-toggle-contact'}><ArrowDropUpIcon/></span></Button>
+
+    }
     else if (action === 'toggleMenu')
       return (
         <Button

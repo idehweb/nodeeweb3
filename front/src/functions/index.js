@@ -2134,6 +2134,8 @@ export const uploadPostFile = (formData, onUploadProgress, id, ref) => {
 };
 export const toggleSidebar = (menuVisible) =>
   SaveData({menuVisible: !menuVisible});
+export const toggleContact = (menuContact = store.getState().store.menuContact) =>
+  SaveData({menuContact: !menuContact});
 export const toggleSearch = (searchvisible) => {
   SaveData({searchvisible: !searchvisible});
 };

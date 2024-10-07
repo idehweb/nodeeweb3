@@ -15,6 +15,8 @@ export default function APP(props) {
   let routes = [];
   // @ts-ignore
   const themeData = useSelector((st) => st.store.themeData, _isEqual);
+  const menuContact = useSelector((st) => st.store.menuContact);
+
   // @ts-ignore
   const appUpdate = useSelector((st) => st.store.appUpdate);
 
@@ -36,7 +38,7 @@ export default function APP(props) {
   if (themeData && themeData.routes) routes = createRoutes(themeData.routes);
 
   return (
-    <div className={t('languageDir')} dir={t('languageDir')}>
+    <div className={t('languageDir') + ' '+(menuContact ? 'menuContact' : '')} dir={t('languageDir')}>
       <Snackbar
         open={Boolean(appUpdate)}
         ContentProps={{
