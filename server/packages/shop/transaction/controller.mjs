@@ -1,14 +1,6 @@
-// import Transaction from "#models/transaction";
-// import Order from "#models/order";
-// import Customer from "#models/customer";
-// import Link from "#models/link";
-// //const rp from "request-promise";
-// import request from "#root/request";
-//
-// import global from "#root/global";
-// import CONFIG from "#c/config";
 import stringMath from 'string-math';
 import crypto from 'crypto';
+import {replaceValue} from './utils.mjs'
 
 var self = ({
     all: function (req, res, next) {
@@ -125,6 +117,15 @@ var self = ({
     },
 
     buy: function (req, res, next) {
+
+        async function sendSms(order,url){
+            //   if(!order.customer_data?.phoneNumber) return ;
+            // const newTxt = replaceValue({ text : setting[settingKey] , data : [order.toObject(),order.customer_data,{payment_link:url}]});
+            // if(newTxt)
+            // req.global.sendSms(order.customer_data?.phoneNumber, newTxt);
+
+        }
+
         let LIMIT=1000000000
 
         let Order = req.mongoose.model('Order');
@@ -140,8 +141,13 @@ var self = ({
                 success: false,
                 message: "req.params._price"
             });
-        Settings.findOne({},"currency", function (err, setting) {
+        Settings.findOne({},"currency paymentActive", function (err, setting) {
 // let currency
+            if(setting && !setting.paymentActive)
+                return res.json({
+                    success:true,
+                    url:"/there-is-problem"
+                })
             if (req.body.method)
                 Gateway.findOne({slug: req.body.method}, function (err, gateway) {
                     if (!gateway || !gateway.request) {
@@ -154,7 +160,7 @@ var self = ({
                     }
 
 
-                    Order.findById(req.params._id, "sum , orderNumber , amount , discount , customer",
+                    Order.findById(req.params._id, "sum , orderNumber , amount , discount , customer customer_data",
                         function (err, order) {
                             if (err || !order) {
                                 res.json({
@@ -305,6 +311,11 @@ var self = ({
                                             }
                                         }, function (order_err, updated_order) {
                                             console.log('end of buy...');
+
+                                            const url = parsedBody['data']?.['url'] ?? ("https://gateway.zibal.ir/start/" + parsedBody['data']?.trackId);
+
+                                            sendSms(order,url)
+
                                             if (parsedBody['data'] && parsedBody['data']['url']) {
                                                 return res.json({
                                                     success: true,

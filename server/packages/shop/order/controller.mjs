@@ -3,8 +3,62 @@ import crypto from 'crypto';
 import moment from 'moment';
 import persianJs from "persianjs";
 import stringMath from "string-math";
+import {Types} from 'mongoose';
+import {replaceValue} from './utils.mjs'
 
 let self = ({
+    async update(req,res,next){
+        const orderModel = req.mongoose.model('Order');
+        const settingModel = req.mongoose.model('Settings');
+        const order = await orderModel.findByIdAndUpdate(req.params.id,req.body,{new:true}).populate('transaction',{Authority:1});
+        const setting = await settingModel.findOne({});
+
+        if(!order) return res.status(404).json({message:"order not found",success:'false'});
+        let text,settingKey;
+        switch (order.status) {
+            case 'cart':
+                break;
+            case 'checkout':
+                break;
+            case 'processing':
+                break;
+            case 'indoing':
+                break;
+            case 'makingready':
+                break;
+            case 'inpeyk':
+                settingKey = 'sms_onSendProduct'
+                break;
+            case 'complete':
+                break;
+            case 'cancel':
+                settingKey = 'sms_onCancel';
+                break;
+        }
+
+        if(req.global?.sendSms && settingKey && order.customer_data?.phoneNumber){
+            const newTxt = replaceValue({ text : setting[settingKey] , data : [order.toObject(),order.customer_data,{payment_link:`https://gateway.zibal.ir/start/${order.transaction?.pop()?.Authority}`}]});
+            // if(newTxt)
+            // req.global.sendSms(order.customer_data?.phoneNumber, newTxt);
+        }
+        return res.json(order);
+
+    },
+    recommendation:async function (req,res,next){
+        const cart = req.body.cart;
+        const pids = cart.map(p=>p._id || p.id).map(id=>new Types.ObjectId(id.split('DDD')[0]));
+        const productModel = req.mongoose.model('Product');
+        const products = await productModel.find(  {_id:{$in : pids}}).populate('relatedProducts');
+        const relatedProducts = products.flatMap(p=>p.relatedProducts)
+        const {hasSale,normal} = relatedProducts.reduce((prev,curr)=>{
+            const hasSale =  curr.salePrice || curr.combinations?.some(c=>c.salePrice);
+            if(hasSale) prev.hasSale.push(curr);
+            else prev.normal.push(curr);
+            return prev;
+        },{hasSale:[],normal:[]});
+        return res.json([...hasSale,...normal].slice(0,5))
+    },
+
     all: function (req, res, next) {
         console.log('get all orders...')
         let Order = req.mongoose.model('Order');
@@ -211,30 +265,15 @@ let self = ({
     },
 
     createByCustomer: function (req, res, next) {
-        // console.log('createByCustomer... , ', req.headers);
         let Product = req.mongoose.model('Product');
         let Order = req.mongoose.model('Order');
         let Settings = req.mongoose.model('Settings');
-
-        // if (req.headers.user && req.headers.token) {
-        //     let action = {
-        //         user: req.headers.user._id,
-        //         title: 'create order ' + order._id,
-        //         data: order,
-        //         // history:req.body,
-        //         order: order._id
-        //     };
-        //     req.global.submitAction(action);
-        // }
         if (req.headers.customer && req.headers.token) {
             let action = {
                 customer: req.headers.customer._id,
                 title: 'create order ' + req.body.amount,
                 data: req.body,
-                // history:req.body,
-                // order: order._id
             };
-            // req.global.submitAction(action);
         }
         var _ids = [], len = 0, ii = 0;
         if (req.body.card && req.body.card.length)
@@ -245,13 +284,8 @@ let self = ({
             if (!id) {
                 id = pack._id;
             }
-
-            // console.log('_id', id, pack.price, pack.salePrice);
-            // _ids.push(id);
-            // console.log('find _id:', id);
             let tempProducts = [];
             Product.findOne({_id: id}, '_id combinations type price salePrice title quantity in_stock', function (err, ps) {
-                // console.log('found id:', id, 'main_id[1]:', main_id[1], 'ps', ps);
                 if (!ps) {
                     return res.json({
                         success: false,
@@ -385,7 +419,7 @@ let self = ({
                     // console.log('\ntempProducts: ', tempProducts)
                     req.global.checkSiteStatus().then(function (resp) {
                         // console.log('resp', resp);
-                        Settings.findOne({}, 'tax taxAmount', function (err, setting) {
+                        Settings.findOne({}, 'tax taxAmount sms_submitOrderNotPaying', function (err, setting) {
                             let tax = setting.tax || false;
                             let taxAmount = setting.taxAmount || 0;
                             // console.log('setting.taxAmount', setting.taxAmount)
@@ -524,7 +558,6 @@ let self = ({
                             }
 
                             function update_order() {
-                                // console.log('==> update_order')
                                 if (req.body.order_id) {
                                     // console.log('==> create order 1...', req.body.order_id);
 

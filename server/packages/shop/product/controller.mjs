@@ -41,6 +41,14 @@ let self = ({
                 "$options": "i"
             };
         }
+        if (req.query.q) {
+
+            search["title." + req.headers.lan] = {
+                $exists: true,
+                "$regex": req.query.q,
+                "$options": "i"
+            };
+        }
         if (req.query.Search) {
 
             search["title." + req.headers.lan] = {
@@ -107,6 +115,15 @@ let self = ({
                     };
                     delete thef.search
                 }
+                if (thef.q) {
+
+                    thef["title." + req.headers.lan] = {
+                        $exists: true,
+                        "$regex": thef.q,
+                        "$options": "i"
+                    };
+                    delete thef.q
+                }
             } else {
                 console.log("string is not a valid json")
             }
@@ -163,7 +180,7 @@ let self = ({
             // console.log('no \'productCategory.slug\'')
             if (!search['status'])
                 search['status'] = 'published'
-            // console.log('search q.exec', search)
+            console.log('sear ch q.exec', search)
 
             q = Product.find(search, fields).populate('productCategory', '_id slug').skip(offset).sort(sort).limit(parseInt(req.params.limit));
             q.exec(function (err, model) {
@@ -244,6 +261,21 @@ let self = ({
         });
     },
 
+    submitToOther: function (req) {
+        console.log("submitToOther")
+        req.httpRequest({
+            method: "post",
+            url: "https://mrgamestore.com/admin/settings/update-product-prices",
+            data: req.body,
+            headers: {token:"0kkz04xgwlo9l3nqympeqak72ui4gq5o"},
+            json: true
+        }).then(function (parsedBody) {
+            // console.log("parsedBody",parsedBody['data'])
+        }).catch((e)=>{
+            // console.log("catch",e)
+
+        });
+    },
     editByAdmin: function (req, res, next) {
         let Product = req.mongoose.model('Product');
 
@@ -313,6 +345,7 @@ let self = ({
                 };
                 req.submitAction(action);
             }
+            self.submitToOther(req);
 
             res.json(product);
             return 0;
@@ -496,7 +529,7 @@ let self = ({
 
         // _id:'61d71cf4365a2313a161456c'
         Settings.findOne({}, "tax taxAmount", function (err, setting) {
-            Product.find({}, "_id title price type salePrice in_stock combinations firstCategory secondCategory thirdCategory slug", function (err, products) {
+            Product.find({status:'published'}, "_id title price type salePrice in_stock combinations firstCategory secondCategory thirdCategory slug", function (err, products) {
                 // console.log('err', err)
                 // console.log('products', products)
                 if (err || !products) {
@@ -752,7 +785,7 @@ let self = ({
             }
             let Product = req.mongoose.model('Product');
 
-            Product.findOne(obj, "title metadescription keywords excerpt type price in_stock salePrice combinations thumbnail photos slug labels _id",
+            Product.findOne(obj, "title metadescription relatedProducts keywords excerpt type price in_stock salePrice combinations thumbnail photos slug labels _id",
                 function (err, product) {
                     if (err || !product) {
                         resolve({});
@@ -853,6 +886,9 @@ let self = ({
                     if (product["labels"]) {
                         obj["labels"] = product["labels"];
                     }
+                    if (product["relatedProducts"]) {
+                        obj["relatedProducts"] = product["relatedProducts"];
+                    }
                     resolve(obj);
                     return 0;
 
@@ -926,7 +962,7 @@ let self = ({
                 }
                 delete product.getContactData;
                 delete product.transaction;
-                delete product.relatedProducts;
+                // delete product.relatedProducts;
                 delete product.firstCategory;
                 // Product.findOne({_id: {$lt: req.params.id}}, "_id title", function (err, pl) {
                 //     if (pl && pl._id && pl.title)

@@ -7,6 +7,13 @@ export default [
         "controller": controller.getAll,
     },
     {
+        "path": "/torob/:offset/:limit",
+        "method": "get",
+        "controller": controller.torob,
+
+        // "access": "admin_user,admin_shopManager,customer_all",
+    },
+    {
         "path": "/count",
         "method": "get",
         "access": "admin_user,admin_shopManager",
@@ -17,10 +24,10 @@ export default [
         "controller": controller.getAll,
 
         // "access": "admin_user,admin_shopManager,customer_all",
-    },  {
-        "path": "/torob/:offset/:limit",
+    }, {
+        "path": "/:offset/:limit/:search",
         "method": "get",
-        "controller": controller.torob,
+        "controller": controller.getAll,
 
         // "access": "admin_user,admin_shopManager,customer_all",
     },

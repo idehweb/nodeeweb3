@@ -8,12 +8,14 @@
     "@nodeeweb/shop": "link:./packages/shop",
     "axios": "^1.2.4",
     "babel-register": "^6.26.0",
+    "basic-ftp": "^5.0.5",
     "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.0.1",
     "fs": "^0.0.1-security",
     "moment": "^2.29.4",
     "nodemon": "^3.0.2",
     "pretty": "^2.0.0",
+    "ssh2-sftp-client": "9.0.4",
     "xlsx": "^0.18.5"
   },
   "scripts": {

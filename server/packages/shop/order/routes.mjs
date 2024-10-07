@@ -6,7 +6,14 @@ export default [
         "access": "admin_user,admin_shopManager",
         "controller": controller.all,
 
-    },{
+    },
+    {
+        "path": "/recommendation",
+        "method": "post",
+        "access": "admin_user,admin_shopManager,customer_user",
+        "controller": controller.recommendation,
+    },
+    {
         "path": "/createByCustomer",
         "method": "post",
         "access": "admin_user,admin_shopManager,customer_user",
@@ -84,6 +91,7 @@ export default [
         "path": "/:id",
         "method": "put",
         "access": "admin_user,admin_shopManager",
+        controller : controller.update
     },
     {
         "path": "/:id",
