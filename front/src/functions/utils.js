@@ -1,13 +1,33 @@
 import dayjs from 'dayjs';
 import jalaliPlugin from '@zoomit/dayjs-jalali-plugin';
 import axios from 'axios';
+import moment from "jalali-moment";
 
 import { isClient } from '#c/functions';
 
 import store from './store';
 
 dayjs.extend(jalaliPlugin);
+export const dFormat = (date, t) => {
+  let ti = "";
+  let now = new moment();
+  let d = moment(date, "YYYY-MM-DDTHH:mm:ss.SSSZ");
 
+  let obj = moment.duration(now.diff(d))._data;
+
+  const {days, hours, minutes} = obj;
+  if (days) {
+    if (days === 1) ti = `${t("ago")} ${days} ${t("Day")}`;
+    else ti = `${t("ago")} ${days} ${t("Days")}`;
+  } else if (!days && hours) ti = hours + " " + t("Hours") + " " + t("ago");
+  else if (!days && !hours && minutes) {
+    if (minutes < 60) ti = t("Half an hour") + " " + t("ago");
+    if (minutes < 30) ti = t("A quarter") + " " + t("ago");
+    if (minutes < 15) ti = t("Minutes") + " " + t("ago");
+  } else ti = t("A few moments") + " " + t("ago");
+
+  return ti;
+};
 export const postData = (
   url = '',
   data = {},

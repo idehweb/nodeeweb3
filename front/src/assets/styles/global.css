@@ -136,6 +136,12 @@ opacity: 1;
   box-shadow: -2px -1px 7px #000;
 
 }
+
+.nbghjk{
+  position: relative;
+  padding-left: 1px;
+  padding-right: 1px;
+}
 .menuContact .contactPopUp > *{
   z-index: 1;
   width: 100%;
@@ -3090,7 +3096,9 @@ del {
   /*animation-iteration-count: infinite;*/
   animation-timing-function: linear;
 }
-
+.gap-10{
+  gap:10px;
+}
 .juygtfgh {
   font-size: 54px;
   font-weight: bold;
@@ -3176,6 +3184,7 @@ td img {
 .jsb {
   justify-content: space-between;
 }
+
 .etebar {
   font-size: 13px;
   color: #000;
@@ -3579,14 +3588,32 @@ img[alt='payment'] {
     transform: translate(-50%, 0);
   }
 }
-
+.gap-10.justify-content-center.row .post-style-grid{
+padding: 0;
+}
 @media (min-width: 1199px) {
   .showInMobile {
     display: none !important;
   }
 }
-
+@media (min-width: 992px) {
+  .col-lg-3 {
+    flex: 0 0 auto;
+    width: calc(25% - 10px);
+  }
+}
 @media (max-width: 1199px) {
+  .gap-10 .col-6{
+
+    width: calc(50% - 15px);
+    padding: 0;
+  }
+  .main-navbar__search.stf.desktopnoned .input-group {
+    border: 1px solid #bdc4ce;
+    border-radius: 7px;
+    height: auto;
+    overflow: hidden;
+  }
   .showInDesktop {
     display: none !important;
   }
@@ -3727,7 +3754,9 @@ img[alt='payment'] {
 
   .main-header {
     /*margin-top: 50px;*/
-    padding: 0 !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    /*padding: 0 !important;*/
   }
 
   .main-header ul {

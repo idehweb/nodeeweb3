@@ -12,11 +12,8 @@ import { getEntitiesWithCount, isClient } from '@/functions';
 import { MyPagination } from './components';
 
 const AdsCard = lazy(() => import('@/components/Home/AdsCard'));
-const PostCard = lazy(() => import('@/components/Home/PostCard'));
+const ProductCard = lazy(() => import('@/components/Home/ProductCard'));
 const BlogCard = lazy(() => import('@/components/Home/BlogCard'));
-const ItemCard = lazy(() => import('@/components/Home/ItemCard'));
-const InItemCard = lazy(() => import('@/components/Home/InItemCard'));
-const TscCard = lazy(() => import('@/components/Home/TscCard'));
 
 const NoOp = () => {};
 
@@ -56,6 +53,7 @@ export default function Pagination(props) {
       // setTracks([...[]]);
       setTracks([]);
       setLoading(true);
+      const query: any = {};
 
       if (customQuery) {
         if (typeof customQuery == 'string') {
@@ -97,7 +95,6 @@ export default function Pagination(props) {
       }
 
       // get query paramters
-      const query: any = {};
       for (const [key, value] of searchParams)
         query[key] = NormalizeString(value);
       const limit = parseInt(query.limit || defaultLimit);
@@ -155,7 +152,7 @@ export default function Pagination(props) {
     <Loading />
   ) : (
     <>
-      <Row>
+      <Row className={'gap-10 justify-content-center'}>
         {tracks.length ? (
           tracks.map((i, idx) => (
             <Col
@@ -164,15 +161,12 @@ export default function Pagination(props) {
               md="3"
               sm="4"
               xs="6"
-              className="post-style-list mb-3">
+              className=" post-style-grid">
               <Headers entity={entity} />
               {entity === 'post' && <BlogCard item={i} onClick={NoOp} />}
               {entity === 'product' && (
-                <PostCard item={i} method="list" onClick={NoOp} />
+                <ProductCard item={i} method="grid" onClick={NoOp} />
               )}
-              {entity === 'initem' && <InItemCard item={i} />}
-              {entity === 'tsc' && <TscCard item={i} />}
-              {entity === 'item' && <ItemCard item={i} />}
               {entity === 'add/allads' && <AdsCard item={i} />}
             </Col>
           ))

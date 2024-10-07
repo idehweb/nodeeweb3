@@ -1,8 +1,8 @@
-window.BASE_URL = 'https://gameboss.shop';
-window.ADMIN_URL = 'https://gameboss.shop';
-window.ADMIN_ROUTE = 'https://gameboss.shop/admin';
-window.SHOP_URL = 'https://gameboss.shop/';
-window.THEME_URL = 'https://gameboss.shop/theme';
+window.BASE_URL = 'https://mrgamestore.com';
+window.ADMIN_URL = 'https://mrgamestore.com';
+window.ADMIN_ROUTE = 'https://mrgamestore.com/admin';
+window.SHOP_URL = 'https://mrgamestore.com/';
+window.THEME_URL = 'https://mrgamestore.com/theme';
 
 //
 // window.BASE_URL = 'https://mahsaaz.idehweb.ir';

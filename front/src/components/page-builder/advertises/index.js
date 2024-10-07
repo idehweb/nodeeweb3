@@ -26,9 +26,6 @@ import { withTranslation } from 'react-i18next';
 import PostCard from '#c/components/Home/PostCard';
 import AdsCard from '#c/components/Home/AdsCard';
 import BlogCard from '#c/components/Home/BlogCard';
-import ItemCard from '#c/components/Home/ItemCard';
-import InItemCard from '#c/components/Home/InItemCard';
-import TscCard from '#c/components/Home/TscCard';
 
 import { useSelector } from 'react-redux/es/index';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
@@ -334,11 +331,6 @@ const Advertises = (props) => {
                     className={'nbghjk post-style-' + 'grid'}>
                     {entity == 'post' && <BlogCard item={i} method={'list'} />}
                     {entity == 'ads' && <AdsCard item={i} method={'grid'} />}
-                    {entity == 'initem' && (
-                      <InItemCard item={i} method={'list'} />
-                    )}
-                    {entity == 'tsc' && <TscCard item={i} method={'list'} />}
-                    {entity == 'item' && <ItemCard item={i} method={'list'} />}
                   </Col>
                 ))}
             </Row>

@@ -133,7 +133,7 @@ const Theprice = (props) => {
         {Boolean(!salePrice && price != null) && (
           <div className={'wer  mt-2 pandnotsp'}>
             <span className="card-non-title-item">
-              {type === 'variable' && t('from')}
+              {/*{type === 'variable' && t('from')}*/}
               <span className={'mr-2'}>
                 {price + ' ' + t(themeData.currency)}
               </span>
@@ -193,7 +193,7 @@ class Theprice_old extends React.PureComponent {
           {Boolean(!salePrice && price != null) && (
             <div className={'wer  mt-2 pandnotsp'}>
               <span className="card-non-title-item">
-                {type === 'variable' && t('from')}
+                {/*{type === 'variable' && t('from')}*/}
                 <span className={'mr-2'}>
                   {price + ' ' + t(themeData.currency)}
                 </span>
