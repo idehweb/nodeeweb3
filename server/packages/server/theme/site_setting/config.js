@@ -34,8 +34,8 @@
 // window.THEME_URL = 'https://spinger.shop/theme';
 
 
-window.BASE_URL = 'https://aranonline.shop';
-window.ADMIN_URL = 'https://aranonline.shop';
-window.ADMIN_ROUTE = 'https://aranonline.shop/admin';
-window.SHOP_URL = 'https://aranonline.shop/';
-window.THEME_URL = 'https://aranonline.shop/theme';
+window.BASE_URL = 'https://iran.gameboss.shop';
+window.ADMIN_URL = 'https://iran.gameboss.shop';
+window.ADMIN_ROUTE = 'https://iran.gameboss.shop/admin';
+window.SHOP_URL = 'https://iran.gameboss.shop/';
+window.THEME_URL = 'https://iran.gameboss.shop/theme';
