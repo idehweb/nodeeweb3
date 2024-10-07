@@ -383,10 +383,12 @@ export default function ExporterGateway(props) {
                                 // tj?.assets.forEach((at, i) => {
                                     for(let i=0;i<=140;i++) {
                                         console.log("i", i)
-                                        if(!assets[i]){
-                                            assets[i]=assets[i-1];
+                                        if(i+1!=141) {
+                                            if (!tj.assets[i]) {
+                                                tj.assets[i] = tj.assets[i - 1];
+                                            }
+                                            tj.assets[i].p = encode_base64(i + 1)
                                         }
-                                        tj.assets[i].p = encode_base64(i + 1)
                                         // tj.assets[i].w=400;
                                         // tj.assets[i].h=500;
                                         // decode_base64(at?.p, i + '.png')

@@ -32,6 +32,8 @@ export default (mongoose)=>{
         customer: { type: mongoose.Schema.Types.ObjectId, ref: "Customer" },
         type: { type: String, default: "normal" },
         description: {},
+        requireWarranty:{},
+
         views: [],
         addToCard: [],
         title: {},
@@ -44,7 +46,6 @@ export default (mongoose)=>{
             required: true,
             trim: true
         },
-        access: { type: String, default: "public" },
         thumbnail: String,
         status: { type: String, default: "processing" },
         transaction: [{ type: mongoose.Schema.Types.ObjectId, ref: "Transaction" }],
