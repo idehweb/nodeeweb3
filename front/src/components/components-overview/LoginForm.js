@@ -526,7 +526,7 @@ class LoginForm extends Component {
                         <FormInput
                           placeholder="**********"
                           id="thepho"
-                          className={'iuygfghuji'}
+                          className={'iuygfghuji ltr'}
                           type="tel"
                           dir="ltr"
                           onChange={(e) =>
