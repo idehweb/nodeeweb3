@@ -584,10 +584,10 @@ const self = {
                         if (post.password) {
                             shallWeSetPass = false;
                         }
-                        // if(!passwordAuthentication){
-                        //     shallWeSetPass = true;
-                        //
-                        // }
+                        if(!passwordAuthentication){
+                            shallWeSetPass = true;
+
+                        }
                         res.json({
                             success: true,
                             message: 'Code has been set!',
@@ -771,10 +771,10 @@ const self = {
                                     if (post.password) {
                                         shallWeSetPass = false;
                                     }
-                                    // if(!passwordAuthentication){
-                                    //     shallWeSetPass = true;
-                                    //
-                                    // }
+                                    if(!passwordAuthentication){
+                                        shallWeSetPass = true;
+
+                                    }
                                     return res.json({
                                         success: true,
                                         token: Token,

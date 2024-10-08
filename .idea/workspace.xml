@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e40ee157-344c-45a6-9d21-5ecec48b1917" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +17,8 @@
       <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="502" column="5" lean-forward="true" selection-start-line="502" selection-start-column="5" selection-end-line="502" selection-end-column="5" />
+            <state relative-caret-position="283">
+              <caret line="387" column="21" selection-start-line="387" selection-start-column="21" selection-end-line="387" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -25,8 +26,8 @@
       <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="773" column="51" lean-forward="true" selection-start-line="773" selection-start-column="51" selection-end-line="773" selection-end-column="51" />
+            <state relative-caret-position="101">
+              <caret line="584" column="22" selection-start-line="584" selection-start-column="22" selection-end-line="584" selection-end-column="22" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
                 <element signature="e#204#4536#0" />
@@ -71,8 +72,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>AddToCardButton</find>
-      <find>SidebarActions</find>
       <find>dFormat</find>
       <find>ad-card-content</find>
       <find>Hi</find>
@@ -93,14 +92,16 @@
       <find>setStyles</find>
       <find>MyOrders</find>
       <find>about-us</find>
-      <find>passwordAuthentication</find>
       <find>settings:</find>
       <find>spinger.shop</find>
       <find>thepho</find>
       <find>captcha</find>
       <find>Settinf</find>
       <find>shallWeSetPass</find>
+      <find>activate</find>
       <find>activateCustomer...</find>
+      <find>setPassword</find>
+      <find>passwordAuthentication</find>
     </findStrings>
     <replaceStrings>
       <replace>http://localhost:3002</replace>
@@ -500,15 +501,16 @@
       <workItem from="1728325267572" duration="6597000" />
       <workItem from="1728334990142" duration="3274000" />
       <workItem from="1728380817367" duration="851000" />
-      <workItem from="1728384112311" duration="4461000" />
+      <workItem from="1728384112311" duration="4929000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108868000" />
+    <option name="totallyTimeSpent" value="109336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -948,8 +950,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="773" column="51" lean-forward="true" selection-start-line="773" selection-start-column="51" selection-end-line="773" selection-end-column="51" />
+        <state relative-caret-position="101">
+          <caret line="584" column="22" selection-start-line="584" selection-start-column="22" selection-end-line="584" selection-end-column="22" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
             <element signature="e#204#4536#0" />
@@ -963,8 +965,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="502" column="5" lean-forward="true" selection-start-line="502" selection-start-column="5" selection-end-line="502" selection-end-column="5" />
+        <state relative-caret-position="283">
+          <caret line="387" column="21" selection-start-line="387" selection-start-column="21" selection-end-line="387" selection-end-column="21" />
         </state>
       </provider>
     </entry>

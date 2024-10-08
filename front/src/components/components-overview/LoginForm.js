@@ -384,11 +384,13 @@ class LoginForm extends Component {
       if (!res.success) return toast.error(t(res.message));
 
       // redirect to home
-      if (res.firstName && res.lastName) {
+      // if (res.firstName && res.lastName) {
+      if (res.success) {
         toast.success(t('welcome'));
         // window.location.href = '/';
-        return;
+        // return;
       }
+      console.log("res.shallWeSetPass",res.shallWeSetPass)
 
       if (res.shallWeSetPass) {
         // savePost({user: false});
