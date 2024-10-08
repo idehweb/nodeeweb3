@@ -14,8 +14,8 @@
       <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="389" column="16" lean-forward="true" selection-start-line="389" selection-start-column="16" selection-end-line="389" selection-end-column="16" />
+            <state relative-caret-position="209">
+              <caret line="528" column="8" selection-start-line="528" selection-start-column="8" selection-end-line="528" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -23,8 +23,8 @@
       <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="587" column="37" lean-forward="true" selection-start-line="587" selection-start-column="37" selection-end-line="587" selection-end-column="37" />
+            <state relative-caret-position="263">
+              <caret line="590" column="24" lean-forward="true" selection-start-line="590" selection-start-column="24" selection-end-line="590" selection-end-column="24" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
                 <element signature="e#204#4536#0" />
@@ -69,7 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dFormat</find>
       <find>ad-card-content</find>
       <find>Hi</find>
       <find>set-filters</find>
@@ -94,10 +93,11 @@
       <find>thepho</find>
       <find>captcha</find>
       <find>Settinf</find>
-      <find>shallWeSetPass</find>
       <find>activate</find>
       <find>activateCustomer...</find>
       <find>setPassword</find>
+      <find>shallWeSetPass</find>
+      <find>**********</find>
       <find>passwordAuthentication</find>
     </findStrings>
     <replaceStrings>
@@ -498,12 +498,12 @@
       <workItem from="1728325267572" duration="6597000" />
       <workItem from="1728334990142" duration="3274000" />
       <workItem from="1728380817367" duration="851000" />
-      <workItem from="1728384112311" duration="5161000" />
+      <workItem from="1728384112311" duration="5412000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109568000" />
+    <option name="totallyTimeSpent" value="109819000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -946,15 +946,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="389" column="16" lean-forward="true" selection-start-line="389" selection-start-column="16" selection-end-line="389" selection-end-column="16" />
+        <state relative-caret-position="209">
+          <caret line="528" column="8" selection-start-line="528" selection-start-column="8" selection-end-line="528" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="587" column="37" lean-forward="true" selection-start-line="587" selection-start-column="37" selection-end-line="587" selection-end-column="37" />
+        <state relative-caret-position="263">
+          <caret line="590" column="24" lean-forward="true" selection-start-line="590" selection-start-column="24" selection-end-line="590" selection-end-column="24" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
             <element signature="e#204#4536#0" />
