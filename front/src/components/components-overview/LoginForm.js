@@ -501,7 +501,7 @@ class LoginForm extends Component {
     ) {
       // window.location.replace('/my-posts');
       console.log('go to profile...', token, CameFromPost, setPassword);
-      // return <Navigate to="/profile" />;
+      return <Navigate to="/profile" />;
     }
     return (
       <ListGroup flush>

@@ -772,7 +772,7 @@ const self = {
                                         shallWeSetPass = false;
                                     }
                                     if(!passwordAuthentication){
-                                        shallWeSetPass = true;
+                                        shallWeSetPass = false;
 
                                     }
                                     console.log("set shallWeSetPass",shallWeSetPass)
