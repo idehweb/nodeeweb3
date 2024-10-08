@@ -771,6 +771,10 @@ const self = {
                                     if (post.password) {
                                         shallWeSetPass = false;
                                     }
+                                    if(!passwordAuthentication){
+                                        shallWeSetPass = true;
+
+                                    }
                                     return res.json({
                                         success: true,
                                         token: Token,
