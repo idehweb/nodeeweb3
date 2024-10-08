@@ -775,6 +775,7 @@ const self = {
                                         shallWeSetPass = false;
 
                                     }
+                                    console.log("set shallWeSetPass",shallWeSetPass)
                                     return res.json({
                                         success: true,
                                         token: Token,
