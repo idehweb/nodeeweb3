@@ -585,7 +585,7 @@ const self = {
                             shallWeSetPass = false;
                         }
                         if(!passwordAuthentication){
-                            shallWeSetPass = true;
+                            shallWeSetPass = false;
 
                         }
                         res.json({
@@ -772,7 +772,7 @@ const self = {
                                         shallWeSetPass = false;
                                     }
                                     if(!passwordAuthentication){
-                                        shallWeSetPass = true;
+                                        shallWeSetPass = false;
 
                                     }
                                     return res.json({
