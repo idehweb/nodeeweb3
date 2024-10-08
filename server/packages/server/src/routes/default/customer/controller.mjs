@@ -659,137 +659,147 @@ const self = {
     },
     activateCustomer: function (req, res, next) {
         let Customer = req.mongoose.model('Customer');
+        let Settings = req.mongoose.model('Settings');
 
-        console.log('activateCustomer...');
-        let p_number = req.body.phoneNumber;
-        if (p_number) {
-            // console.log('==> addCustomer() 1.11');
-            p_number = persianJs(p_number).arabicNumber().toString().trim();
-            p_number = persianJs(p_number).persianNumber().toString().trim();
-            p_number = parseInt(p_number);
-            if (p_number.toString().length < 12) {
-                // console.log(p_number.toString().length, p_number.toString(), 'p_number.toString().length');
-                if (p_number.toString().length === 10) {
-                    p_number = '98' + p_number.toString();
+        // console.log('==> updateActivationCode');
+        // console.log(response);
+        Settings.findOne({}, 'passwordAuthentication', function (err, setting) {
+            let passwordAuthentication = false;
+            if (setting?.passwordAuthentication)
+                passwordAuthentication = true;
+            console.log("passwordAuthentication", passwordAuthentication)
+
+            console.log('activateCustomer...');
+            let p_number = req.body.phoneNumber;
+            if (p_number) {
+                // console.log('==> addCustomer() 1.11');
+                p_number = persianJs(p_number).arabicNumber().toString().trim();
+                p_number = persianJs(p_number).persianNumber().toString().trim();
+                p_number = parseInt(p_number);
+                if (p_number.toString().length < 12) {
+                    // console.log(p_number.toString().length, p_number.toString(), 'p_number.toString().length');
+                    if (p_number.toString().length === 10) {
+                        p_number = '98' + p_number.toString();
+                    }
                 }
-            }
-            // console.log('==> addCustomer() 1.15');
-            if (isNaN(p_number)) {
+                // console.log('==> addCustomer() 1.15');
+                if (isNaN(p_number)) {
+                    res.json({
+                        success: false,
+                        message: 'something wrong in creating customer : customer!',
+                    });
+                    return;
+                }
+            } else {
                 res.json({
                     success: false,
-                    message: 'something wrong in creating customer : customer!',
+                    message:
+                        'something wrong in creating customer : phoneNumber is not entered!',
                 });
                 return;
             }
-        } else {
-            res.json({
-                success: false,
-                message:
-                    'something wrong in creating customer : phoneNumber is not entered!',
-            });
-            return;
-        }
-        req.body.phoneNumber = p_number.toString();
-        // console.log('customer phone number is:', p_number.toString());
+            req.body.phoneNumber = p_number.toString();
+            // console.log('customer phone number is:', p_number.toString());
 
-        p_number = req.body.activationCode;
-        if (p_number) {
-            // console.log('==> addCustomer() 1.11');
-            p_number = persianJs(p_number).arabicNumber().toString().trim();
-            p_number = persianJs(p_number).persianNumber().toString().trim();
-            p_number = parseInt(p_number);
-            // console.log('==> addCustomer() 1.15');
-            if (isNaN(p_number)) {
+            p_number = req.body.activationCode;
+            if (p_number) {
+                // console.log('==> addCustomer() 1.11');
+                p_number = persianJs(p_number).arabicNumber().toString().trim();
+                p_number = persianJs(p_number).persianNumber().toString().trim();
+                p_number = parseInt(p_number);
+                // console.log('==> addCustomer() 1.15');
+                if (isNaN(p_number)) {
+                    res.json({
+                        success: false,
+                        message: 'something wrong in creating customer : customer!',
+                    });
+                    return;
+                }
+            } else {
                 res.json({
                     success: false,
-                    message: 'something wrong in creating customer : customer!',
+                    message:
+                        'something wrong in creating customer : activationCode is not entered!',
                 });
                 return;
             }
-        } else {
-            res.json({
-                success: false,
-                message:
-                    'something wrong in creating customer : activationCode is not entered!',
-            });
-            return;
-        }
-        req.body.activationCode = p_number.toString();
-        // console.log('activationCode is:', p_number.toString());
-        // parseInt(p_number).toString()
+            req.body.activationCode = p_number.toString();
+            // console.log('activationCode is:', p_number.toString());
+            // parseInt(p_number).toString()
 
-        Customer.findOne(
-            {phoneNumber: req.body.phoneNumber},
-            '_id activationCode internationalCode address firstName lastName invitation_code',
-            function (err, user) {
-                if (err) return next(err);
-                // console.log('user is:', user);
-                if (user) {
-                    // console.log('==> check db.activationCode with req.body.activationCode');
-                    // console.log(user.activationCode, req.body.activationCode);
-                    if (user.activationCode == req.body.activationCode) {
-                        let Token = global.generateUnid();
-                        let invitation_code;
-                        if (!user.invitation_code) {
-                            invitation_code = Math.floor(100000 + Math.random() * 900000);
-                        } else {
-                            invitation_code = user.invitation_code;
-                        }
-                        console.log('Token generated:', Token);
-                        Customer.findByIdAndUpdate(
-                            user._id,
-                            {
-                                activationCode: null,
-                                invitation_code: invitation_code,
-                                $push: {tokens: {token: Token, os: req.body.os}},
-                            },
-                            {
-                                returnNewDocument: true,
-                                projection: {
-                                    password: true,
-                                    // internationalCode:true,
-                                    // address:true,
-                                    // firstName:true,
-                                    // lastName:true
-                                },
-                            },
-                            function (err, post) {
-                                if (err) return next(err);
-                                // console.log('user activated successfully...');
-                                // if (post.tokens)
-                                // console.log('user tokens count is:', post.tokens.length);
-                                let shallWeSetPass = true;
-                                if (post.password) {
-                                    shallWeSetPass = false;
-                                }
-                                return res.json({
-                                    success: true,
-                                    token: Token,
-                                    address: user.address,
-                                    firstName: user.firstName,
-                                    lastName: user.lastName,
-                                    internationalCode: user.internationalCode,
-                                    shallWeSetPass: shallWeSetPass,
-                                    invitation_code: invitation_code,
-                                    _id: user._id,
-                                    message: 'Your user account activated successfully!',
-                                });
+            Customer.findOne(
+                {phoneNumber: req.body.phoneNumber},
+                '_id activationCode internationalCode address firstName lastName invitation_code',
+                function (err, user) {
+                    if (err) return next(err);
+                    // console.log('user is:', user);
+                    if (user) {
+                        // console.log('==> check db.activationCode with req.body.activationCode');
+                        // console.log(user.activationCode, req.body.activationCode);
+                        if (user.activationCode == req.body.activationCode) {
+                            let Token = global.generateUnid();
+                            let invitation_code;
+                            if (!user.invitation_code) {
+                                invitation_code = Math.floor(100000 + Math.random() * 900000);
+                            } else {
+                                invitation_code = user.invitation_code;
                             }
-                        );
+                            console.log('Token generated:', Token);
+                            Customer.findByIdAndUpdate(
+                                user._id,
+                                {
+                                    activationCode: null,
+                                    invitation_code: invitation_code,
+                                    $push: {tokens: {token: Token, os: req.body.os}},
+                                },
+                                {
+                                    returnNewDocument: true,
+                                    projection: {
+                                        password: true,
+                                        // internationalCode:true,
+                                        // address:true,
+                                        // firstName:true,
+                                        // lastName:true
+                                    },
+                                },
+                                function (err, post) {
+                                    if (err) return next(err);
+                                    // console.log('user activated successfully...');
+                                    // if (post.tokens)
+                                    // console.log('user tokens count is:', post.tokens.length);
+                                    let shallWeSetPass = true;
+                                    if (post.password) {
+                                        shallWeSetPass = false;
+                                    }
+                                    return res.json({
+                                        success: true,
+                                        token: Token,
+                                        address: user.address,
+                                        firstName: user.firstName,
+                                        lastName: user.lastName,
+                                        internationalCode: user.internationalCode,
+                                        shallWeSetPass: shallWeSetPass,
+                                        invitation_code: invitation_code,
+                                        _id: user._id,
+                                        message: 'Your user account activated successfully!',
+                                    });
+                                }
+                            );
+                        } else {
+                            return res.json({
+                                success: false,
+                                message: 'The code is wrong!',
+                            });
+                        }
                     } else {
                         return res.json({
                             success: false,
-                            message: 'The code is wrong!',
+                            message: 'This user was not found!',
                         });
                     }
-                } else {
-                    return res.json({
-                        success: false,
-                        message: 'This user was not found!',
-                    });
                 }
-            }
-        );
+            );
+        });
     },
     authCustomerWithPassword: function (req, res, next) {
         // console.log('\n\n\n\n\n =====> try login/register user:');
