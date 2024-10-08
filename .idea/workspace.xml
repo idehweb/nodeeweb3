@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e40ee157-344c-45a6-9d21-5ecec48b1917" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/public/site_setting/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/public/site_setting/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/i18n/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/i18n/fa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/functions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/functions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/language/fa/translation.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/language/fa/translation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/views/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/views/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,11 +13,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="534" column="17" selection-start-line="534" selection-start-column="17" selection-end-line="537" selection-end-column="27" />
+            <state relative-caret-position="167">
+              <caret line="104" column="2" lean-forward="true" selection-start-line="104" selection-start-column="2" selection-end-line="110" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="588" lean-forward="true" selection-start-line="588" selection-end-line="588" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+                <element signature="e#204#4536#0" />
+                <element signature="e#4577#5606#0" />
+                <element signature="e#5652#14142#0" />
+                <element signature="e#14181#15089#0" />
+                <element signature="e#20975#21061#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model.mjs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/model.mjs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="13" column="30" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/controller.mjs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="87">
+              <caret line="88" selection-start-line="88" selection-end-line="89" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,9 +71,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>post-style-list</find>
-      <find>post-style-grid</find>
-      <find>InItemCard</find>
       <find>PostCard</find>
       <find>AddToCardButton</find>
       <find>SidebarActions</find>
@@ -69,6 +98,9 @@
       <find>settings:</find>
       <find>spinger.shop</find>
       <find>thepho</find>
+      <find>captcha</find>
+      <find>Settinf</find>
+      <find>shallWeSetPass</find>
     </findStrings>
     <replaceStrings>
       <replace>http://localhost:3002</replace>
@@ -100,7 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="&lt;af3c178b-a2c1-47d1-a3b3-6902f6efb671&gt;/home/gameboss/public_html/.env.local" />
         <option value="&lt;af3c178b-a2c1-47d1-a3b3-6902f6efb671&gt;/home/gameboss/public_html/.env" />
         <option value="&lt;af3c178b-a2c1-47d1-a3b3-6902f6efb671&gt;/home/gameboss/domains/gameboss.shop/public_html/.env" />
         <option value="&lt;af3c178b-a2c1-47d1-a3b3-6902f6efb671&gt;/etc/mongod.conf" />
@@ -151,6 +182,7 @@
         <option value="$PROJECT_DIR$/admin/public/site_setting/config.js" />
         <option value="$PROJECT_DIR$/front/public/site_setting/config.js" />
         <option value="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" />
+        <option value="$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs" />
       </list>
     </option>
   </component>
@@ -468,12 +500,12 @@
       <workItem from="1728325267572" duration="6597000" />
       <workItem from="1728334990142" duration="3274000" />
       <workItem from="1728380817367" duration="851000" />
-      <workItem from="1728384112311" duration="943000" />
+      <workItem from="1728384112311" duration="1633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105350000" />
+    <option name="totallyTimeSpent" value="106040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -484,10 +516,10 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.53256303" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.6386555" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32967034" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32983193" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31929183" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31929183" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983193" />
@@ -560,9 +592,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/packages/server/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/plugins/zarehbin-api/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6048">
@@ -880,31 +909,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/model.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/i18n/fa.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="795" column="47" lean-forward="true" selection-start-line="795" selection-start-column="47" selection-end-line="795" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="426" lean-forward="true" selection-start-line="426" selection-end-line="426" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="e#204#4536#0" />
-            <element signature="e#4577#5606#0" />
-            <element signature="e#5652#14142#0" />
-            <element signature="e#14181#15089#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -924,8 +932,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="534" column="17" selection-start-line="534" selection-start-column="17" selection-end-line="537" selection-end-column="27" />
+        <state relative-caret-position="167">
+          <caret line="104" column="2" lean-forward="true" selection-start-line="104" selection-start-column="2" selection-end-line="110" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/controller.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="88" selection-start-line="88" selection-end-line="89" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/model.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="588" lean-forward="true" selection-start-line="588" selection-end-line="588" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#204#4536#0" />
+            <element signature="e#4577#5606#0" />
+            <element signature="e#5652#14142#0" />
+            <element signature="e#14181#15089#0" />
+            <element signature="e#20975#21061#0" />
+          </folding>
         </state>
       </provider>
     </entry>

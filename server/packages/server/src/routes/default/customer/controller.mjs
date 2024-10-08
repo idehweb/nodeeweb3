@@ -584,6 +584,10 @@ const self = {
                         if (post.password) {
                             shallWeSetPass = false;
                         }
+                        if(!passwordAuthentication){
+                            shallWeSetPass = false;
+
+                        }
                         res.json({
                             success: true,
                             message: 'Code has been set!',
