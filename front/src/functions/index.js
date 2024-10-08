@@ -73,6 +73,7 @@ export const setStyles = (fields) => {
     justifyContent,
     alignItems,
   } = fields;
+  // return gap
   if (paddingTop) {
     style['paddingTop'] = paddingTop;
   }

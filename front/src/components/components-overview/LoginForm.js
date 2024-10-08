@@ -102,13 +102,13 @@ class LoginForm extends Component {
       });
       return;
     }
-    if (!captcha || captcha == false || captcha == 'undefined') {
-      // alert("enter captcha");
-      toast('لطفا فیلد کپچا را وارد کنید', {
-        type: 'error',
-      });
-      return;
-    }
+    // if (!captcha || captcha == false || captcha == 'undefined') {
+    //   // alert("enter captcha");
+    //   toast('لطفا فیلد کپچا را وارد کنید', {
+    //     type: 'error',
+    //   });
+    //   return;
+    // }
     number = number.substring(number.length - 10);
     console.log('number', number);
     this.setState({
@@ -532,10 +532,10 @@ class LoginForm extends Component {
                           }
                         />
                       </InputGroup>
-                      <Captcha
-                        onActionValue={this.captchaValue}
-                        onActionSubmit={this.captchaAction}
-                      />
+                      {/*<Captcha*/}
+                        {/*onActionValue={this.captchaValue}*/}
+                        {/*onActionSubmit={this.captchaAction}*/}
+                      {/*/>*/}
                     </Col>
                   </Row>
                   <Row form>

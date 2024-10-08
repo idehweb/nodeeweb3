@@ -59,21 +59,21 @@ const self = {
         }
         req.body.companyTelNumber = parseInt(ctn).toString();
         let {companyTelNumber, phoneNumber} = req.body;
-        if (phoneNumber == "NaN" || phoneNumber=='') {
+        if (phoneNumber == "NaN" || phoneNumber == '') {
             phoneNumber = "";
             delete req.body.phoneNumber
         }
-        if (companyTelNumber == "NaN" || companyTelNumber=='') {
+        if (companyTelNumber == "NaN" || companyTelNumber == '') {
             companyTelNumber = "";
             delete req.body.companyTelNumber
         }
         console.log('here')
         try {
-            let arr=[];
-            if(!(companyTelNumber=='' || companyTelNumber=='NaN')){
+            let arr = [];
+            if (!(companyTelNumber == '' || companyTelNumber == 'NaN')) {
                 arr.push({companyTelNumber: {$regex: companyTelNumber, $options: 'i'}})
             }
-            if(!(phoneNumber=='' || phoneNumber=='NaN')){
+            if (!(phoneNumber == '' || phoneNumber == 'NaN')) {
                 arr.push({phoneNumber: {$regex: phoneNumber, $options: 'i'}})
             }
             const customers = await Customer.find({
@@ -88,7 +88,7 @@ const self = {
                     companyTelNumber: companyTelNumber,
                     message: "this customer exist!",
                     customers: customers,
-                    query:arr
+                    query: arr
                 });
                 return 0;
             }
@@ -235,8 +235,8 @@ const self = {
             });
         }
         if (thef.campaign) {
-            search={"campaign" : {"$elemMatch": {_id : thef.campaign,"status": "visited"}}};
-            
+            search = {"campaign": {"$elemMatch": {_id: thef.campaign, "status": "visited"}}};
+
         }
         if (thef && thef.status) {
             search = {
@@ -555,97 +555,103 @@ const self = {
     ) {
         console.log('\n\n\n\n\n =====> updateActivationCode');
         let Customer = req.mongoose.model('Customer');
+        let Settings = req.mongoose.model('Settings');
 
         // console.log('==> updateActivationCode');
         // console.log(response);
-
-        let code = Math.floor(100000 + Math.random() * 900000);
-        let date = new Date();
-        Customer.findByIdAndUpdate(
-            response._id,
-            {
-                activationCode: code,
-                updatedAt: date,
-            },
-            {new: true},
-            function (err, post) {
-                if (err) {
-                    res.json({
-                        success: false,
-                        message: 'error!',
-                    });
-                } else {
-                    let shallWeSetPass = true;
-                    if (post.password) {
-                        shallWeSetPass = false;
-                    }
-                    res.json({
-                        success: true,
-                        message: 'Code has been set!',
-                        userWasInDbBefore: userWasInDbBefore,
-                        shallWeSetPass: shallWeSetPass,
-                    });
-                    console.log('==> sending sms');
-                    let $text;
-                    $text = 'فروشگاه آنلاین آروند' + ' : ' + post.activationCode;
-                    console.log('req.body.method', req.body.method);
-                    console.log('activation code is:', post.activationCode);
-
-                    if (!shallWeSetPass && userWasInDbBefore) {
-                        console.log(
-                            'shallWeSetPass && userWasInDbBefore:',
-                            shallWeSetPass,
-                            userWasInDbBefore
-                        );
-
-                        return;
-                    }
-                    if (req.body.method == 'whatsapp') {
-                        Customer.findByIdAndUpdate(
-                            response._id,
-                            {
-                                whatsapp: true,
-                            },
-                            {new: true},
-                            function (err, cus) {
-                                return;
-                            }
-                        );
+        Settings.findOne({}, 'passwordAuthentication', function (err, setting) {
+            let passwordAuthentication = false;
+            if (setting?.passwordAuthentication)
+                passwordAuthentication = true;
+            console.log("passwordAuthentication",passwordAuthentication)
+            let code = Math.floor(100000 + Math.random() * 900000);
+            let date = new Date();
+            Customer.findByIdAndUpdate(
+                response._id,
+                {
+                    activationCode: code,
+                    updatedAt: date,
+                },
+                {new: true},
+                function (err, post) {
+                    if (err) {
+                        res.json({
+                            success: false,
+                            message: 'error!',
+                        });
                     } else {
-                        let key = 'sms_welcome';
-                        if (userWasInDbBefore) {
-                            key = 'sms_register';
+                        let shallWeSetPass = true;
+                        if (post.password) {
+                            shallWeSetPass = false;
                         }
-                        console.log('...global.sendSms');
-                        global
-                            .sendSms(
-                                req.body.phoneNumber,
-                                [
-                                    {
-                                        key: 'activationCode',
-                                        value: post.activationCode,
-                                    },
-                                ],
-                                '300088103373',
+                        res.json({
+                            success: true,
+                            message: 'Code has been set!',
+                            userWasInDbBefore: userWasInDbBefore,
+                            shallWeSetPass: shallWeSetPass,
+                        });
+                        console.log('==> sending sms');
+                        let $text;
+                        $text = 'فروشگاه آنلاین آروند' + ' : ' + post.activationCode;
+                        console.log('req.body.method', req.body.method);
+                        console.log('activation code is:', post.activationCode);
+
+                        if (!shallWeSetPass && userWasInDbBefore) {
+                            console.log(
+                                'shallWeSetPass && userWasInDbBefore:',
+                                shallWeSetPass,
+                                userWasInDbBefore
+                            );
+
+                            return;
+                        }
+                        if (req.body.method == 'whatsapp') {
+                            Customer.findByIdAndUpdate(
                                 response._id,
-                                req.body.countryCode,
-                                key
-                            )
-                            .then(function (uid) {
-                                console.log(
-                                    'activation code sent via sms to customer:',
-                                    req.body.phoneNumber
-                                );
-                                return;
-                            })
-                            .catch(function (e) {
-                                console.log('sth is wrong', e);
-                                return;
-                            });
+                                {
+                                    whatsapp: true,
+                                },
+                                {new: true},
+                                function (err, cus) {
+                                    return;
+                                }
+                            );
+                        } else {
+                            let key = 'sms_welcome';
+                            if (userWasInDbBefore) {
+                                key = 'sms_register';
+                            }
+                            console.log('...global.sendSms');
+                            global
+                                .sendSms(
+                                    req.body.phoneNumber,
+                                    [
+                                        {
+                                            key: 'activationCode',
+                                            value: post.activationCode,
+                                        },
+                                    ],
+                                    '300088103373',
+                                    response._id,
+                                    req.body.countryCode,
+                                    key
+                                )
+                                .then(function (uid) {
+                                    console.log(
+                                        'activation code sent via sms to customer:',
+                                        req.body.phoneNumber
+                                    );
+                                    return;
+                                })
+                                .catch(function (e) {
+                                    console.log('sth is wrong', e);
+                                    return;
+                                });
+                        }
                     }
                 }
-            }
-        );
+            );
+        })
     },
     activateCustomer: function (req, res, next) {
         let Customer = req.mongoose.model('Customer');

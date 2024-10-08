@@ -2,6 +2,7 @@ export default () => ({
   rial: 'ریال',
   toman: 'تومان',
   languageDir: 'rtl',
+  requests: 'درخواست های من',
   Dashboard: 'پیشخوان',
   Attributes: 'ویژگی ها',
   accountCharge: 'اعتبار حساب',

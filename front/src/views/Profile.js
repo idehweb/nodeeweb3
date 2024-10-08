@@ -14,8 +14,8 @@ const Tabs = [
   { id: 'profile', label: 'profile' },
   { id: 'my-orders', label: 'my orders' },
   { id: 'transactions', label: 'transactions' },
-  // { id: 'requests', label: 'requests' },
-  { id: 'myads', label: 'my ads' },
+  { id: 'requests', label: 'requests' },
+  // { id: 'myads', label: 'my ads' },
 ];
 
 export default function Profile() {

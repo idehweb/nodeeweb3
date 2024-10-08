@@ -793,6 +793,7 @@ export default {
         reviews: {},
 
         settings: {
+            passwordAuthentication: 'فعال سازی احراز با رمز',
             taxAmount: 'رقم مالیات',
             shop_name: 'اسم فروشگاه (فاکتور)',
             shop_site_address: 'آدرس سایت (فاکتور)',
