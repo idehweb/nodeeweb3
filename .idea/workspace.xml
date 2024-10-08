@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e40ee157-344c-45a6-9d21-5ecec48b1917" name="Default" comment="" />
+    <list default="true" id="e40ee157-344c-45a6-9d21-5ecec48b1917" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,20 +13,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="104" column="2" lean-forward="true" selection-start-line="104" selection-start-column="2" selection-end-line="110" selection-end-column="8" />
+            <state relative-caret-position="261">
+              <caret line="502" column="5" lean-forward="true" selection-start-line="502" selection-start-column="5" selection-end-line="502" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="671" column="44" selection-start-line="671" selection-start-column="25" selection-end-line="671" selection-end-column="44" />
+            <state relative-caret-position="373">
+              <caret line="773" column="51" lean-forward="true" selection-start-line="773" selection-start-column="51" selection-end-line="773" selection-end-column="51" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
                 <element signature="e#204#4536#0" />
@@ -69,7 +71,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>PostCard</find>
       <find>AddToCardButton</find>
       <find>SidebarActions</find>
       <find>dFormat</find>
@@ -99,6 +100,7 @@
       <find>captcha</find>
       <find>Settinf</find>
       <find>shallWeSetPass</find>
+      <find>activateCustomer...</find>
     </findStrings>
     <replaceStrings>
       <replace>http://localhost:3002</replace>
@@ -179,8 +181,8 @@
         <option value="$PROJECT_DIR$/admin/src/i18n/fa.js" />
         <option value="$PROJECT_DIR$/admin/public/site_setting/config.js" />
         <option value="$PROJECT_DIR$/front/public/site_setting/config.js" />
-        <option value="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" />
         <option value="$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs" />
+        <option value="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" />
       </list>
     </option>
   </component>
@@ -498,23 +500,22 @@
       <workItem from="1728325267572" duration="6597000" />
       <workItem from="1728334990142" duration="3274000" />
       <workItem from="1728380817367" duration="851000" />
-      <workItem from="1728384112311" duration="3958000" />
+      <workItem from="1728384112311" duration="4461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108365000" />
+    <option name="totallyTimeSpent" value="108868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.5535714" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.43382353" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32967034" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32983193" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31929183" />
@@ -928,13 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="104" column="2" lean-forward="true" selection-start-line="104" selection-start-column="2" selection-end-line="110" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/controller.mjs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
@@ -954,8 +948,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="671" column="44" selection-start-line="671" selection-start-column="25" selection-end-line="671" selection-end-column="44" />
+        <state relative-caret-position="373">
+          <caret line="773" column="51" lean-forward="true" selection-start-line="773" selection-start-column="51" selection-end-line="773" selection-end-column="51" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
             <element signature="e#204#4536#0" />
@@ -964,6 +958,13 @@
             <element signature="e#14181#15089#0" />
             <element signature="e#20975#21061#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="502" column="5" lean-forward="true" selection-start-line="502" selection-start-column="5" selection-end-line="502" selection-end-column="5" />
         </state>
       </provider>
     </entry>

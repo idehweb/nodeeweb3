@@ -386,7 +386,7 @@ class LoginForm extends Component {
       // redirect to home
       if (res.firstName && res.lastName) {
         toast.success(t('welcome'));
-        window.location.href = '/';
+        // window.location.href = '/';
         return;
       }
 
@@ -499,7 +499,7 @@ class LoginForm extends Component {
     ) {
       // window.location.replace('/my-posts');
       console.log('go to profile...', token, CameFromPost, setPassword);
-      return <Navigate to="/profile" />;
+      // return <Navigate to="/profile" />;
     }
     return (
       <ListGroup flush>
