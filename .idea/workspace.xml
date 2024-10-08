@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e40ee157-344c-45a6-9d21-5ecec48b1917" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +16,13 @@
       <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="504" column="5" lean-forward="true" selection-start-line="504" selection-start-column="5" selection-end-line="504" selection-end-column="5" />
+            <state relative-caret-position="252">
+              <caret line="423" column="29" selection-start-line="423" selection-start-column="29" selection-end-line="423" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+                <element signature="e#13309#16390#0" />
+                <element signature="e#16450#20519#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -27,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="219">
-              <caret line="776" column="37" lean-forward="true" selection-start-line="776" selection-start-column="37" selection-end-line="776" selection-end-column="37" />
+              <caret line="776" column="26" lean-forward="true" selection-start-line="776" selection-start-column="26" selection-end-line="776" selection-end-column="26" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
                 <element signature="e#204#4536#0" />
@@ -72,13 +76,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ad-card-content</find>
-      <find>Hi</find>
-      <find>set-filters</find>
-      <find>.main-navbar__search.stf.desktopnoned .input-group</find>
-      <find>hi</find>
-      <find>justi</find>
-      <find>ProductCard</find>
       <find>max-w</find>
       <find>iran.gameboss.shop</find>
       <find>'from'</find>
@@ -102,6 +99,13 @@
       <find>shallWeSetPass</find>
       <find>**********</find>
       <find>passwordAuthentication</find>
+      <find>themeData</find>
+      <find>password</find>
+      <find>savePasswordAndData</find>
+      <find>iuygfghuji</find>
+      <find>your-phone-number</find>
+      <find>iuygfghuji</find>
+      <find>userWasInDbBefore</find>
     </findStrings>
     <replaceStrings>
       <replace>http://localhost:3002</replace>
@@ -501,12 +505,12 @@
       <workItem from="1728325267572" duration="6597000" />
       <workItem from="1728334990142" duration="3274000" />
       <workItem from="1728380817367" duration="851000" />
-      <workItem from="1728384112311" duration="5540000" />
+      <workItem from="1728384112311" duration="6559000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109947000" />
+    <option name="totallyTimeSpent" value="110966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -951,7 +955,7 @@
     <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
-          <caret line="776" column="37" lean-forward="true" selection-start-line="776" selection-start-column="37" selection-end-line="776" selection-end-column="37" />
+          <caret line="776" column="26" lean-forward="true" selection-start-line="776" selection-start-column="26" selection-end-line="776" selection-end-column="26" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
             <element signature="e#204#4536#0" />
@@ -965,8 +969,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="504" column="5" lean-forward="true" selection-start-line="504" selection-start-column="5" selection-end-line="504" selection-end-column="5" />
+        <state relative-caret-position="252">
+          <caret line="423" column="29" selection-start-line="423" selection-start-column="29" selection-end-line="423" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#13309#16390#0" />
+            <element signature="e#16450#20519#0" />
+          </folding>
         </state>
       </provider>
     </entry>

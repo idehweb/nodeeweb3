@@ -1002,14 +1002,15 @@ const self = {
         // console.log('\n\n\n\n\n =====> try to set password:');
         console.log('before hash');
         bcrypt.hash(req.body.password, 10, function (err, hash) {
-            if (err) {
-                return next(err);
+            let obj = {};
+            if (!err) {
+                // return next(err);
+                req.body.password = hash;
+                obj['password']=req.body.password;
+
             }
             // console.log('after hash');
-            req.body.password = hash;
-            let obj = {
-                password: req.body.password,
-            };
+
             if (req.body.email) {
                 obj['email'] = req.body.email;
             }

@@ -31,6 +31,8 @@ import store from '#c/functions/store';
 
 import Captcha from '#c/components/captcha';
 import { fNum } from '#c/functions/utils';
+import _isEqual from "lodash/isEqual";
+import {useSelector} from "react-redux/es/index";
 
 const globalTimerSet = 120;
 
@@ -54,12 +56,14 @@ class LoginForm extends Component {
       activationCode: null,
       enterActivationCodeMode: false,
       showSecondForm: false,
+      userWasInDbBefore:true,
       isDisplay: !shallweshowsubmitpass,
       setPassword: shallweshowsubmitpass,
       countryCode: st.countryCode,
       getPassword: false,
       firstName: st.user.firstName,
       lastName: st.user.lastName,
+      passwordAuthentication:  st?.themeData?.passwordAuthentication,
       // internationalCodeClass: (checkCodeMeli(st.user.internationalCode)) ? "true" : null,
       // internationalCode: st.user.internationalCode,
       email: '',
@@ -121,6 +125,7 @@ class LoginForm extends Component {
     register(phoneNumber, fd, this.state.loginMethod).then((r) => {
       // new user
       console.log('local', store.getState().store);
+      console.log('r', r);
 
       if (r.shallWeSetPass) {
         this.state.timer = globalTimerSet;
@@ -133,11 +138,14 @@ class LoginForm extends Component {
           enterActivationCodeMode: true,
           activationCode: null,
           isDisplay: false,
+          userWasInDbBefore:r?.userWasInDbBefore
         });
       } else if (!r.shallWeSetPass && r.userWasInDbBefore) {
         this.setState({
           isDisplay: false,
           getPassword: true,
+          userWasInDbBefore:r?.userWasInDbBefore
+
         });
       }
     });
@@ -278,14 +286,15 @@ class LoginForm extends Component {
       });
       return;
     }
-    if (!password || password == undefined || password == '') {
-      console.log('password', password, !password);
+    if(this.state.passwordAuthentication)
+      if (!password || password == undefined || password == '') {
+        console.log('password', password, !password);
 
-      toast(t('fill everything!'), {
-        type: 'error',
-      });
-      return;
-    }
+        toast(t('fill everything!'), {
+          type: 'error',
+        });
+        return;
+      }
     // if (!internationalCode || internationalCode == undefined || internationalCode == "") {
     //   console.log("internationalCode", internationalCode, !internationalCode);
 
@@ -391,6 +400,7 @@ class LoginForm extends Component {
         // return;
       }
       console.log("res.shallWeSetPass",res.shallWeSetPass)
+      console.log("res.shallWeSetPass",res.token)
 
       if (res.shallWeSetPass) {
         // savePost({user: false});
@@ -406,7 +416,27 @@ class LoginForm extends Component {
         //   th["internationalCodeClass"] = checkCodeMeli(res.internationalCode);
         // }
         this.setState(th);
-      } else this.setState({ token: res.token });
+      } else {
+        if(!this.state.userWasInDbBefore){
+          this.setState({
+            token: res?.token,
+            enterActivationCodeMode: false,
+            setPassword: true,
+            firstName: res?.firstName,
+            lastName: res?.lastName
+          });
+
+        }else{
+          this.setState({
+            token: res?.token,
+            enterActivationCodeMode: false,
+            setPassword: false,
+            firstName: res?.firstName,
+            lastName: res?.lastName
+          });
+        }
+
+      }
     });
   };
 
@@ -445,6 +475,7 @@ class LoginForm extends Component {
       goToChat,
       loginMethod,
       timer,
+      passwordAuthentication
     } = this.state;
     const { t, fromPage } = this.props;
 
@@ -524,7 +555,7 @@ class LoginForm extends Component {
                           </FormSelect>
                         </InputGroupAddon>
                         <FormInput
-                          placeholder="**********"
+                          placeholder=""
                           id="thepho"
                           className={'iuygfghuji ltr'}
                           type="tel"
@@ -643,7 +674,7 @@ class LoginForm extends Component {
                         <FormInput
                           placeholder="_ _ _ _ _ _"
                           type="number"
-                          className={'iuygfghuji'}
+                          className={'iuygfghuji ltr'}
                           dir="ltr"
                           onChange={(e) => {
                             this.setState({ activationCode: e.target.value });
@@ -752,7 +783,7 @@ class LoginForm extends Component {
                         </InputGroup>
                       </Col> */}
 
-                    <Col md="12" className="form-group">
+                    {passwordAuthentication && <Col md="12" className="form-group">
                       <label htmlFor="oiuytpaswword">
                         {t('set new password')}
                       </label>
@@ -768,7 +799,7 @@ class LoginForm extends Component {
                           }
                         />
                       </InputGroup>
-                    </Col>
+                    </Col>}
                   </Row>
 
                   <Row form>
