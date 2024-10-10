@@ -215,6 +215,22 @@ const Form = ({ children, ...props }) => {
         </SimpleFormIterator>
       </ArrayInput>
 
+        <ArrayInput source="registerExtraFields">
+            <SimpleFormIterator {...props}>
+                <TextInput
+                    fullWidth
+                    source={"label"}
+                    label={translate("resources.settings.label")}
+                />
+                <TextInput
+                    fullWidth
+                    source={"name"}
+                    label={translate("resources.settings.name")}
+                />
+
+            </SimpleFormIterator>
+        </ArrayInput>
+
       <TextInput fullWidth source={"title."+ translate("lan")} label={translate('resources.settings.title')} />
       <TextInput fullWidth source={"description."+ translate("lan")} label={translate('resources.settings.description')} />
       <TextInput fullWidth source="currency" label={translate('resources.settings.currency')} />

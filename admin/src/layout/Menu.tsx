@@ -361,37 +361,37 @@ export default function Menu({ onMenuClick, dense = false }) {
         />
       </SubMenu>
 
-        <SubMenu
-            name="accounting"
-            label={translate('pos.menu.accounting')}
-            icon={<RSList.Accounting.icon />}
-            dense={dense}>
-            <MenuItemLink
-                to={{ pathname: '/Payments' }}
-                primaryText={translate('pos.menu.Payments')}
-                leftIcon={<RSList.Accounting.createIcon />}
-                dense={dense}
-            />
-            <MenuItemLink
-                to={{ pathname: '/receipts' }}
-                primaryText={translate('pos.menu.Receipts')}
-                leftIcon={<RSList.Accounting.createIcon />}
-                dense={dense}
-            />
-            <MenuItemLink
-                to={{ pathname: '/salesInvoice' }}
-                primaryText={translate('pos.menu.salesInvoice')}
-                leftIcon={<RSList.Accounting.createIcon />}
-                dense={dense}
-            />
-            <MenuItemLink
-                to={{ pathname: '/purchaseInvoice' }}
-                primaryText={translate('pos.menu.purchaseInvoice')}
-                leftIcon={<RSList.Post.createIcon />}
-                dense={dense}
-            />
+        {/*<SubMenu*/}
+            {/*name="accounting"*/}
+            {/*label={translate('pos.menu.accounting')}*/}
+            {/*icon={<RSList.Accounting.icon />}*/}
+            {/*dense={dense}>*/}
+            {/*<MenuItemLink*/}
+                {/*to={{ pathname: '/Payments' }}*/}
+                {/*primaryText={translate('pos.menu.Payments')}*/}
+                {/*leftIcon={<RSList.Accounting.createIcon />}*/}
+                {/*dense={dense}*/}
+            {/*/>*/}
+            {/*<MenuItemLink*/}
+                {/*to={{ pathname: '/receipts' }}*/}
+                {/*primaryText={translate('pos.menu.Receipts')}*/}
+                {/*leftIcon={<RSList.Accounting.createIcon />}*/}
+                {/*dense={dense}*/}
+            {/*/>*/}
+            {/*<MenuItemLink*/}
+                {/*to={{ pathname: '/salesInvoice' }}*/}
+                {/*primaryText={translate('pos.menu.salesInvoice')}*/}
+                {/*leftIcon={<RSList.Accounting.createIcon />}*/}
+                {/*dense={dense}*/}
+            {/*/>*/}
+            {/*<MenuItemLink*/}
+                {/*to={{ pathname: '/purchaseInvoice' }}*/}
+                {/*primaryText={translate('pos.menu.purchaseInvoice')}*/}
+                {/*leftIcon={<RSList.Post.createIcon />}*/}
+                {/*dense={dense}*/}
+            {/*/>*/}
 
-        </SubMenu>
+        {/*</SubMenu>*/}
       <SubMenu
         name="more"
         label={translate('pos.menu.more')}

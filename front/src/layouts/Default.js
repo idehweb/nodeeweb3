@@ -27,7 +27,7 @@ const DefaultLayout = (props) => {
         <header
           style={headerStyle}
           className={
-            'main-header d-flex pt-3 pb-1 px-3  ' +
+            'main-header d-flex pb-1 px-3  ' +
             themeData.header.classes +
             (themeData.header.showInDesktop ? ' showInDesktop ' : '') +
             (themeData.header.showInMobile ? ' showInMobile ' : '')

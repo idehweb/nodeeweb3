@@ -12,7 +12,7 @@ const CustomNavItem = ({ href, children }) => (
 );
 
 const MainHeader = ({ t }) => (
-  <header className="main-header d-flex pt-3 pb-1 px-3 bg-white">
+  <header className="main-header d-flex pb-1 px-3 bg-white">
     <Nav>
       <NavItem>
         <NavLink tag={Link} to="/">

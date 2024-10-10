@@ -33,6 +33,7 @@ const ProductsSlider = ({
   breakpoints = defaultBreakPoints,
   t,
 }) => {
+  // return JSON.stringify(arrows);
   // console.log("\nProductsSlider==================>");
   let productSliderData = useSelector((st) => {
     return st.store.productSliderData;
