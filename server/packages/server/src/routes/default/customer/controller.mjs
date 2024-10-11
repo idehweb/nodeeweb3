@@ -1027,7 +1027,7 @@ const self = {
                 obj['internationalCode'] = req.body.internationalCode;
             }
             if (req.body.address) {
-                if(isArray(req.body.address))
+                if(req.body.address instanceof Array)
                     obj['address'] = req.body.address;
             }
             console.log('obj', obj);
@@ -1104,7 +1104,7 @@ const self = {
                 obj['lastName'] = req.body.lastName;
             }
             if (req.body.address) {
-                if(isArray(req.body.address))
+                if(req.body.address instanceof Array)
                 obj['address'] = req.body.address;
             }
             let p_number = req.body.phoneNumber.toString();
