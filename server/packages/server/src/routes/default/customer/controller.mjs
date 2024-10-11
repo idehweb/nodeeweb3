@@ -1024,7 +1024,7 @@ const self = {
                 obj['lastName'] = req.body.lastName;
             }
             if (req.body.internationalCode) {
-                obj['internationalCode'] = req.body.internationalCode;
+                obj['internationalCode'] = parseInt(req.body.internationalCode);
             }
             if (req.body.data) {
                 obj['internationalCode'] = req.body.data;
@@ -1091,7 +1091,7 @@ const self = {
                 obj['email'] = req.body.email;
             }
             if (req.body.internationalCode) {
-                obj['internationalCode'] = req.body.internationalCode;
+                obj['internationalCode'] = parseInt(req.body.internationalCode);
             }
             if (req.body.nickname) {
                 obj['nickname'] = req.body.nickname;
