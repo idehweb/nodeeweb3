@@ -94,19 +94,22 @@
       <file leaf-file-name="Product.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/src/views/Product.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="490" column="27" selection-start-line="490" selection-start-column="27" selection-end-line="490" selection-end-column="27" />
+            <state relative-caret-position="266">
+              <caret line="542" column="22" lean-forward="true" selection-start-line="542" selection-start-column="22" selection-end-line="542" selection-end-column="22" />
+              <folding>
+                <element signature="e#129#250#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Checkout.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/views/Checkout.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/components/single-post/base/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="81">
+              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
               <folding>
-                <element signature="e#0#51#0" expanded="true" />
+                <element signature="e#78#6387#0" />
               </folding>
             </state>
           </provider>
@@ -123,7 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>returnThisRouteRules</find>
       <find>put</find>
       <find>setting</find>
       <find>order</find>
@@ -153,6 +155,7 @@
       <find>internationalCode</find>
       <find>borderT</find>
       <find>createRoutes</find>
+      <find>WarrantyIcon</find>
     </findStrings>
     <replaceStrings>
       <replace>http://localhost:3002</replace>
@@ -303,6 +306,30 @@
               <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
               <item name="front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="single-post" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="single-post" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
@@ -483,12 +510,12 @@
       <workItem from="1728325267572" duration="6597000" />
       <workItem from="1728334990142" duration="3274000" />
       <workItem from="1728380817367" duration="851000" />
-      <workItem from="1728384112311" duration="27635000" />
+      <workItem from="1728384112311" duration="27854000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132042000" />
+    <option name="totallyTimeSpent" value="132261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -500,10 +527,10 @@
       <window_info anchor="bottom" id="File Transfer" order="8" weight="0.32983193" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.4737395" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.4737395" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32967034" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32983193" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31929183" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31929183" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983193" />
@@ -587,13 +614,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/front/src/components/page-builder/SideMenu-b.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/components/Collapsable.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1001,10 +1021,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/components/single-post/base/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding>
+            <element signature="e#78#6387#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/views/Product.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="490" column="27" selection-start-line="490" selection-start-column="27" selection-end-line="490" selection-end-column="27" />
+        <state relative-caret-position="266">
+          <caret line="542" column="22" lean-forward="true" selection-start-line="542" selection-start-column="22" selection-end-line="542" selection-end-column="22" />
+          <folding>
+            <element signature="e#129#250#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

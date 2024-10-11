@@ -487,30 +487,30 @@ const Product = (props) => {
           )}
         </Col>
         <Col lg={12} md={12} sm={12} xs={12} className={'mt-3 mb-5'}>
-          <Row>
-          <Col lg={4} md={4} sm={6} xs={6} className={"mb-3"}>
-          <div>
-          {/* <div className={"pro-icons-wrapper"}> */}
-          <div className={"pro-icons"}>
-          <WarrantyIcon/>
-          </div>
-          <div className={"pro-icons-title"}>
-          ضمانت اصالت و سلامت فیزیکی
-          </div>
-          </div>
-          </Col>
-          <Col lg={4} md={4} sm={6} xs={6} className={"mb-3"}>
-          <div >
-          {/* <div className={"pro-icons-wrapper"}> */}
+          {/*<Row>*/}
+          {/*<Col lg={3} md={3} sm={6} xs={6} className={"mb-3"}>*/}
+          {/*<div>*/}
+          {/*/!* <div className={"pro-icons-wrapper"}> *!/*/}
+          {/*<div className={"pro-icons"}>*/}
+          {/*<WarrantyIcon/>*/}
+          {/*</div>*/}
+          {/*<div className={"pro-icons-title"}>*/}
+          {/*ضمانت اصالت و سلامت فیزیکی*/}
+          {/*</div>*/}
+          {/*</div>*/}
+          {/*</Col>*/}
+          {/*<Col lg={3} md={3} sm={6} xs={6} className={"mb-3"}>*/}
+          {/*<div >*/}
+          {/*/!* <div className={"pro-icons-wrapper"}> *!/*/}
 
-          <div className={"pro-icons"}>
-          <PersonInIcon/>
-          </div>
-          <div className={"pro-icons-title"}>
-          پرداخت حضوری و غیرحضوری
-          </div>
-          </div>
-          </Col>
+          {/*<div className={"pro-icons"}>*/}
+          {/*<PersonInIcon/>*/}
+          {/*</div>*/}
+          {/*<div className={"pro-icons-title"}>*/}
+          {/*پرداخت حضوری و غیرحضوری*/}
+          {/*</div>*/}
+          {/*</div>*/}
+          {/*</Col>*/}
           {/*<Col lg={3} md={3} sm={6} xs={6} className={"mb-3"}>*/}
           {/*/!* <div className={"pro-icons-wrapper"}> *!/*/}
           {/*<div>*/}
@@ -525,22 +525,22 @@ const Product = (props) => {
           {/*</div>*/}
           {/*</div>*/}
           {/*</Col>*/}
-          <Col lg={4} md={4} sm={6} xs={6} className={"mb-3"}>
-          {/* <div className={"pro-icons-wrapper"}> */}
-          <div>
+          {/*<Col lg={3} md={3} sm={6} xs={6} className={"mb-3"}>*/}
+          {/*/!* <div className={"pro-icons-wrapper"}> *!/*/}
+          {/*<div>*/}
 
-          <div className={"pro-icons"}>
-          {/* <SupportAgentIcon/> */}
-          {/* <img width={100} src={secureIcon} alt={' پرداخت امن'}/> */}
-          <SecurityIcon/>
-          </div>
-          <div className={"pro-icons-title"}>
-          پرداخت امن
-          </div>
-          </div>
-          </Col>
+          {/*<div className={"pro-icons"}>*/}
+          {/*/!* <SupportAgentIcon/> *!/*/}
+          {/*/!* <img width={100} src={secureIcon} alt={' پرداخت امن'}/> *!/*/}
+          {/*<SecurityIcon/>*/}
+          {/*</div>*/}
+          {/*<div className={"pro-icons-title"}>*/}
+          {/*پرداخت امن*/}
+          {/*</div>*/}
+          {/*</div>*/}
+          {/*</Col>*/}
 
-          </Row>
+          {/*</Row>*/}
         </Col>
         <Col lg={12} md={12} sm={12} xs={12}>
           <Nav justified={true} tabs={true} className={'post-product-nav'}>
