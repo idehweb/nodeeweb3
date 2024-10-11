@@ -1027,7 +1027,7 @@ const self = {
                 obj['internationalCode'] = parseInt(req.body.internationalCode);
             }
             if (req.body.data) {
-                obj['internationalCode'] = req.body.data;
+                obj['data'] = req.body.data;
             }
             if (req.body.address) {
                 if(req.body.address instanceof Array)
