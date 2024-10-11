@@ -18,6 +18,8 @@ export const ExcludeList = [
   'admin',
   'menu',
   'page',
+  'link',
+  'campaign',
   'notification',
   'media',
   'post',

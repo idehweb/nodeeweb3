@@ -72,8 +72,36 @@ export const setStyles = (fields) => {
     flexDirection,
     justifyContent,
     alignItems,
+    borderBottom,
+    borderBottomWidth,
+    borderBottomColor,
+    borderBottomStyle,
+    borderTop,
+    borderLeft,
+    borderRight
   } = fields;
   // return gap
+  if (borderBottom) {
+    style['borderBottom'] = borderBottom;
+  }
+  if (borderBottomWidth) {
+    style['borderBottomWidth'] = borderBottomWidth;
+  }
+  if (borderBottomColor) {
+    style['borderBottomColor'] = borderBottomColor;
+  }
+  if (borderBottomStyle) {
+    style['borderBottomStyle'] = borderBottomStyle;
+  }
+  if (borderTop) {
+    style['borderTop'] = borderTop;
+  }
+  if (borderLeft) {
+    style['borderLeft'] = borderLeft;
+  }
+  if (borderRight) {
+    style['borderRight'] = borderRight;
+  }
   if (paddingTop) {
     style['paddingTop'] = paddingTop;
   }
@@ -1416,11 +1444,40 @@ export const getBookmarks = () => {
   });
 };
 export const getMe = () => {
+  let {user} = store.getState().store;
+  let {address} = store.getState().store;
+  if (!address) {
+    address = [];
+  }
+  // address.push(data);
+  // putData(`${ApiUrl}/customer/updateAddress`, {address: address}, true)
+  //   .then((data) => {
+  //     let mainD = data['data'];
+
   return new Promise(function (resolve, reject) {
     getData(`${ApiUrl}/customer/getme`, {}, true)
       .then((data) => {
         let mainD = data['data'];
-
+        if (mainD?.success) {
+          user = {...user, address: mainD.customer.address};
+          if (mainD?.customer?.internationalCode) {
+            user['internationalCode'] = mainD?.customer?.internationalCode
+          }
+          console.log("user", user)
+          SaveData({
+            // phoneNumber: mainD.customer.phoneNumber,
+            address: mainD.customer.address,
+            user: user,
+          });
+        } else {
+          if (mainD?.message && mainD.message == 'You do not have access!') {
+            clearState();
+            window.location.replace('/');
+          }
+        }
+        // if (mainD?.customer?.address) {
+        //
+        // }
         resolve(mainD);
       })
       .catch((err) => {
@@ -2409,14 +2466,13 @@ export const setPassWithPhoneNumber = (data) => {
     postData(`${ApiUrl}/customer/setPassword`, data, true)
       .then((data) => {
         let mainD = data['data'];
-        if (mainD.success) {
+        if (mainD?.success) {
           user = {...user, ...mainD.customer};
-
-          SaveData({
-            // phoneNumber: mainD.customer.phoneNumber,
-            user: user,
-            // token: mainD.customer.token,
-          });
+          console.log("user", user)
+          let obj = {user: user};
+          if (mainD?.customer?.address)
+            obj['address'] = mainD?.customer?.address
+          SaveData(obj);
         }
         resolve(mainD);
       })

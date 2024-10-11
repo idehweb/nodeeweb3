@@ -17,6 +17,7 @@ import { useSelector } from 'react-redux';
 
 function Checkout(props) {
   console.log('props', props);
+  // return;
   const { t } = useTranslation();
   // let ref = this;
   let navigate = useNavigate();
@@ -146,7 +147,7 @@ function Checkout(props) {
     toast(t('Submitting order...'), {
       type: 'success',
     });
-    
+
     console.log('order', order);
     console.log('paymentMethod', paymentMethod);
     // return;
@@ -197,16 +198,26 @@ function Checkout(props) {
   console.log('page', page, page);
 
   // return null;
-  if (!firstName || !lastName || !internationalCode) {
+  // if(themeData?.passwordAuthentication)
+  if (!firstName || !lastName) {
+    console.log("no f and l name",firstName)
+    console.log("no f and l lastName",lastName)
+    console.log("no f and l internationalCode",internationalCode)
+
+    // return;
     redirect = true;
     redirect_url = '/login/goToCheckout';
   }
   if (!token) {
+    console.log("no t")
+
+    // return;
     redirect = true;
   }
   if (redirect) {
     console.log('redirect_url', redirect, redirect_url);
     // if (!_id) {
+    // return;
     //   _id = this.props.match.params._id;
     // }
     // this.cameFromProduct(_id);
@@ -441,7 +452,7 @@ export default withTranslation()(Checkout);
 //     toast(t("Submitting order..."), {
 //       type: "success"
 //     });
-//     
+//
 //     console.log('order',order);
 //     console.log('paymentMethod',paymentMethod);
 //     // return;

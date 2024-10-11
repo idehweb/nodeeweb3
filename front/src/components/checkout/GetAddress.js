@@ -98,7 +98,7 @@ function GetAddress(props) {
           readValue: 'no',
           returnEverything: true,
           onChange: (text) => {
-            
+
             console.log('text', text);
             checkOutBillingAddress.add.data['City'] = text.name;
             checkOutBillingAddress.add.data['City_no'] = text.no;
@@ -365,7 +365,7 @@ function GetAddress(props) {
                       {/*<div className={'white p-2'}>*/}
                       <div className={'ttl'}>{adr.PostalCode}</div>
                       <div className={'desc'}>
-                        {adr.State} - {adr.City} - {adr.StreetAddress}
+                        {adr.State && <span>{adr.State} - </span>}{adr.City && <span>{adr.City} - </span>}{adr.StreetAddress && <span>{adr.StreetAddress}</span>}
                       </div>
                       <div className={' d-flex posab bilar'}>
                         <div className={'flex-1 pl-2 textAlignRight theb'}>

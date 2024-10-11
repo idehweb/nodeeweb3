@@ -27,7 +27,7 @@ const DefaultLayout = (props) => {
         <header
           style={headerStyle}
           className={
-            'main-header d-flex pb-1 px-3  ' +
+            'main-header d-flex pb-1  ' +
             themeData.header.classes +
             (themeData.header.showInDesktop ? ' showInDesktop ' : '') +
             (themeData.header.showInMobile ? ' showInMobile ' : '')
@@ -46,7 +46,7 @@ const DefaultLayout = (props) => {
         <footer
           style={footer}
           className={clsx(
-            'main-footer p-2 px-3 border-top',
+            'main-footer border-top',
             themeData.footer.classes
           )}>
           <PageBuilder

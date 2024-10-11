@@ -317,7 +317,7 @@ class LoginForm extends Component {
           if (extraFields['postalCode'])
             x['PostalCode'] = extraFields['postalCode'];
           if (extraFields['postalcode'])
-            x['postalcode'] = extraFields['postalcode'];
+            x['PostalCode'] = extraFields['postalcode'];
           addres.push(x);
 
         }
@@ -541,7 +541,7 @@ class LoginForm extends Component {
       passwordAuthentication
     } = this.state;
     const {t, fromPage} = this.props;
-
+// return
     if (
       token &&
       !firstName &&

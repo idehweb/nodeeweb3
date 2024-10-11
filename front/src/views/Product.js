@@ -85,7 +85,7 @@ const Product = (props) => {
     admin_token = fp;
   }
   const [mainId, setMainId] = useState(the_id);
-  const [tab, setTab] = useState('attributes');
+  const [tab, setTab] = useState('comments');
   const [state, setState] = useState(isClient ? [] : product || []);
   const [lan, setLan] = useState(store.getState().store.lan || 'fa');
   const [requiredWarranty, setRequiredWarranty] = useState(true);
@@ -210,82 +210,82 @@ const Product = (props) => {
       className="main-content-container p-0 pb-4 kiuytyuioiu bg-white"
      >
       <Row className={'limited posrel justify-end'}>
-        <div className={'floating-tools'}>
-          <ButtonGroup vertical>
-            <Button
-              className={'love-it '}
-              onClick={() => {
-                loveIt(_id)
-                  .then((res) => {
-                    if (res.like) {
-                      like = res.like;
-                      setState({ ...state, like: like });
-                    }
-                    toast(t(res.message), {
-                      type: 'success',
-                    });
-                  })
-                  .catch((err) => {
-                    toast(t(err.message), {
-                      type: 'warning',
-                    });
-                  });
-              }}>
-              <FavoriteBorderIcon className={'beforehov'} />
-              <FavoriteIcon className={'hov'} />
-              <Badge theme="info">{like}</Badge>
-            </Button>
+        {/*<div className={'floating-tools'}>*/}
+          {/*<ButtonGroup vertical>*/}
+            {/*<Button*/}
+              {/*className={'love-it '}*/}
+              {/*onClick={() => {*/}
+                {/*loveIt(_id)*/}
+                  {/*.then((res) => {*/}
+                    {/*if (res.like) {*/}
+                      {/*like = res.like;*/}
+                      {/*setState({ ...state, like: like });*/}
+                    {/*}*/}
+                    {/*toast(t(res.message), {*/}
+                      {/*type: 'success',*/}
+                    {/*});*/}
+                  {/*})*/}
+                  {/*.catch((err) => {*/}
+                    {/*toast(t(err.message), {*/}
+                      {/*type: 'warning',*/}
+                    {/*});*/}
+                  {/*});*/}
+              {/*}}>*/}
+              {/*<FavoriteBorderIcon className={'beforehov'} />*/}
+              {/*<FavoriteIcon className={'hov'} />*/}
+              {/*<Badge theme="info">{like}</Badge>*/}
+            {/*</Button>*/}
 
-            {Boolean(isClient && title) && (
-              <RWebShare
-                data={{
-                  text: excerpt,
-                  url:
-                    CONFIG.SHOP_URL +
-                    'p/' +
-                    _id +
-                    '/' +
-                    encodeURIComponent(title[lan]),
-                  title: title[lan],
-                }}
-                sites={['whatsapp', 'telegram', 'linkedin', 'copy']}
-                closeText={t('close')}
-                onClick={() => console.log('shared successfully!')}>
-                <Button>
-                  <ShareIcon />
-                </Button>
-              </RWebShare>
-            )}
-            {views && (
-              <Button>
-                <RemoveRedEyeIcon />
-                {/*<Badge theme="info">{views}</Badge>*/}
-              </Button>
-            )}
-            <Button
-              onClick={() => {
-                addBookmark(_id)
-                  .then((res) => {
-                    toast(t(res.message), {
-                      type: 'success',
-                    });
-                  })
-                  .catch((err) => {
-                    toast(t(err.message), {
-                      type: 'warning',
-                    });
-                  });
-              }}>
-              <BookmarkAddIcon />
-            </Button>
+            {/*{Boolean(isClient && title) && (*/}
+              {/*<RWebShare*/}
+                {/*data={{*/}
+                  {/*text: excerpt,*/}
+                  {/*url:*/}
+                    {/*CONFIG.SHOP_URL +*/}
+                    {/*'p/' +*/}
+                    {/*_id +*/}
+                    {/*'/' +*/}
+                    {/*encodeURIComponent(title[lan]),*/}
+                  {/*title: title[lan],*/}
+                {/*}}*/}
+                {/*sites={['whatsapp', 'telegram', 'linkedin', 'copy']}*/}
+                {/*closeText={t('close')}*/}
+                {/*onClick={() => console.log('shared successfully!')}>*/}
+                {/*<Button>*/}
+                  {/*<ShareIcon />*/}
+                {/*</Button>*/}
+              {/*</RWebShare>*/}
+            {/*)}*/}
+            {/*{views && (*/}
+              {/*<Button>*/}
+                {/*<RemoveRedEyeIcon />*/}
+                {/*/!*<Badge theme="info">{views}</Badge>*!/*/}
+              {/*</Button>*/}
+            {/*)}*/}
+            {/*<Button*/}
+              {/*onClick={() => {*/}
+                {/*addBookmark(_id)*/}
+                  {/*.then((res) => {*/}
+                    {/*toast(t(res.message), {*/}
+                      {/*type: 'success',*/}
+                    {/*});*/}
+                  {/*})*/}
+                  {/*.catch((err) => {*/}
+                    {/*toast(t(err.message), {*/}
+                      {/*type: 'warning',*/}
+                    {/*});*/}
+                  {/*});*/}
+              {/*}}>*/}
+              {/*<BookmarkAddIcon />*/}
+            {/*</Button>*/}
 
-            {admin_token && (
-              <Link to={'/admin/#/product/' + _id} className={'btn btn-primary'}>
-                <EditIcon />
-              </Link>
-            )}
-          </ButtonGroup>
-        </div>
+            {/*{admin_token && (*/}
+              {/*<Link to={'/admin/#/product/' + _id} className={'btn btn-primary'}>*/}
+                {/*<EditIcon />*/}
+              {/*</Link>*/}
+            {/*)}*/}
+          {/*</ButtonGroup>*/}
+        {/*</div>*/}
       </Row>
       <Row className={'limited posrel'}>
         <Col lg="6" md="12">
@@ -544,24 +544,24 @@ const Product = (props) => {
         </Col>
         <Col lg={12} md={12} sm={12} xs={12}>
           <Nav justified={true} tabs={true} className={'post-product-nav'}>
-            <NavItem>
-              <NavLink
-                active={tab === 'attributes'}
-                href="#attributes"
-                onClick={() => setTab('attributes')}>
-                <EditAttributesIcon className={'ml-2'} />
-                <span className={'d-xs-none'}>{t('attributes')}</span>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink
-                active={tab === 'description'}
-                href="#description"
-                onClick={() => setTab('description')}>
-                <DescriptionIcon className={'ml-2'} />
-                <span className={'d-xs-none'}>{t('description')}</span>
-              </NavLink>
-            </NavItem>
+            {/*<NavItem>*/}
+              {/*<NavLink*/}
+                {/*active={tab === 'attributes'}*/}
+                {/*href="#attributes"*/}
+                {/*onClick={() => setTab('attributes')}>*/}
+                {/*<EditAttributesIcon className={'ml-2'} />*/}
+                {/*<span className={'d-xs-none'}>{t('attributes')}</span>*/}
+              {/*</NavLink>*/}
+            {/*</NavItem>*/}
+            {/*<NavItem>*/}
+              {/*<NavLink*/}
+                {/*active={tab === 'description'}*/}
+                {/*href="#description"*/}
+                {/*onClick={() => setTab('description')}>*/}
+                {/*<DescriptionIcon className={'ml-2'} />*/}
+                {/*<span className={'d-xs-none'}>{t('description')}</span>*/}
+              {/*</NavLink>*/}
+            {/*</NavItem>*/}
 
             <NavItem>
               <NavLink
