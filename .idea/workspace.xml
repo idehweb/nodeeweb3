@@ -2,7 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e40ee157-344c-45a6-9d21-5ecec48b1917" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/server/packages/server/src/global.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/src/global.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/language/fa/translation.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/language/fa/translation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/admin/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/admin/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/admin/site_setting/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/admin/site_setting/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/admin/static/css/main.db3cfc09.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/admin/static/js/main.9390b72b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/admin/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/admin/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/admin/site_setting/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/admin/site_setting/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/admin/static/css/main.db3cfc09.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/admin/static/js/main.9390b72b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/theme/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/theme/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/theme/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/theme/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/theme/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/theme/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/theme/site_setting/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/theme/site_setting/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/theme/static/css/bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/theme/static/css/bundle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/theme/static/js/135.09027fca.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/theme/static/js/344.99941a98.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/theme/static/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/theme/static/js/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/theme/static/js/main.d0291c7f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/theme/static/js/runtime.df3a4921.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/theme/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/theme/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/theme/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/theme/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/theme/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/theme/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/theme/site_setting/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/theme/site_setting/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/theme/static/css/bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/server/theme/static/css/bundle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/theme/static/js/135.09027fca.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/theme/static/js/344.99941a98.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/theme/static/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/theme/static/js/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/theme/static/js/main.d0291c7f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/theme/static/js/runtime.df3a4921.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/front/src/views/Login.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="945">
-              <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+              <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -25,11 +57,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="66" column="33" lean-forward="true" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
+            <state relative-caret-position="350">
+              <caret line="385" column="14" lean-forward="true" selection-start-line="385" selection-start-column="14" selection-end-line="385" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#14400#17499#0" />
+                <element signature="e#17559#21632#0" />
+                <element signature="e#21858#22573#0" />
+                <element signature="e#22595#23256#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="updateBack.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/updateBack.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-734">
+              <caret line="1006" column="36" selection-start-line="1006" selection-start-column="36" selection-end-line="1006" selection-end-column="36" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -37,11 +94,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global.mjs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="translation.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/language/fa/translation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global.mjs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/packages/server/src/global.mjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="251" column="72" selection-start-line="251" selection-start-column="72" selection-end-line="251" selection-end-column="72" />
+            <state relative-caret-position="244">
+              <caret line="203" column="14" selection-start-line="203" selection-start-column="14" selection-end-line="203" selection-end-column="14" />
               <folding>
                 <element signature="e#4839#6242#0" />
                 <element signature="e#6377#6653#0" />
@@ -70,16 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>iuygfghuji</find>
-      <find>userWasInDbBefore</find>
-      <find>slider</find>
-      <find>setPassw</find>
-      <find>SWIPERWrapper</find>
-      <find>ProductsSlider</find>
-      <find>acc</find>
-      <find>iran.gameboss</find>
-      <find>translate</find>
-      <find>useSelector</find>
       <find>Tabs</find>
       <find>MenuItem</find>
       <find>displayedFilters</find>
@@ -98,8 +154,18 @@
       <find>SelectInput</find>
       <find>OrderTabs</find>
       <find>siteActive</find>
-      <find>registerExtraFields</find>
       <find>delive</find>
+      <find>passwordAuthentication</find>
+      <find>savePas</find>
+      <find>savePasswordAndData</find>
+      <find>extraFields</find>
+      <find>internationalCodeClass</find>
+      <find>checkCodeMeli</find>
+      <find>internationalCode</find>
+      <find>addre</find>
+      <find>setPassWithPhoneNumber</find>
+      <find>setPassword</find>
+      <find>registerExtraFields</find>
     </findStrings>
     <replaceStrings>
       <replace>http://localhost:3002</replace>
@@ -123,8 +189,8 @@
       <dir>$PROJECT_DIR$/server/packages/shop</dir>
       <dir>$PROJECT_DIR$/server/packages</dir>
       <dir>$PROJECT_DIR$/front/src/components/page-builder</dir>
-      <dir>$PROJECT_DIR$/front/src</dir>
       <dir>$PROJECT_DIR$/admin/src</dir>
+      <dir>$PROJECT_DIR$/front/src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -133,7 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/packages/shop/transaction/index.mjs" />
         <option value="$PROJECT_DIR$/server/packages/shop/transaction/utils.mjs" />
         <option value="$PROJECT_DIR$/server/packages/shop/order/utils.mjs" />
         <option value="$PROJECT_DIR$/server/packages/shop/order/controller.mjs" />
@@ -169,7 +234,6 @@
         <option value="$PROJECT_DIR$/server/entity/index.mjs" />
         <option value="$PROJECT_DIR$/admin/public/site_setting/config.js" />
         <option value="$PROJECT_DIR$/front/public/site_setting/config.js" />
-        <option value="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" />
         <option value="$PROJECT_DIR$/front/src/assets/styles/global.css" />
         <option value="$PROJECT_DIR$/front/src/views/Login.tsx" />
         <option value="$PROJECT_DIR$/admin/src/components/index.js" />
@@ -184,6 +248,8 @@
         <option value="&lt;af3c178b-a2c1-47d1-a3b3-6902f6efb671&gt;/root/mongo.sh" />
         <option value="&lt;af3c178b-a2c1-47d1-a3b3-6902f6efb671&gt;/root/startall.sh" />
         <option value="$PROJECT_DIR$/server/packages/server/src/global.mjs" />
+        <option value="$PROJECT_DIR$/front/src/language/fa/translation.js" />
+        <option value="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" />
       </list>
     </option>
   </component>
@@ -226,6 +292,11 @@
             <path>
               <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
@@ -372,6 +443,17 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
               <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="customer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
               <item name="settings" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -456,12 +538,12 @@
       <workItem from="1728325267572" duration="6597000" />
       <workItem from="1728334990142" duration="3274000" />
       <workItem from="1728380817367" duration="851000" />
-      <workItem from="1728384112311" duration="18558000" />
+      <workItem from="1728384112311" duration="22561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122965000" />
+    <option name="totallyTimeSpent" value="126968000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -473,10 +555,10 @@
       <window_info anchor="bottom" id="File Transfer" order="8" weight="0.32983193" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.49054623" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.4737395" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32967034" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32983193" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31929183" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31929183" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983193" />
@@ -556,17 +638,10 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/routes.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="88" column="1" lean-forward="true" selection-start-line="88" selection-start-column="1" selection-end-line="88" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/updateBack.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -729,31 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/model.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="1008" column="25" selection-start-line="1008" selection-start-column="25" selection-end-line="1008" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="e#204#4536#0" />
-            <element signature="e#4577#5606#0" />
-            <element signature="e#5652#14142#0" />
-            <element signature="e#14181#15089#0" />
-            <element signature="e#20975#21061#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/components/page-builder/Render/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -830,13 +880,6 @@
             <element signature="e#9823#9997#0" />
             <element signature="e#10115#10260#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/language/fa/translation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="26" column="9" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -947,7 +990,7 @@
     <entry file="file://$PROJECT_DIR$/front/src/views/Login.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
-          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
@@ -961,23 +1004,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
+    <entry file="file://$PROJECT_DIR$/server/packages/server/src/global.mjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="66" column="33" lean-forward="true" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
+        <state relative-caret-position="244">
+          <caret line="203" column="14" selection-start-line="203" selection-start-column="14" selection-end-line="203" selection-end-column="14" />
+          <folding>
+            <element signature="e#4839#6242#0" />
+            <element signature="e#6377#6653#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/language/fa/translation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/model.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="89" column="7" lean-forward="true" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-734">
+          <caret line="1006" column="36" selection-start-line="1006" selection-start-column="36" selection-end-line="1006" selection-end-column="36" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/server/src/global.mjs">
+    <entry file="file://$PROJECT_DIR$/admin/updateBack.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="251" column="72" selection-start-line="251" selection-start-column="72" selection-end-line="251" selection-end-column="72" />
+        <state relative-caret-position="108">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="385" column="14" lean-forward="true" selection-start-line="385" selection-start-column="14" selection-end-line="385" selection-end-column="14" />
           <folding>
-            <element signature="e#4839#6242#0" />
-            <element signature="e#6377#6653#0" />
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#14400#17499#0" />
+            <element signature="e#17559#21632#0" />
+            <element signature="e#21858#22573#0" />
+            <element signature="e#22595#23256#0" />
           </folding>
         </state>
       </provider>

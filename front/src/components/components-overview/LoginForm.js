@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import {Component} from 'react';
 import {
   Button,
   Col,
@@ -11,9 +11,9 @@ import {
   ListGroupItem,
   Row,
 } from 'shards-react';
-import { withTranslation } from 'react-i18next';
-import { Navigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import {withTranslation} from 'react-i18next';
+import {Navigate} from 'react-router-dom';
+import {toast} from 'react-toastify';
 import CircularProgress from '@mui/material/CircularProgress';
 
 import {
@@ -26,13 +26,10 @@ import {
   register,
   savePost,
   setPassWithPhoneNumber,
+  checkCodeMeli
 } from '#c/functions';
 import store from '#c/functions/store';
-
-import Captcha from '#c/components/captcha';
-import { fNum } from '#c/functions/utils';
-import _isEqual from "lodash/isEqual";
-import {useSelector} from "react-redux/es/index";
+import {fNum} from '#c/functions/utils';
 
 const globalTimerSet = 120;
 
@@ -44,7 +41,7 @@ class LoginForm extends Component {
     if (
       st.user.token &&
       (!st.user.firstName || !st.user.lastName)
-      // || !st.user.internationalCode
+    // || !st.user.internationalCode
     ) {
       shallweshowsubmitpass = true;
     }
@@ -56,16 +53,19 @@ class LoginForm extends Component {
       activationCode: null,
       enterActivationCodeMode: false,
       showSecondForm: false,
-      userWasInDbBefore:true,
+      userWasInDbBefore: true,
       isDisplay: !shallweshowsubmitpass,
       setPassword: shallweshowsubmitpass,
+      // setPassword: true,
       countryCode: st.countryCode,
       getPassword: false,
       firstName: st.user.firstName,
       lastName: st.user.lastName,
-      passwordAuthentication:  st?.themeData?.passwordAuthentication,
-      // internationalCodeClass: (checkCodeMeli(st.user.internationalCode)) ? "true" : null,
-      // internationalCode: st.user.internationalCode,
+      passwordAuthentication: st?.themeData?.passwordAuthentication,
+      registerExtraFields: st?.themeData?.registerExtraFields,
+      extraFields: {},
+      internationalCodeClass: (checkCodeMeli(st.user.internationalCode)) ? "true" : null,
+      internationalCode: st.user.internationalCode,
       email: '',
       goToProfile: false,
       loginMethod: 'sms',
@@ -130,7 +130,7 @@ class LoginForm extends Component {
       if (r.shallWeSetPass) {
         this.state.timer = globalTimerSet;
         this.myInterval = setInterval(() => {
-          this.setState(({ timer }) => ({
+          this.setState(({timer}) => ({
             timer: timer > 0 ? timer - 1 : this.handleClearInterval(),
           }));
         }, 1000);
@@ -138,13 +138,13 @@ class LoginForm extends Component {
           enterActivationCodeMode: true,
           activationCode: null,
           isDisplay: false,
-          userWasInDbBefore:r?.userWasInDbBefore
+          userWasInDbBefore: r?.userWasInDbBefore
         });
       } else if (!r.shallWeSetPass && r.userWasInDbBefore) {
         this.setState({
           isDisplay: false,
           getPassword: true,
-          userWasInDbBefore:r?.userWasInDbBefore
+          userWasInDbBefore: r?.userWasInDbBefore
 
         });
       }
@@ -221,7 +221,7 @@ class LoginForm extends Component {
         });
         this.state.timer = globalTimerSet;
         this.myInterval = setInterval(() => {
-          this.setState(({ timer }) => ({
+          this.setState(({timer}) => ({
             timer: timer > 0 ? timer - 1 : this.handleClearInterval(),
           }));
         }, 1000);
@@ -258,16 +258,20 @@ class LoginForm extends Component {
       firstName,
       lastName,
       email,
+      registerExtraFields,
       password,
-      // internationalCode,
-      // internationalCodeClass,
+      extraFields,
+      internationalCode,
+      internationalCodeClass,
       address,
     } = this.state;
-    const { t } = this.props;
+    const {t} = this.props;
+
     let fd = countryCode || '98';
     console.log(firstName, !firstName);
     console.log(lastName, !lastName);
     console.log(password, !password);
+    console.log(extraFields);
     // console.log(internationalCode, !internationalCode);
     // console.log(internationalCodeClass, internationalCodeClass != true);
     if (!firstName || firstName == '') {
@@ -286,7 +290,7 @@ class LoginForm extends Component {
       });
       return;
     }
-    if(this.state.passwordAuthentication)
+    if (this.state.passwordAuthentication)
       if (!password || password == undefined || password == '') {
         console.log('password', password, !password);
 
@@ -295,32 +299,56 @@ class LoginForm extends Component {
         });
         return;
       }
-    // if (!internationalCode || internationalCode == undefined || internationalCode == "") {
-    //   console.log("internationalCode", internationalCode, !internationalCode);
+    if (registerExtraFields) {
+      console.log(registerExtraFields.length,registerExtraFields)
+      // let exk=Object.keys(extraFields)
+      for (let i = 0; i <= registerExtraFields?.length; i++) {
+        let label = registerExtraFields[i]?.name;
+        let require = registerExtraFields[i]?.require;
+        if (require && label == 'internationalCode') {
+          if (!extraFields[label] || extraFields[label] == undefined || extraFields[label] == "") {
+            console.log("internationalCode", extraFields[label], !extraFields[label]);
 
-    //   toast(t("fill everything!"), {
-    //     type: "error"
-    //   });
-    //   return;
-    // }
-    // if (!internationalCodeClass || internationalCodeClass == undefined || internationalCodeClass == "") {
-    //   console.log("internationalCodeClass", internationalCodeClass, !internationalCodeClass);
-    //   if (internationalCode) {
-    //     if (checkCodeMeli(internationalCode)) {
+            toast(t("fill internationalCode!"), {
+              type: "error"
+            });
+            return;
+          }
 
-    //     } else {
-    //       toast(t("fill everything!"), {
-    //         type: "error"
-    //       });
-    //       return;
-    //     }
-    //   } else {
-    //     toast(t("fill everything!"), {
-    //       type: "error"
-    //     });
-    //     return;
-    //   }
-    // }
+          if (!internationalCodeClass || internationalCodeClass == undefined || internationalCodeClass == "") {
+            console.log("internationalCodeClass", internationalCodeClass, !internationalCodeClass);
+            if (internationalCode) {
+              if (checkCodeMeli(internationalCode)) {
+
+              } else {
+                toast(t("fill internationalCode!"), {
+                  type: "error"
+                });
+                return;
+              }
+            } else {
+              toast(t("fill internationalCode!"), {
+                type: "error"
+              });
+              return;
+            }
+          }
+        }
+        if (require && label !== 'internationalCode') {
+          if (!extraFields[label] || extraFields[label] == undefined || extraFields[label] == "") {
+            console.log("every thing", extraFields[label], !extraFields[label]);
+
+            toast(t("fill every thing!"), {
+              type: "error"
+            });
+            return;
+          }
+        }
+        console.log(extraFields[label])
+      }
+    }
+    // return;
+
 
     function just_persian(str) {
       let p = /^[\u0600-\u06FF\s]+$/;
@@ -344,13 +372,24 @@ class LoginForm extends Component {
       });
       return;
     }
-    console.log('setPassWithPhoneNumber...');
+    console.log('setPassWithPhoneNumber...',{
+      phoneNumber: fd + phoneNumber,
+      firstName,
+      lastName,
+      address,
+      email,
+      data: extraFields,
+      internationalCode,
+      password,
+    });
+    // return;
     setPassWithPhoneNumber({
       phoneNumber: fd + phoneNumber,
       firstName,
       lastName,
       address,
       email,
+      data: extraFields,
       // internationalCode,
       password,
     }).then((res) => {
@@ -370,14 +409,14 @@ class LoginForm extends Component {
   };
 
   checkResponse(res) {
-    this.setState({ loginMethod: res });
+    this.setState({loginMethod: res});
   }
 
   handleActivation = (e) => {
     e.preventDefault();
 
-    let { activationCode, countryCode, phoneNumber = '0' } = this.state;
-    let { t } = this.props;
+    let {activationCode, countryCode, phoneNumber = '0'} = this.state;
+    let {t} = this.props;
     if (!countryCode) {
       countryCode = '98';
     }
@@ -399,8 +438,8 @@ class LoginForm extends Component {
         // window.location.href = '/';
         // return;
       }
-      console.log("res.shallWeSetPass",res.shallWeSetPass)
-      console.log("res.shallWeSetPass",res.token)
+      console.log("res.shallWeSetPass", res.shallWeSetPass)
+      console.log("res.shallWeSetPass", res.token)
 
       if (res.shallWeSetPass) {
         // savePost({user: false});
@@ -417,7 +456,7 @@ class LoginForm extends Component {
         // }
         this.setState(th);
       } else {
-        if(!this.state.userWasInDbBefore){
+        if (!this.state.userWasInDbBefore) {
           this.setState({
             token: res?.token,
             enterActivationCodeMode: false,
@@ -426,7 +465,7 @@ class LoginForm extends Component {
             lastName: res?.lastName
           });
 
-        }else{
+        } else {
           this.setState({
             token: res?.token,
             enterActivationCodeMode: false,
@@ -440,14 +479,17 @@ class LoginForm extends Component {
     });
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+  }
 
   componentWillUnmount() {
     clearInterval(this.myInterval);
   }
+
   captchaValue(cVal) {
     // console.log('parentReCaptchaaaaaa',cVal);
   }
+
   captchaAction(e) {
     if (e === true) {
       console.log('parentReCaptchaaaaaa', true);
@@ -456,6 +498,7 @@ class LoginForm extends Component {
       });
     }
   }
+
   render() {
     // console.clear()
     const {
@@ -467,24 +510,26 @@ class LoginForm extends Component {
       CameFromPost,
       goToProduct,
       setPassword,
+      registerExtraFields,
       getPassword,
-      // internationalCode,
+      internationalCode,
       enterActivationCodeMode,
-      // internationalCodeClass,
+      internationalCodeClass,
       goToCheckout,
       goToChat,
       loginMethod,
+      extraFields,
       timer,
       passwordAuthentication
     } = this.state;
-    const { t, fromPage } = this.props;
+    const {t, fromPage} = this.props;
 
     if (
       token &&
       !firstName &&
       !lastName
-      //  &&
-      //  !internationalCode
+    //  &&
+    //  !internationalCode
     ) {
       // this.setState({setPassword: true});
       // return <Navigate to={'/login'} />;
@@ -492,7 +537,7 @@ class LoginForm extends Component {
     if (token && goToProduct) {
       this.fc(false);
 
-      return <Navigate to={'/submit-order/' + goToProduct} />;
+      return <Navigate to={'/submit-order/' + goToProduct}/>;
     }
 
     if (
@@ -504,35 +549,35 @@ class LoginForm extends Component {
       !setPassword
     ) {
       console.log('goToCheckout');
-      savePost({ goToCheckout: false });
+      savePost({goToCheckout: false});
 
-      return <Navigate to={'/checkout/'} />;
+      return <Navigate to={'/checkout/'}/>;
     }
     if (token && !goToCheckout && fromPage && !setPassword) {
       console.log('goToCheckout false');
-      savePost({ goToCheckout: false });
+      savePost({goToCheckout: false});
 
-      return <Navigate to={fromPage + '/'} />;
+      return <Navigate to={fromPage + '/'}/>;
     }
 
     // if (token && goToChat && firstName && lastName && internationalCode && !setPassword) {
     if (token && goToChat) {
       console.log('goTo chat');
-      savePost({ goToChat: false });
+      savePost({goToChat: false});
 
-      return <Navigate to={'/chat/'} />;
+      return <Navigate to={'/chat/'}/>;
     }
     if (token && CameFromPost && !setPassword) {
       console.log('goToPUBLISH');
       this.fd(false);
-      return <Navigate to="/add-new-post/publish" />;
+      return <Navigate to="/add-new-post/publish"/>;
     } else if (
       (token && !CameFromPost && !setPassword && firstName && lastName) ||
       goToProfile
     ) {
       // window.location.replace('/my-posts');
       console.log('go to profile...', token, CameFromPost, setPassword);
-      return <Navigate to="/profile" />;
+      return <Navigate to="/profile"/>;
     }
     return (
       <ListGroup className={'login-register-form-inside'} flush>
@@ -549,7 +594,7 @@ class LoginForm extends Component {
                         <InputGroupAddon type="prepend">
                           <FormSelect
                             onChange={(e) =>
-                              this.setState({ countryCode: e.target.value })
+                              this.setState({countryCode: e.target.value})
                             }>
                             <option value="98">+98</option>
                           </FormSelect>
@@ -561,13 +606,13 @@ class LoginForm extends Component {
                           type="tel"
                           dir="ltr"
                           onChange={(e) =>
-                            this.setState({ phoneNumber: e.target.value })
+                            this.setState({phoneNumber: e.target.value})
                           }
                         />
                       </InputGroup>
                       {/*<Captcha*/}
-                        {/*onActionValue={this.captchaValue}*/}
-                        {/*onActionSubmit={this.captchaAction}*/}
+                      {/*onActionValue={this.captchaValue}*/}
+                      {/*onActionSubmit={this.captchaAction}*/}
                       {/*/>*/}
                     </Col>
                   </Row>
@@ -632,8 +677,8 @@ class LoginForm extends Component {
                         </div>
                         <div className={'flex-item ltr'}>
                           {'+' +
-                            this.state.countryCode +
-                            this.state.thePhoneNumber}
+                          this.state.countryCode +
+                          this.state.thePhoneNumber}
                         </div>
                       </div>
                       <div className={'your-timer'}>
@@ -664,7 +709,7 @@ class LoginForm extends Component {
                         {/*{t("get enter code")}*/}
                         {/*</label>*/}
                         <label
-                          style={{ fontSize: 12 }}
+                          style={{fontSize: 12}}
                           htmlFor="feEmailAddress">
                           {t('enter sent code')}
                         </label>
@@ -677,7 +722,7 @@ class LoginForm extends Component {
                           className={'iuygfghuji ltr'}
                           dir="ltr"
                           onChange={(e) => {
-                            this.setState({ activationCode: e.target.value });
+                            this.setState({activationCode: e.target.value});
                           }}
                         />
                       </InputGroup>
@@ -737,7 +782,7 @@ class LoginForm extends Component {
                           dir="rtl"
                           value={firstName}
                           onChange={(e) =>
-                            this.setState({ firstName: e.target.value })
+                            this.setState({firstName: e.target.value})
                           }
                         />
                       </InputGroup>
@@ -754,34 +799,60 @@ class LoginForm extends Component {
                           id="ollastname"
                           dir="rtl"
                           onChange={(e) =>
-                            this.setState({ lastName: e.target.value })
+                            this.setState({lastName: e.target.value})
                           }
                         />
                       </InputGroup>
                     </Col>
-                    {/* <Col md="12" className={"form-group " + internationalCodeClass}>
-                        <label htmlFor="internationalCode">
-                          {t("International Code")}
-                        </label>
+                    {registerExtraFields && registerExtraFields.map((item) => {
+                      if (item?.name == 'internationalCode') {
+                        return <Col md="12" className={"form-group " + internationalCodeClass}>
+                          <label htmlFor="internationalCode">
+                            {t("International Code")}
+                          </label>
 
-                        <InputGroup className="mb-3">
-                          <FormInput
-                            className={"iuygfghuji "}
-                            placeholder={t("xxxxxxxxxx")}
-                            type="number"
-                            value={internationalCode}
-                            id="internationalCode"
-                            dir="ltr"
-                            onChange={(e) => {
-                              // console.log(checkCodeMeli(e.target.value));
-                              this.setState({
-                                internationalCode: e.target.value,
-                                internationalCodeClass: checkCodeMeli(e.target.value)
-                              });
-                            }}
-                          />
-                        </InputGroup>
-                      </Col> */}
+                          <InputGroup className="mb-3">
+                            <FormInput
+                              className={"iuygfghuji ltr"}
+                              placeholder={t("xxxxxxxxxx")}
+                              type="number"
+                              value={internationalCode}
+                              id="internationalCode"
+                              dir="ltr"
+                              onChange={(e) => {
+                                // console.log(checkCodeMeli(e.target.value));
+                                let p = extraFields;
+                                p[item?.name] = e.target.value;
+                                this.setState({
+                                  internationalCode: e.target.value,
+                                  internationalCodeClass: checkCodeMeli(e.target.value),
+                                  extraFields: {...p}
+                                });
+                              }}
+                            />
+                          </InputGroup>
+                        </Col>
+                      } else
+                        return <Col md="12" className="form-group">
+                          <label htmlFor="ollastname">{item?.label}</label>
+
+                          <InputGroup className="mb-3">
+                            <FormInput
+                              placeholder={item?.label}
+                              type="text"
+                              value={extraFields[item?.name]}
+                              id="ollastname"
+                              dir="rtl"
+                              onChange={(e) => {
+                                let p = extraFields;
+                                p[item?.name] = e.target.value;
+                                this.setState({extraFields: {...p}})
+                              }}
+                            />
+                          </InputGroup>
+                        </Col>
+                    })}
+
 
                     {passwordAuthentication && <Col md="12" className="form-group">
                       <label htmlFor="oiuytpaswword">
@@ -795,7 +866,7 @@ class LoginForm extends Component {
                           id="oiuytpaswword"
                           dir="ltr"
                           onChange={(e) =>
-                            this.setState({ password: e.target.value })
+                            this.setState({password: e.target.value})
                           }
                         />
                       </InputGroup>
@@ -848,8 +919,8 @@ class LoginForm extends Component {
                         </div>
                         <div className={'flex-item ltr'}>
                           {'+' +
-                            this.state.countryCode +
-                            this.state.thePhoneNumber}
+                          this.state.countryCode +
+                          this.state.thePhoneNumber}
                         </div>
                       </div>
                       <label htmlFor="oiuytgpaswword">
@@ -863,7 +934,7 @@ class LoginForm extends Component {
                           id="oiuytgpaswword"
                           dir="ltr"
                           onChange={(e) =>
-                            this.setState({ password: e.target.value })
+                            this.setState({password: e.target.value})
                           }
                         />
                       </InputGroup>

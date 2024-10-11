@@ -23,6 +23,8 @@ export default () => ({
   'you have used this discount once!':
     'شما قبلا از این کد تخفیف یکبار استفاده کرده اید!',
   Guaranteecards: 'کارت گارانتی',
+  'fill internationalCode!': 'لطفا کدملی را تکمیل کنید!',
+  'fill every thing!': 'لطفا همه فیلد ها را تکمیل کنید!',
   Admin: 'کاربران',
   Settings: 'تنظیمات',
   Page: 'صفحه ها',
