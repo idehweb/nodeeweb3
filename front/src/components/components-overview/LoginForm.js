@@ -535,7 +535,7 @@ class LoginForm extends Component {
       return <Navigate to="/profile" />;
     }
     return (
-      <ListGroup flush>
+      <ListGroup className={'login-register-form-inside'} flush>
         {isDisplay && (
           <ListGroupItem className="p-3">
             <Row>

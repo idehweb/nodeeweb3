@@ -27,7 +27,7 @@ export default function Login() {
         />
       </Row>
 
-      <div className="w-100">
+      <div className="w-100 login-register-form-wrapper">
         <Col lg="4" className="mx-auto mb-4">
           <Card>
             <LoginForm

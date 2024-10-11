@@ -20,18 +20,18 @@
 // window.THEME_URL='https://gomrok24.com/theme';
 
 //remote development
+//
+// window.BASE_URL = 'https://mahsaaz.idehweb.ir';
+// window.ADMIN_URL = 'https://mahsaaz.idehweb.ir';
+// window.ADMIN_ROUTE = 'https://mahsaaz.idehweb.ir/admin';
+// window.SHOP_URL = 'https://mahsaaz.idehweb.ir/';
+// window.THEME_URL = 'https://mahsaaz.idehweb.ir/theme';
 
-window.BASE_URL = 'https://mahsaaz.idehweb.ir';
-window.ADMIN_URL = 'https://mahsaaz.idehweb.ir';
-window.ADMIN_ROUTE = 'https://mahsaaz.idehweb.ir/admin';
-window.SHOP_URL = 'https://mahsaaz.idehweb.ir/';
-window.THEME_URL = 'https://mahsaaz.idehweb.ir/theme';
-
-// window.BASE_URL = 'https://spinger.shop';
-// window.ADMIN_URL = 'https://spinger.shop';
-// window.ADMIN_ROUTE = 'https://spinger.shop/admin';
-// window.SHOP_URL = 'https://spinger.shop/';
-// window.THEME_URL = 'https://spinger.shop/theme';
+window.BASE_URL = 'https://spinger.shop';
+window.ADMIN_URL = 'https://spinger.shop';
+window.ADMIN_ROUTE = 'https://spinger.shop/admin';
+window.SHOP_URL = 'https://spinger.shop/';
+window.THEME_URL = 'https://spinger.shop/theme';
 
 
 // window.BASE_URL = 'https://spinger.shop';

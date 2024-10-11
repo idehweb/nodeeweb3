@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e40ee157-344c-45a6-9d21-5ecec48b1917" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/admin/src/components/SettingTabs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/public/site_setting/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/public/site_setting/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/assets/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/assets/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/i18n/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/i18n/fa.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/layout/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/layout/Menu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/resource/setting/settingsEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/resource/setting/settingsEdit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/public/site_setting/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/site_setting/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/assets/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/assets/styles/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/components-overview/ProductsSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/components-overview/ProductsSlider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/layout/MainHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/layout/MainHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/layouts/Default.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/layouts/Default.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/views/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/views/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/packages/server/src/routes/default/settings/model.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/server/src/routes/default/settings/model.mjs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,108 +25,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="1008" column="25" selection-start-line="1008" selection-start-column="25" selection-end-line="1008" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-                <element signature="e#204#4536#0" />
-                <element signature="e#4577#5606#0" />
-                <element signature="e#5652#14142#0" />
-                <element signature="e#14181#15089#0" />
-                <element signature="e#20975#21061#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/components/page-builder/Render/index.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="6" column="75" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductsSlider.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/ProductsSlider.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#61#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/.env">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="settingsEdit.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settingsEdit.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/src/resource/setting/settingsEdit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="222" column="62" selection-start-line="222" selection-start-column="62" selection-end-line="222" selection-end-column="62" />
+            <state relative-caret-position="289">
+              <caret line="284" lean-forward="true" selection-start-line="284" selection-end-line="284" />
               <folding>
-                <element signature="e#0#186#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/public/site_setting/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#0#44#0" expanded="true" />
+                <element signature="e#5593#7009#0" />
+                <element signature="e#4760#6108#0" />
+                <element signature="e#6952#7119#0" />
+                <element signature="e#7000#7395#0" />
+                <element signature="e#8417#8808#0" />
+                <element signature="e#8972#10100#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="global.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/assets/styles/global.css">
+        <entry file="file://$PROJECT_DIR$/admin/src/assets/global.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="3748" column="18" selection-start-line="3748" selection-start-column="18" selection-end-line="3748" selection-end-column="18" />
+            <state relative-caret-position="162">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainHeader.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/src/components/layout/MainHeader.js">
+      <file leaf-file-name="model.mjs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/model.mjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+            <state relative-caret-position="243">
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.tsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SettingTabs.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/components/SettingTabs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fa.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/src/i18n/fa.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="804" column="27" selection-start-line="804" selection-start-column="27" selection-end-line="804" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Menu.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/layout/Menu.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="394" column="8" selection-start-line="394" selection-start-column="8" selection-end-line="394" selection-end-column="8" />
+            <state relative-caret-position="220">
+              <caret line="448" column="36" lean-forward="true" selection-start-line="448" selection-start-column="36" selection-end-line="448" selection-end-column="36" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/public/site_setting/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -138,26 +102,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loadProductCategories</find>
-      <find>alignItems</find>
-      <find>mrgamestore.com</find>
-      <find>setStyles</find>
-      <find>MyOrders</find>
-      <find>about-us</find>
-      <find>settings:</find>
-      <find>spinger.shop</find>
-      <find>thepho</find>
-      <find>captcha</find>
-      <find>Settinf</find>
-      <find>activate</find>
-      <find>activateCustomer...</find>
-      <find>setPassword</find>
-      <find>shallWeSetPass</find>
-      <find>**********</find>
-      <find>passwordAuthentication</find>
-      <find>themeData</find>
-      <find>password</find>
-      <find>savePasswordAndData</find>
       <find>iuygfghuji</find>
       <find>your-phone-number</find>
       <find>iuygfghuji</find>
@@ -166,8 +110,28 @@
       <find>setPassw</find>
       <find>SWIPERWrapper</find>
       <find>ProductsSlider</find>
+      <find>acc</find>
       <find>iran.gameboss</find>
+      <find>translate</find>
+      <find>useSelector</find>
+      <find>Tabs</find>
+      <find>MenuItem</find>
+      <find>displayedFilters</find>
+      <find>settings:</find>
+      <find>settings</find>
+      <find>payment</find>
+      <find>paymentActive</find>
+      <find>filterValues</find>
+      <find>tab</find>
+      <find>cont</find>
+      <find>returnThisRouteRules</find>
+      <find>put</find>
+      <find>setting</find>
+      <find>order</find>
       <find>main-header</find>
+      <find>SelectInput</find>
+      <find>OrderTabs</find>
+      <find>siteActive</find>
     </findStrings>
     <replaceStrings>
       <replace>http://localhost:3002</replace>
@@ -175,7 +139,6 @@
       <replace>anilaraz.ir</replace>
       <replace>https://aranonline.shop/</replace>
       <replace>gameboss.shop</replace>
-      <replace>t</replace>
       <replace>accounting</replace>
       <replace>aranonline.shop</replace>
       <replace>mrgamestore.com</replace>
@@ -183,14 +146,17 @@
       <replace>spinger.shop</replace>
       <replace>iran.gameboss.shop</replace>
       <replace>spinger</replace>
+      <replace>settings</replace>
+      <replace>SettingTabs</replace>
+      <replace>t</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/admin/src</dir>
       <dir>$PROJECT_DIR$/admin/src/resource/accounting</dir>
       <dir>$PROJECT_DIR$/server/packages/shop</dir>
       <dir>$PROJECT_DIR$/server/packages</dir>
       <dir>$PROJECT_DIR$/front/src/components/page-builder</dir>
       <dir>$PROJECT_DIR$/front/src</dir>
+      <dir>$PROJECT_DIR$/admin/src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -199,12 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="&lt;af3c178b-a2c1-47d1-a3b3-6902f6efb671&gt;/root/mongo.sh" />
-        <option value="&lt;af3c178b-a2c1-47d1-a3b3-6902f6efb671&gt;/home/gameboss/domains/gameboss.shop/public_html/server/.env.local" />
-        <option value="$PROJECT_DIR$/server/plugins/zarehbin-api/index.js" />
-        <option value="$PROJECT_DIR$/server/plugins/zarinpal-gateway/index.js" />
-        <option value="$PROJECT_DIR$/server/plugins/zibal-gateway/index.js" />
-        <option value="$PROJECT_DIR$/server/plugins/backup-gateway/sftp.js" />
         <option value="$PROJECT_DIR$/server/plugins/backup-gateway/index.js" />
         <option value="$PROJECT_DIR$/server/plugins/telegram-gateway/index.js" />
         <option value="&lt;af3c178b-a2c1-47d1-a3b3-6902f6efb671&gt;/home/gameboss/domains/gameboss.shop/public_html/server/plugins/telegram-gateway/index.js" />
@@ -239,17 +199,23 @@
         <option value="$PROJECT_DIR$/server/packages/shop/product/controller.mjs" />
         <option value="$PROJECT_DIR$/server/.env.local" />
         <option value="$PROJECT_DIR$/front/src/functions/index.js" />
-        <option value="$PROJECT_DIR$/admin/src/i18n/fa.js" />
-        <option value="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" />
         <option value="$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs" />
         <option value="$PROJECT_DIR$/front/src/components/page-builder/Render/index.tsx" />
         <option value="$PROJECT_DIR$/front/src/components/components-overview/ProductsSlider.js" />
-        <option value="$PROJECT_DIR$/admin/src/resource/setting/settingsEdit.js" />
-        <option value="$PROJECT_DIR$/front/public/site_setting/config.js" />
-        <option value="$PROJECT_DIR$/admin/public/site_setting/config.js" />
-        <option value="$PROJECT_DIR$/front/src/assets/styles/global.css" />
         <option value="$PROJECT_DIR$/front/src/components/layout/MainHeader.js" />
+        <option value="$PROJECT_DIR$/server/entity/index.mjs" />
+        <option value="$PROJECT_DIR$/admin/public/site_setting/config.js" />
+        <option value="$PROJECT_DIR$/front/public/site_setting/config.js" />
+        <option value="$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js" />
+        <option value="$PROJECT_DIR$/front/src/assets/styles/global.css" />
+        <option value="$PROJECT_DIR$/front/src/views/Login.tsx" />
+        <option value="$PROJECT_DIR$/server/packages/server/src/routes/default/settings/model.mjs" />
+        <option value="$PROJECT_DIR$/admin/src/components/index.js" />
+        <option value="$PROJECT_DIR$/admin/src/components/SettingTabs.js" />
+        <option value="$PROJECT_DIR$/admin/src/assets/global.css" />
         <option value="$PROJECT_DIR$/admin/src/layout/Menu.tsx" />
+        <option value="$PROJECT_DIR$/admin/src/resource/setting/settingsEdit.js" />
+        <option value="$PROJECT_DIR$/admin/src/i18n/fa.js" />
       </list>
     </option>
   </component>
@@ -302,19 +268,6 @@
               <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="site_setting" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -340,6 +293,19 @@
               <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
               <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="site_setting" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -356,6 +322,121 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="components-overview" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="language" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="language" type="462c0819:PsiDirectoryNode" />
+              <item name="fa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -379,11 +460,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/admin/src/components" />
       <recent name="$PROJECT_DIR$/front/src/components" />
       <recent name="$PROJECT_DIR$/front/src" />
       <recent name="$PROJECT_DIR$/front/src/components/page-builder" />
       <recent name="$PROJECT_DIR$/server/packages" />
-      <recent name="$PROJECT_DIR$/admin/src/resource/accounting" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -432,12 +513,12 @@
       <workItem from="1728325267572" duration="6597000" />
       <workItem from="1728334990142" duration="3274000" />
       <workItem from="1728380817367" duration="851000" />
-      <workItem from="1728384112311" duration="10789000" />
+      <workItem from="1728384112311" duration="14868000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115196000" />
+    <option name="totallyTimeSpent" value="119275000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -448,7 +529,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.43382353" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.49054623" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32967034" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32983193" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31929183" />
@@ -519,89 +600,23 @@
           <line>265</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/controller.mjs</url>
+          <line>91</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>remoteDeploymentFS://&lt;d5a8ca77-7538-4e3d-b090-5ca613197c7e&gt;/home/admin/domains/gameboss.shop/public_html/core/server/src/routes/default/settings/controller.mjs</url>
+          <line>163</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="9" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/plugins/telegram-gateway/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="270" column="17" lean-forward="true" selection-start-line="270" selection-start-column="17" selection-end-line="270" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/index.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="108" column="1" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/utils.mjsutils.mjs" />
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/utils.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/order/utils.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/order/controller.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="1841" column="20" selection-start-line="1841" selection-start-column="20" selection-end-line="1841" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/order/index.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/order/model.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/order/routes.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/model.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/product/index.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="232" column="1" selection-start-line="232" selection-start-column="1" selection-end-line="232" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/shop/product/model.mjs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
@@ -795,42 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/i18n/fa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="795" column="47" lean-forward="true" selection-start-line="795" selection-start-column="47" selection-end-line="795" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/controller.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="88" selection-start-line="88" selection-end-line="89" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/model.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="417" column="26" selection-start-line="417" selection-start-column="26" selection-end-line="417" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="e#13309#16390#0" />
-            <element signature="e#16450#20519#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/customer/controller.mjs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -866,40 +845,6 @@
     <entry file="file://$PROJECT_DIR$/admin/.env">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/resource/setting/settingsEdit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="222" column="62" selection-start-line="222" selection-start-column="62" selection-end-line="222" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#186#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/public/site_setting/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/public/site_setting/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/assets/styles/global.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="3748" column="18" selection-start-line="3748" selection-start-column="18" selection-end-line="3748" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/components/layout/MainHeader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -907,12 +852,185 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/layout/Menu.tsx">
+    <entry file="file://$PROJECT_DIR$/server/entity/index.mjs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/public/site_setting/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="394" column="8" selection-start-line="394" selection-start-column="8" selection-end-line="394" selection-end-column="8" />
+        <state relative-caret-position="189">
+          <caret line="7" selection-start-line="7" selection-start-column="3" selection-end-line="11" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/public/site_setting/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="29" selection-start-line="29" selection-end-line="33" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="537" column="17" selection-start-line="537" selection-start-column="17" selection-end-line="537" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/views/Login.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/assets/styles/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="3179" column="1" lean-forward="true" selection-start-line="3179" selection-start-column="1" selection-end-line="3179" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/public/site_setting/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/resource/order/orderEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1465">
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/resource/order/List.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="28" selection-start-line="28" selection-end-line="29" />
+          <folding>
+            <element signature="e#6810#9404#0" />
+            <element signature="e#9823#9997#0" />
+            <element signature="e#10115#10260#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/language/fa/translation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="26" column="9" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/controller.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="88" selection-start-line="88" selection-end-line="89" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/components/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/server/src/controllers/index.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="270" column="13" lean-forward="true" selection-start-line="270" selection-start-column="13" selection-end-line="270" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#205#3877#0" />
+            <element signature="e#3923#4712#0" />
+            <element signature="e#4765#5963#0" />
+            <element signature="e#6013#7529#0" />
+            <element signature="e#7588#8402#0" />
+            <element signature="e#8456#9009#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/index.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2162">
+          <caret line="106" column="20" selection-start-line="106" selection-start-column="4" selection-end-line="106" selection-end-column="20" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/routes.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2532">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/server/src/routes/default/settings/model.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/assets/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/components/SettingTabs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/layout/Menu.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="448" column="36" lean-forward="true" selection-start-line="448" selection-start-column="36" selection-end-line="448" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/i18n/fa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="804" column="27" selection-start-line="804" selection-start-column="27" selection-end-line="804" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/resource/setting/settingsEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="284" lean-forward="true" selection-start-line="284" selection-end-line="284" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#5593#7009#0" />
+            <element signature="e#4760#6108#0" />
+            <element signature="e#6952#7119#0" />
+            <element signature="e#7000#7395#0" />
+            <element signature="e#8417#8808#0" />
+            <element signature="e#8972#10100#0" />
           </folding>
         </state>
       </provider>

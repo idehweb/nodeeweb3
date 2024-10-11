@@ -42,6 +42,7 @@ export { default as PaymentStatusField } from './PaymentStatusField';
 export { default as OrderPaymentStatus } from './OrderPaymentStatus';
 export { default as TransactionPaymentStatusField } from './TransactionPaymentStatusField';
 export { default as OrderStatus } from './OrderStatus';
+export { default as SettingTabs } from './SettingTabs';
 export { default as OrderTabs } from './OrderTabs';
 export { default as ProductType } from './product/ProductType';
 export { default as AttrType } from './AttrType';

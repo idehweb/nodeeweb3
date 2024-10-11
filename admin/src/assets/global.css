@@ -3,6 +3,9 @@ body {
   margin: 0;
   padding: 0;
 }
+.RaSimpleFormIterator-form{
+  width: 100%;
+}
 #theprint table{
   display: none;
 }
@@ -10,7 +13,9 @@ body {
     max-width: 100vw;
 
 }
-
+.setting-in{
+  width: 100%;
+}
 .RaSidebar-docked{
 
 }

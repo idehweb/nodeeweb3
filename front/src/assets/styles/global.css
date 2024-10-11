@@ -3178,6 +3178,9 @@ td img {
   font-weight: bold;
   font-size: 50px;
 }
+.login-register-form-wrapper{
+  margin-bottom: 50px;
+}
 .navbar .navbar {
   list-style: none;
 }

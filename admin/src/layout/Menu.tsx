@@ -428,24 +428,24 @@ export default function Menu({ onMenuClick, dense = false }) {
           leftIcon={<RSList.Settings.icon />}
           dense={dense}
         />
-        <MenuItemLink
-          to={{ pathname: '/task' }}
-          primaryText={translate('pos.menu.tasks')}
-          leftIcon={<RSList.Task.icon />}
-          dense={dense}
-        />
-        <MenuItemLink
-          to={{ pathname: '/note' }}
-          primaryText={translate('pos.menu.notes')}
-          leftIcon={<RSList.Note.icon />}
-          dense={dense}
-        />
-        <MenuItemLink
-          to={{ pathname: '/automation' }}
-          primaryText={translate('pos.menu.automation')}
-          leftIcon={<RSList.Automation.icon />}
-          dense={dense}
-        />
+        {/*<MenuItemLink*/}
+          {/*to={{ pathname: '/task' }}*/}
+          {/*primaryText={translate('pos.menu.tasks')}*/}
+          {/*leftIcon={<RSList.Task.icon />}*/}
+          {/*dense={dense}*/}
+        {/*/>*/}
+        {/*<MenuItemLink*/}
+          {/*to={{ pathname: '/note' }}*/}
+          {/*primaryText={translate('pos.menu.notes')}*/}
+          {/*leftIcon={<RSList.Note.icon />}*/}
+          {/*dense={dense}*/}
+        {/*/>*/}
+        {/*<MenuItemLink*/}
+          {/*to={{ pathname: '/automation' }}*/}
+          {/*primaryText={translate('pos.menu.automation')}*/}
+          {/*leftIcon={<RSList.Automation.icon />}*/}
+          {/*dense={dense}*/}
+        {/*/>*/}
         {ModelList.map((i, idx) => {
           const modelName = i.toLowerCase();
           if (!ExcludeList.includes(modelName))
