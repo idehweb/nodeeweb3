@@ -201,7 +201,7 @@ let global = {
             let Template = mongoose.model('Template');
             let Page = mongoose.model('Page');
             Settings.findOne({}, 'currency tax taxAmount passwordAuthentication registerExtraFields', function (err, setting) {
-                // console.log('setting', setting)
+                console.log('setting', setting)
                 Template.findOne({type: 'header'}, function (err, header) {
                     Template.findOne({type: 'footer'}, function (err, footer) {
                         let routes = [];
