@@ -21,12 +21,12 @@ import {
   authCustomerForgotPass,
   authCustomerWithPassword,
   CameFromPost,
+  checkCodeMeli,
   goToProduct,
   Logout,
   register,
   savePost,
-  setPassWithPhoneNumber,
-  checkCodeMeli
+  setPassWithPhoneNumber
 } from '#c/functions';
 import store from '#c/functions/store';
 import {fNum} from '#c/functions/utils';
@@ -266,7 +266,10 @@ class LoginForm extends Component {
       address,
     } = this.state;
     const {t} = this.props;
-
+    let addres = address;
+    if (!addres) {
+      addres = []
+    }
     let fd = countryCode || '98';
     console.log(firstName, !firstName);
     console.log(lastName, !lastName);
@@ -300,11 +303,24 @@ class LoginForm extends Component {
         return;
       }
     if (registerExtraFields) {
-      console.log(registerExtraFields.length,registerExtraFields)
+      console.log(registerExtraFields.length, registerExtraFields)
       // let exk=Object.keys(extraFields)
       for (let i = 0; i <= registerExtraFields?.length; i++) {
         let label = registerExtraFields[i]?.name;
         let require = registerExtraFields[i]?.require;
+        if (require && label == 'address') {
+          let x = {
+            StreetAddress: extraFields[label]
+          }
+          if (extraFields['PostalCode'])
+            x['PostalCode'] = extraFields['PostalCode'];
+          if (extraFields['postalCode'])
+            x['PostalCode'] = extraFields['postalCode'];
+          if (extraFields['postalcode'])
+            x['postalcode'] = extraFields['postalcode'];
+          addres.push(x);
+
+        }
         if (require && label == 'internationalCode') {
           if (!extraFields[label] || extraFields[label] == undefined || extraFields[label] == "") {
             console.log("internationalCode", extraFields[label], !extraFields[label]);
@@ -334,7 +350,7 @@ class LoginForm extends Component {
             }
           }
         }
-        if (require && label !== 'internationalCode') {
+        if (require && label !== 'internationalCode' && label !== 'address') {
           if (!extraFields[label] || extraFields[label] == undefined || extraFields[label] == "") {
             console.log("every thing", extraFields[label], !extraFields[label]);
 
@@ -346,7 +362,9 @@ class LoginForm extends Component {
         }
         console.log(extraFields[label])
       }
+
     }
+
     // return;
 
 
@@ -372,11 +390,11 @@ class LoginForm extends Component {
       });
       return;
     }
-    console.log('setPassWithPhoneNumber...',{
+    console.log('setPassWithPhoneNumber...', {
       phoneNumber: fd + phoneNumber,
       firstName,
       lastName,
-      address,
+      address:addres,
       email,
       data: extraFields,
       internationalCode,
@@ -387,10 +405,10 @@ class LoginForm extends Component {
       phoneNumber: fd + phoneNumber,
       firstName,
       lastName,
-      address,
+      address:addres,
       email,
       data: extraFields,
-      // internationalCode,
+      internationalCode,
       password,
     }).then((res) => {
       console.log(

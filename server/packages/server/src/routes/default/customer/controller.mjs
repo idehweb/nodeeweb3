@@ -1026,6 +1026,10 @@ const self = {
             if (req.body.internationalCode) {
                 obj['internationalCode'] = req.body.internationalCode;
             }
+            if (req.body.address) {
+                if(isArray(req.body.address))
+                    obj['address'] = req.body.address;
+            }
             console.log('obj', obj);
             Customer.findOneAndUpdate(
                 {
@@ -1083,6 +1087,9 @@ const self = {
             if (req.body.email) {
                 obj['email'] = req.body.email;
             }
+            if (req.body.internationalCode) {
+                obj['internationalCode'] = req.body.internationalCode;
+            }
             if (req.body.nickname) {
                 obj['nickname'] = req.body.nickname;
             } else {
@@ -1095,6 +1102,10 @@ const self = {
             }
             if (req.body.lastname) {
                 obj['lastName'] = req.body.lastName;
+            }
+            if (req.body.address) {
+                if(isArray(req.body.address))
+                obj['address'] = req.body.address;
             }
             let p_number = req.body.phoneNumber.toString();
             if (p_number) {
