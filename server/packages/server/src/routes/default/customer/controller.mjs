@@ -1026,6 +1026,9 @@ const self = {
             if (req.body.internationalCode) {
                 obj['internationalCode'] = req.body.internationalCode;
             }
+            if (req.body.data) {
+                obj['internationalCode'] = req.body.data;
+            }
             if (req.body.address) {
                 if(req.body.address instanceof Array)
                     obj['address'] = req.body.address;
@@ -1102,6 +1105,9 @@ const self = {
             }
             if (req.body.lastname) {
                 obj['lastName'] = req.body.lastName;
+            }
+            if (req.body.data) {
+                obj['data'] = req.body.data;
             }
             if (req.body.address) {
                 if(req.body.address instanceof Array)
