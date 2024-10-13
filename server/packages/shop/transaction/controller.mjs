@@ -345,6 +345,7 @@ console.log("buy=>...")
 
                             }).catch(e => {
                                 // req.publishToTelegram('error creating transaction! please check...' + "\nfor order:" + order.orderNumber + "\namount:" + order.amount)
+                                console.log("error at 348  at transaction controller")
 
                                 res.json({e, requ: theReq})
 
@@ -524,7 +525,10 @@ console.log("buy=>...")
                                 });
                             });
 
-                        }).catch(e => res.json({e, requ: theReq}))
+                        }).catch(e => {
+                            console.log("error at 529  at transaction controller")
+
+                            res.json({e, requ: theReq})})
 
 
                     });
