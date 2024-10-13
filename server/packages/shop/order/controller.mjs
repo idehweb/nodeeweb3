@@ -1272,7 +1272,10 @@ let self = ({
                                 });
                             });
 
-                        }).catch(e => res.json({e, requ: theReq}))
+                        }).catch(e => {
+                            console.log("error at 1276  at order controller")
+                            res.json({e, requ: theReq})
+                        })
 
 
                     });
