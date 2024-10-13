@@ -70,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/packages/shop/order/controller.mjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="601" column="81" lean-forward="true" selection-start-line="601" selection-start-column="81" selection-end-line="601" selection-end-column="81" />
+            <state relative-caret-position="316">
+              <caret line="1275" selection-start-line="1275" selection-end-line="1276" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
                 <element signature="e#272#1691#0" />
@@ -87,7 +87,6 @@
                 <element signature="e#46230#49009#0" />
                 <element signature="e#49053#50364#0" />
                 <element signature="e#50406#51110#0" />
-                <element signature="e#51162#59566#0" />
                 <element signature="e#59615#64335#0" />
                 <element signature="e#64379#66362#0" />
                 <element signature="e#66415#67261#0" />
@@ -111,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="131" column="27" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="27" />
+            <state relative-caret-position="262">
+              <caret line="531" lean-forward="true" selection-start-line="531" selection-end-line="531" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
                 <element signature="e#158#1550#0" />
@@ -158,7 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setPassWithPhoneNumber</find>
       <find>registerExtraFields</find>
       <find>isA</find>
       <find>billingAddress</find>
@@ -188,6 +186,7 @@
       <find>Order.create</find>
       <find>send</find>
       <find>sendToTelegram</find>
+      <find>requ:</find>
     </findStrings>
     <replaceStrings>
       <replace>http://localhost:3002</replace>
@@ -270,8 +269,8 @@
         <option value="$PROJECT_DIR$/server/packages/shop/order/model.mjs" />
         <option value="$PROJECT_DIR$/front/src/views/Checkout.js" />
         <option value="$PROJECT_DIR$/server/plugins/telegram-gateway/index.js" />
-        <option value="$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs" />
         <option value="$PROJECT_DIR$/server/packages/shop/order/controller.mjs" />
+        <option value="$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs" />
       </list>
     </option>
   </component>
@@ -515,12 +514,12 @@
       <workItem from="1728325267572" duration="6597000" />
       <workItem from="1728334990142" duration="3274000" />
       <workItem from="1728380817367" duration="851000" />
-      <workItem from="1728384112311" duration="37813000" />
+      <workItem from="1728384112311" duration="38084000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142220000" />
+    <option name="totallyTimeSpent" value="142491000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -1034,23 +1033,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="131" column="27" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-            <element signature="e#158#1550#0" />
-            <element signature="e#1600#2868#0" />
-            <element signature="e#2916#3641#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/shop/order/controller.mjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="601" column="81" lean-forward="true" selection-start-line="601" selection-start-column="81" selection-end-line="601" selection-end-column="81" />
+        <state relative-caret-position="316">
+          <caret line="1275" selection-start-line="1275" selection-end-line="1276" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
             <element signature="e#272#1691#0" />
@@ -1063,11 +1049,23 @@
             <element signature="e#46230#49009#0" />
             <element signature="e#49053#50364#0" />
             <element signature="e#50406#51110#0" />
-            <element signature="e#51162#59566#0" />
             <element signature="e#59615#64335#0" />
             <element signature="e#64379#66362#0" />
             <element signature="e#66415#67261#0" />
             <element signature="e#67308#79758#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="531" lean-forward="true" selection-start-line="531" selection-end-line="531" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#158#1550#0" />
+            <element signature="e#1600#2868#0" />
+            <element signature="e#2916#3641#0" />
           </folding>
         </state>
       </provider>

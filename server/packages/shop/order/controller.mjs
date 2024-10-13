@@ -598,7 +598,7 @@ let self = ({
                                                     }
                                                     console.log('creating order2 successfully:', order);
                                                     change_products_quantities();
-                                                    // req.fireEvent('create-order-by-customer', order);
+                                                    req.fireEvent('create-order-by-customer', order);
                                                     res.json({success: true, order: order});
 
                                                 });
@@ -627,7 +627,7 @@ let self = ({
                                                 // }
                                                 console.log('creating order1 successfully:', order);
                                                 change_products_quantities();
-                                                // req.fireEvent('create-order-by-customer', order);
+                                                req.fireEvent('create-order-by-customer', order);
 
                                                 res.json({success: true, order: order});
                                             }
