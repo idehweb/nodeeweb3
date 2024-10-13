@@ -11,19 +11,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="global.mjs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/packages/server/src/global.mjs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="251" column="43" selection-start-line="251" selection-start-column="43" selection-end-line="251" selection-end-column="43" />
-              <folding>
-                <element signature="e#4839#6242#0" />
-                <element signature="e#6377#6653#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LoginForm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/LoginForm.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -83,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/packages/shop/order/controller.mjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="604" column="60" selection-start-line="604" selection-start-column="60" selection-end-line="604" selection-end-column="60" />
+            <state relative-caret-position="205">
+              <caret line="601" column="81" lean-forward="true" selection-start-line="601" selection-start-column="81" selection-end-line="601" selection-end-column="81" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
                 <element signature="e#272#1691#0" />
@@ -110,15 +97,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/plugins/telegram-gateway/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="293" lean-forward="true" selection-start-line="293" selection-end-line="293" />
+            <state relative-caret-position="351">
+              <caret line="436" column="38" selection-start-line="436" selection-start-column="24" selection-end-line="436" selection-end-column="38" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#216#9820#0" />
                 <element signature="e#9897#10721#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="131" column="27" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+                <element signature="e#158#1550#0" />
+                <element signature="e#1600#2868#0" />
+                <element signature="e#2916#3641#0" />
               </folding>
             </state>
           </provider>
@@ -156,8 +158,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>checkCodeMeli</find>
-      <find>addre</find>
       <find>setPassWithPhoneNumber</find>
       <find>registerExtraFields</find>
       <find>isA</find>
@@ -186,6 +186,8 @@
       <find>extraFields</find>
       <find>placeOrder</find>
       <find>Order.create</find>
+      <find>send</find>
+      <find>sendToTelegram</find>
     </findStrings>
     <replaceStrings>
       <replace>http://localhost:3002</replace>
@@ -219,7 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/front/src/components/page-builder/Render/components/Button.tsx" />
         <option value="$PROJECT_DIR$/front/src/components/page-builder/PageBuilder.js" />
         <option value="$PROJECT_DIR$/front/src/components/page-builder/advertises/index.js" />
         <option value="$PROJECT_DIR$/front/src/functions/utils.js" />
@@ -268,8 +269,9 @@
         <option value="$PROJECT_DIR$/front/src/components/checkout/LastPart.js" />
         <option value="$PROJECT_DIR$/server/packages/shop/order/model.mjs" />
         <option value="$PROJECT_DIR$/front/src/views/Checkout.js" />
-        <option value="$PROJECT_DIR$/server/packages/shop/order/controller.mjs" />
         <option value="$PROJECT_DIR$/server/plugins/telegram-gateway/index.js" />
+        <option value="$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs" />
+        <option value="$PROJECT_DIR$/server/packages/shop/order/controller.mjs" />
       </list>
     </option>
   </component>
@@ -421,6 +423,14 @@
               <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
+              <item name="transaction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodeeweb3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodeeweb3" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="plugins" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -505,12 +515,12 @@
       <workItem from="1728325267572" duration="6597000" />
       <workItem from="1728334990142" duration="3274000" />
       <workItem from="1728380817367" duration="851000" />
-      <workItem from="1728384112311" duration="37554000" />
+      <workItem from="1728384112311" duration="37813000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141961000" />
+    <option name="totallyTimeSpent" value="142220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -608,13 +618,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/.env.local">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/components/page-builder/Render/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
@@ -1019,10 +1022,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/plugins/telegram-gateway/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="436" column="38" selection-start-line="436" selection-start-column="24" selection-end-line="436" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#216#9820#0" />
+            <element signature="e#9897#10721#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="131" column="27" selection-start-line="131" selection-start-column="27" selection-end-line="131" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#158#1550#0" />
+            <element signature="e#1600#2868#0" />
+            <element signature="e#2916#3641#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/shop/order/controller.mjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="604" column="60" selection-start-line="604" selection-start-column="60" selection-end-line="604" selection-end-column="60" />
+        <state relative-caret-position="205">
+          <caret line="601" column="81" lean-forward="true" selection-start-line="601" selection-start-column="81" selection-end-line="601" selection-end-column="81" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
             <element signature="e#272#1691#0" />
@@ -1040,18 +1068,6 @@
             <element signature="e#64379#66362#0" />
             <element signature="e#66415#67261#0" />
             <element signature="e#67308#79758#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/plugins/telegram-gateway/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="293" lean-forward="true" selection-start-line="293" selection-end-line="293" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#216#9820#0" />
-            <element signature="e#9897#10721#0" />
           </folding>
         </state>
       </provider>
