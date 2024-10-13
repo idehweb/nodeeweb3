@@ -222,9 +222,12 @@ export default (props) => {
 
     function publishToTelegram(req, telegramLink, telegramChatID, message) {
         console.log('publishToTelegram====>', message);
-        return
-
         return new Promise(function (resolve, reject) {
+            reject({
+                suc:false
+            });
+
+return
             console.log('telegramLink',telegramLink);
             let url = encodeURI(telegramLink);
             req.httpRequest({
@@ -253,6 +256,10 @@ export default (props) => {
 
     function sendToTelegram(req, status, params) {
         console.log('sendToTelegram...')
+        reject({
+            sssss:false
+        });
+
         return
         return new Promise(function (resolve, reject) {
             let Settings = req.mongoose.model('Settings');
