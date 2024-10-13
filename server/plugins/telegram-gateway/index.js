@@ -223,11 +223,11 @@ export default (props) => {
     function publishToTelegram(req, telegramLink, telegramChatID, message) {
         console.log('publishToTelegram====>', message);
         return new Promise(function (resolve, reject) {
-            reject({
-                suc:false
-            });
-
-return
+//             reject({
+//                 suc:false
+//             });
+//
+// return
             console.log('telegramLink',telegramLink);
             let url = encodeURI(telegramLink);
             req.httpRequest({
@@ -258,11 +258,11 @@ return
         console.log('sendToTelegram...')
 
         return new Promise(function (resolve, reject) {
-            reject({
-                sssss:false
-            });
-
-            return
+            // reject({
+            //     sssss:false
+            // });
+            //
+            // return
             let Settings = req.mongoose.model('Settings');
 
             Settings.findOne({}, 'plugins currency', function (err, setting) {

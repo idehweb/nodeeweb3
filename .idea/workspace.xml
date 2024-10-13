@@ -73,8 +73,8 @@
       <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/packages/shop/order/controller.mjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="1275" selection-start-line="1275" selection-end-line="1276" />
+            <state relative-caret-position="294">
+              <caret line="294" column="17" lean-forward="true" selection-start-line="294" selection-start-column="17" selection-end-line="294" selection-end-column="17" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
                 <element signature="e#272#1691#0" />
@@ -87,6 +87,7 @@
                 <element signature="e#46230#49009#0" />
                 <element signature="e#49053#50364#0" />
                 <element signature="e#50406#51110#0" />
+                <element signature="e#51162#59566#0" />
                 <element signature="e#59615#64335#0" />
                 <element signature="e#64379#66362#0" />
                 <element signature="e#66415#67261#0" />
@@ -113,13 +114,14 @@
       <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="531" lean-forward="true" selection-start-line="531" selection-end-line="531" />
+            <state relative-caret-position="2302">
+              <caret line="235" column="50" selection-start-line="235" selection-start-column="44" selection-end-line="235" selection-end-column="50" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
                 <element signature="e#158#1550#0" />
                 <element signature="e#1600#2868#0" />
                 <element signature="e#2916#3641#0" />
+                <element signature="e#12894#15807#0" />
               </folding>
             </state>
           </provider>
@@ -157,7 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>registerExtraFields</find>
       <find>isA</find>
       <find>billingAddress</find>
       <find>postalcode</find>
@@ -185,8 +186,9 @@
       <find>placeOrder</find>
       <find>Order.create</find>
       <find>send</find>
-      <find>sendToTelegram</find>
       <find>requ:</find>
+      <find>sendToTelegram</find>
+      <find>create-</find>
     </findStrings>
     <replaceStrings>
       <replace>http://localhost:3002</replace>
@@ -269,8 +271,8 @@
         <option value="$PROJECT_DIR$/server/packages/shop/order/model.mjs" />
         <option value="$PROJECT_DIR$/front/src/views/Checkout.js" />
         <option value="$PROJECT_DIR$/server/plugins/telegram-gateway/index.js" />
-        <option value="$PROJECT_DIR$/server/packages/shop/order/controller.mjs" />
         <option value="$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs" />
+        <option value="$PROJECT_DIR$/server/packages/shop/order/controller.mjs" />
       </list>
     </option>
   </component>
@@ -514,15 +516,16 @@
       <workItem from="1728325267572" duration="6597000" />
       <workItem from="1728334990142" duration="3274000" />
       <workItem from="1728380817367" duration="851000" />
-      <workItem from="1728384112311" duration="38084000" />
+      <workItem from="1728384112311" duration="38341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142491000" />
+    <option name="totallyTimeSpent" value="142748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -612,8 +615,14 @@
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs</url>
+          <line>343</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="14" />
+      <option name="time" value="15" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1035,8 +1044,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/shop/order/controller.mjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="1275" selection-start-line="1275" selection-end-line="1276" />
+        <state relative-caret-position="294">
+          <caret line="294" column="17" lean-forward="true" selection-start-line="294" selection-start-column="17" selection-end-line="294" selection-end-column="17" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
             <element signature="e#272#1691#0" />
@@ -1049,6 +1058,7 @@
             <element signature="e#46230#49009#0" />
             <element signature="e#49053#50364#0" />
             <element signature="e#50406#51110#0" />
+            <element signature="e#51162#59566#0" />
             <element signature="e#59615#64335#0" />
             <element signature="e#64379#66362#0" />
             <element signature="e#66415#67261#0" />
@@ -1059,13 +1069,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/shop/transaction/controller.mjs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="531" lean-forward="true" selection-start-line="531" selection-end-line="531" />
+        <state relative-caret-position="2302">
+          <caret line="235" column="50" selection-start-line="235" selection-start-column="44" selection-end-line="235" selection-end-column="50" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
             <element signature="e#158#1550#0" />
             <element signature="e#1600#2868#0" />
             <element signature="e#2916#3641#0" />
+            <element signature="e#12894#15807#0" />
           </folding>
         </state>
       </provider>
