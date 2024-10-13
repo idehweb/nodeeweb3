@@ -285,7 +285,7 @@ return
                     console.log('params', params)
 
                     onUpdateTransactionByCustomer = washString(onUpdateTransactionByCustomer, params);
-                    publishToTelegram(req, telegramLink, telegramChatID, onUpdateTransactionByCustomer)
+                    publishToTelegram(req, telegramLink, telegramChatID, onUpdateTransactionByCustomer).then(e=>console.log('e',e)).catch((d)=>console.log('d',d))
 
                 }
                 if (onCreateOrderByCustomer && status == 'create-order-by-customer') {
@@ -297,7 +297,7 @@ return
                     // onScheduleTask = washString(onScheduleTask, params);
                     //get count of order for today
                     getReport(req, onScheduleTask).then((message) => {
-                        publishToTelegram(req, telegramLink, telegramChatID, message)
+                        publishToTelegram(req, telegramLink, telegramChatID, message).then(e=>console.log('e',e)).catch((d)=>console.log('d',d))
 
                     }).catch((err) => {
                         console.log('err', err)
@@ -307,7 +307,7 @@ return
                 if (status == 'backup-completion') {
                     // onScheduleTask = washString(onScheduleTask, params);
 
-                    publishToTelegram(req, telegramLink, telegramChatID, onBackupComplete || 'back up completed')
+                    publishToTelegram(req, telegramLink, telegramChatID, onBackupComplete || 'back up completed').then(e=>console.log('e',e)).catch((d)=>console.log('d',d))
 
 
                 }
@@ -407,7 +407,7 @@ return
                     name: 'send order to telegram',
                     func: (req, res, next, params) => {
                         console.log('create-order-by-customer');
-                        sendToTelegram(req, 'create-order-by-customer', params)
+                        sendToTelegram(req, 'create-order-by-customer', params).then(e=>console.log('e',e)).catch((d)=>console.log('d',d))
                     }
                 })
 
@@ -415,7 +415,7 @@ return
                     event: 'update-transaction-by-customer',
                     name: 'send transaction to telegram',
                     func: (req, res, next, params) => {
-                        sendToTelegram(req, 'update-transaction-by-customer', params)
+                        sendToTelegram(req, 'update-transaction-by-customer', params).then(e=>console.log('e',e)).catch((d)=>console.log('d',d))
 
                     }
                 })
@@ -424,7 +424,7 @@ return
                     event: 'send-schedule-message-by-system',
                     name: 'send message to telegram',
                     func: (req, res, next, params) => {
-                        sendToTelegram(req, 'send-schedule-message-by-system', params)
+                        sendToTelegram(req, 'send-schedule-message-by-system', params).then(e=>console.log('e',e)).catch((d)=>console.log('d',d))
 
                     }
                 })
@@ -434,7 +434,7 @@ return
                     name: 'send message to telegram after backup',
                     func: (req, res, next, params) => {
                         // console.log('back up complete',req)
-                        sendToTelegram(req, 'backup-completion', params)
+                        sendToTelegram(req, 'backup-completion', params).then(e=>console.log('e',e)).catch((d)=>console.log('d',d))
 
                     }
                 })
