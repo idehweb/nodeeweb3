@@ -458,6 +458,7 @@ let self = ({
                                 "shipAmount": req.body.shipAmount || 0,
                                 "tax": setting.tax || false,
                                 "taxAmount": req.body.taxAmount || 0,
+                                "extraField": req.body.extraField || {},
                                 "productsAfterThisOrder": tempProducts
                             }
 

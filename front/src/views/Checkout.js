@@ -86,11 +86,14 @@ function Checkout(props) {
     // setState(params);
   };
 
-  const placeOrder = (theprice = 0) => {
+  const placeOrder = (theprice = 0,d={}) => {
     // let {address, hover, deliveryPrice, hoverD, order_id, card, setting, user, sum, paymentMethod, return_url, amount,  discountCode, discount} = state;
     // const { t } = props
     // let c;
     // console.log("placeOrder...", state);
+    console.log("d",d)
+    console.log("theprice",theprice)
+    // return;
     console.log('placeOrder...', store.getState().store.order_id);
     // return;
     sum = 0;
@@ -108,6 +111,7 @@ function Checkout(props) {
       discountCode: discountCode,
       discount: discount,
       customer: user._id,
+      extraFields:d
     };
     if (order_id) {
       order['order_id'] = order_id;
@@ -284,8 +288,8 @@ function Checkout(props) {
           <Col lg="8">
             <LastPart
               onPrev={() => goNext('3')}
-              onPlaceOrder={(e) => {
-                placeOrder(e);
+              onPlaceOrder={(e,d) => {
+                placeOrder(e,d);
               }}
               theParams={{
                 sum,

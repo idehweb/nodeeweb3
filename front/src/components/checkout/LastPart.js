@@ -4,6 +4,11 @@ import {
   ButtonGroup,
   Card,
   CardBody,
+  FormInput,
+  FormSelect,
+
+  InputGroup,
+  InputGroupAddon,
   CardFooter,
   CardHeader,
   Col,
@@ -65,6 +70,7 @@ const LastPart = (props) => {
   let [order_id, setOrder_id] = useState(
     store.getState().store.order_id || null
   );
+  let [extraFields, setExtraFields] = useState({});
   let [paymentMethod, setPaymentMethod] = useState('zarinpal');
   let [sum, setSum] = useState(theParams.sum || 0);
   let [return_url, setReturn_url] = useState('');
@@ -405,6 +411,32 @@ const LastPart = (props) => {
               />
               {/*</ListGroup>*/}
             </ListGroupItem>
+            <ListGroupItem className={'d-flex px-3 border-0 '}>
+              {/*{JSON.stringify(themeData?.orderExtraFields)}*/}
+              {themeData?.orderExtraFields && themeData?.orderExtraFields.map((item) => {
+
+                return <Col md="12" className="form-group">
+                  <label htmlFor="ollastname">{item?.label}</label>
+
+                  <InputGroup className="mb-3">
+                    <FormInput
+                      placeholder={item?.label}
+                      type="text"
+                      value={extraFields[item?.name]}
+                      id="ollastname"
+                      dir="rtl"
+                      onChange={(e) => {
+                        let p = extraFields;
+                        p[item?.name] = e.target.value;
+                        setExtraFields(p)
+                        // this.setState({extraFields: {...p}})
+                      }}
+                    />
+                  </InputGroup>
+                </Col>
+              })}
+
+            </ListGroupItem>
             {Boolean(amount > LIMIT) && (
               <ListGroupItem className={'d-flex px-3 border-0 '}>
                 {[
@@ -463,7 +495,7 @@ const LastPart = (props) => {
             <Button
               className={'place-order '}
               left={'true'}
-              onClick={() => onPlaceOrder(0)}>
+              onClick={() => onPlaceOrder(0,extraFields)}>
               {t('Place Order')}
             </Button>
           </ButtonGroup>

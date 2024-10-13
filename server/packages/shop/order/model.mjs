@@ -49,6 +49,7 @@ export default (mongoose) => {
         discount: Number,
         discountAmount: Number,
         discountCode: String,
+        extraFields:{},
         description: String,
         agentIncome: Number,
         sellerIncome: Number,
