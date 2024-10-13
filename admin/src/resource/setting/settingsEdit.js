@@ -277,7 +277,36 @@ const Form = ({children, ...props}) => {
 
                                 source="type"
                                 choices={[
-                                    {id: "text", name: t("resources.settings.text")}
+                                    {id: "text", name: t("resources.settings.text")},
+                                    {id: "number", name: t("resources.settings.number")}
+                                ]}
+                            />
+                            <BooleanInput source="require"
+                                          label={t("resources.settings.require")}/>
+
+                        </SimpleFormIterator>
+                    </ArrayInput>
+                    <ArrayInput source="orderExtraFields" label={t("resources.settings.orderExtraFields")}>
+                        <SimpleFormIterator {...props}>
+                            <TextInput
+                                fullWidth
+                                source={"label"}
+                                label={t("resources.settings.label")}
+                            />
+                            <TextInput
+                                fullWidth
+                                source={"name"}
+                                label={t("resources.settings.name")}
+                            />
+                            <SelectInput
+                                label={t("resources.settings.type")}
+                                defaultValue={"text"}
+                                fullWidth
+
+                                source="type"
+                                choices={[
+                                    {id: "text", name: t("resources.settings.text")},
+                                    {id: "number", name: t("resources.settings.number")}
                                 ]}
                             />
                             <BooleanInput source="require"

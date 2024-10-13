@@ -8,6 +8,7 @@ export default (mongoose) => {
         messages: [],
         plugins: {},
         registerExtraFields: [],
+        orderExtraFields: [],
         data: [],
         settings: {},
         siteActive: {type: Boolean, default: true},

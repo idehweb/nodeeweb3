@@ -2710,7 +2710,7 @@ export const active = (req) => {
             firstName: firstName,
             lastName: lastName,
             invitation_code: invitation_code,
-            internationalCode: '',
+            internationalCode: internationalCode,
             _id: _id,
           },
         };
