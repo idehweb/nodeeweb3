@@ -117,7 +117,7 @@ var self = ({
     },
 
     buy: function (req, res, next) {
-
+console.log("buy=>...")
         async function sendSms(order,url){
             //   if(!order.customer_data?.phoneNumber) return ;
             // const newTxt = replaceValue({ text : setting[settingKey] , data : [order.toObject(),order.customer_data,{payment_link:url}]});
