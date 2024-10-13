@@ -290,7 +290,7 @@ return
                 }
                 if (onCreateOrderByCustomer && status == 'create-order-by-customer') {
                     onCreateOrderByCustomer = washString(onCreateOrderByCustomer, params);
-                    publishToTelegram(req, telegramLink, telegramChatID, onCreateOrderByCustomer)
+                    publishToTelegram(req, telegramLink, telegramChatID, onCreateOrderByCustomer).then(e=>console.log('e',e)).catch((d)=>console.log('d',d))
 
                 }
                 if (status == 'send-schedule-message-by-system') {
