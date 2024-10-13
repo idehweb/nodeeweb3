@@ -265,6 +265,7 @@ let self = ({
     },
 
     createByCustomer: function (req, res, next) {
+        console.log("createByCustomer...")
         let Product = req.mongoose.model('Product');
         let Order = req.mongoose.model('Order');
         let Settings = req.mongoose.model('Settings');
@@ -458,10 +459,10 @@ let self = ({
                                 "shipAmount": req.body.shipAmount || 0,
                                 "tax": setting.tax || false,
                                 "taxAmount": req.body.taxAmount || 0,
-                                "extraField": req.body.extraField || {},
+                                "extraFields": req.body.extraFields || {},
                                 "productsAfterThisOrder": tempProducts
                             }
-
+// console.
                             if (req.body.discountCode) {
                                 let Discount = req.mongoose.model('Discount');
                                 Discount.findOne({slug: req.body.discountCode},

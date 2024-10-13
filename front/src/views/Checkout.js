@@ -157,7 +157,7 @@ function Checkout(props) {
     // return;
 
     createOrder(order).then((res) => {
-      // console.log('res for judytgs is:', res.order._id);
+      console.log('res for judytgs is:', res);
       if (!res.success) {
         toast(t(res.message), {
           type: 'error',
@@ -167,6 +167,7 @@ function Checkout(props) {
       toast(t('Submitting transaction...'), {
         type: 'success',
       });
+      // return
       buy(
         res.order._id,
         {
