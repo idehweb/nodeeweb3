@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e40ee157-344c-45a6-9d21-5ecec48b1917" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/views/Checkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/views/Checkout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/packages/shop/order/controller.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/server/packages/shop/order/controller.mjs" afterDir="false" />
-    </list>
+    <list default="true" id="e40ee157-344c-45a6-9d21-5ecec48b1917" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Checkout.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Checkout.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/src/views/Checkout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="166" column="45" selection-start-line="166" selection-start-column="45" selection-end-line="166" selection-end-column="45" />
+            <state relative-caret-position="271">
+              <caret line="170" column="10" selection-start-line="170" selection-start-column="10" selection-end-line="170" selection-end-column="10" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -96,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controller.mjs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/packages/shop/order/controller.mjs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="564" lean-forward="true" selection-start-line="564" selection-end-line="564" />
+              <caret line="564" selection-start-line="564" selection-end-line="564" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
                 <element signature="e#272#1691#0" />
@@ -182,8 +178,8 @@
       <find>placeO</find>
       <find>place</find>
       <find>onPlaceOrder</find>
-      <find>Order.create</find>
       <find>placeOrder</find>
+      <find>Order.create</find>
       <find>extraFields</find>
     </findStrings>
     <replaceStrings>
@@ -267,8 +263,8 @@
         <option value="$PROJECT_DIR$/server/packages/server/src/global.mjs" />
         <option value="$PROJECT_DIR$/front/src/components/checkout/LastPart.js" />
         <option value="$PROJECT_DIR$/server/packages/shop/order/model.mjs" />
-        <option value="$PROJECT_DIR$/front/src/views/Checkout.js" />
         <option value="$PROJECT_DIR$/server/packages/shop/order/controller.mjs" />
+        <option value="$PROJECT_DIR$/front/src/views/Checkout.js" />
       </list>
     </option>
   </component>
@@ -491,16 +487,15 @@
       <workItem from="1728325267572" duration="6597000" />
       <workItem from="1728334990142" duration="3274000" />
       <workItem from="1728380817367" duration="851000" />
-      <workItem from="1728384112311" duration="35981000" />
+      <workItem from="1728384112311" duration="36623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140388000" />
+    <option name="totallyTimeSpent" value="141030000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -980,15 +975,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/order/index.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/shop/order/routes.mjs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1860">
@@ -996,27 +982,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/views/Checkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="166" column="45" selection-start-line="166" selection-start-column="45" selection-end-line="166" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/packages/shop/order/model.mjs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="51" column="19" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/shop/order/controller.mjs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="564" lean-forward="true" selection-start-line="564" selection-end-line="564" />
+          <caret line="564" selection-start-line="564" selection-end-line="564" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
             <element signature="e#272#1691#0" />
@@ -1034,6 +1003,32 @@
             <element signature="e#64379#66362#0" />
             <element signature="e#66415#67261#0" />
             <element signature="e#67308#79758#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/shop/order/index.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/packages/shop/order/model.mjs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/views/Checkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="170" column="10" selection-start-line="170" selection-start-column="10" selection-end-line="170" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
