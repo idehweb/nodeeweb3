@@ -256,12 +256,13 @@ return
 
     function sendToTelegram(req, status, params) {
         console.log('sendToTelegram...')
-        reject({
-            sssss:false
-        });
 
-        return
         return new Promise(function (resolve, reject) {
+            reject({
+                sssss:false
+            });
+
+            return
             let Settings = req.mongoose.model('Settings');
 
             Settings.findOne({}, 'plugins currency', function (err, setting) {
