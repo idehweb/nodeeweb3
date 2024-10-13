@@ -200,7 +200,7 @@ let global = {
             let Settings = mongoose.model('Settings');
             let Template = mongoose.model('Template');
             let Page = mongoose.model('Page');
-            Settings.findOne({}, 'currency tax taxAmount passwordAuthentication registerExtraFields', function (err, setting) {
+            Settings.findOne({}, 'currency tax taxAmount passwordAuthentication registerExtraFields orderExtraFields', function (err, setting) {
                 console.log('setting', setting)
                 Template.findOne({type: 'header'}, function (err, header) {
                     Template.findOne({type: 'footer'}, function (err, footer) {
@@ -241,6 +241,10 @@ let global = {
                             if (setting && setting.registerExtraFields) {
                                 registerExtraFields = setting.registerExtraFields;
                             }
+                            let orderExtraFields = false;
+                            if (setting && setting.orderExtraFields) {
+                                orderExtraFields = setting.orderExtraFields;
+                            }
                             let taxAmount = 0;
                             if (setting && setting.taxAmount) {
                                 taxAmount = setting.taxAmount;
@@ -250,6 +254,7 @@ let global = {
                                 tax: tax,
                                 passwordAuthentication: passwordAuthentication,
                                 registerExtraFields: registerExtraFields,
+                                orderExtraFields: orderExtraFields,
                                 currency: currency,
                                 header: {
                                     maxWidth:
