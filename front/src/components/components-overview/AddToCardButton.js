@@ -87,9 +87,14 @@ function AddToCardButton({item, text = '',variable=false,children, t}) {
                   });
                 }
               }}>
-        {!item.single && <span>{text}</span>}
-        {!item.single && <ShoppingBagIcon className="center"/>}
+        <span></span>
+        <span>
+        {!item.single && <span>{text}<ShoppingBagIcon className="center"/></span>}
+        {/*{!item.single && }*/}
         {!variable && <span>{t("add to cart")}</span>}
+        </span>
+        <span></span>
+
       </Button>}
       {children}
     </div>

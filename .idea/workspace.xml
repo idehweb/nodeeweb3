@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e40ee157-344c-45a6-9d21-5ecec48b1917" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/public/site_setting/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/public/site_setting/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/assets/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/assets/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/data/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/data/models.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/i18n/fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/i18n/fa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/resource/order/orderEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/resource/order/orderEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/resource/setting/settingsEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/resource/setting/settingsEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/site_setting/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/site_setting/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/public/site_setting/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/site_setting/theme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/assets/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/assets/styles/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/assets/styles/shards-dashboards.1.1.0.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/assets/styles/shards-dashboards.1.1.0.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/checkout/GetAddress.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/checkout/GetAddress.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/checkout/GetDelivery.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/checkout/GetDelivery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/checkout/GetInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/checkout/GetInformation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/checkout/GetInformationnew.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/checkout/GetInformationnew.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/checkout/LastPart.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/checkout/LastPart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/checkout/PriceChunker.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/checkout/PriceChunker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/profile/UserAccountDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/profile/UserAccountDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/language/fa/translation.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/language/fa/translation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/views/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/views/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/components-overview/AddToCardButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/components-overview/AddToCardButton.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="global.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="global.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/src/assets/styles/global.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="3180" column="33" lean-forward="true" selection-start-line="3180" selection-start-column="33" selection-end-line="3180" selection-end-column="33" />
+            <state relative-caret-position="208">
+              <caret line="3182" column="30" selection-start-line="3182" selection-start-column="30" selection-end-line="3182" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -50,11 +32,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetDelivery.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GetDelivery.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/src/components/checkout/GetDelivery.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
               <caret line="362" column="23" selection-start-line="362" selection-start-column="23" selection-end-line="362" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddToCardButton.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/AddToCardButton.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="90" column="14" lean-forward="true" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -84,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/admin/src/assets/global.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="233">
-              <caret line="810" column="11" lean-forward="true" selection-start-line="810" selection-start-column="11" selection-end-line="810" selection-end-column="11" />
+              <caret line="810" column="11" selection-start-line="810" selection-start-column="11" selection-end-line="810" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -100,7 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>intern</find>
       <find>user</find>
       <find>orderExtraFields</find>
       <find>limit</find>
@@ -130,6 +120,7 @@
       <find>back-to-checkout</find>
       <find>&lt;ButtonGroup size=&quot;sm</find>
       <find>ثبت</find>
+      <find>buy-button</find>
     </findStrings>
     <replaceStrings>
       <replace>http://localhost:3002</replace>
@@ -164,7 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/entity/index.mjs" />
         <option value="$PROJECT_DIR$/front/src/views/Login.tsx" />
         <option value="$PROJECT_DIR$/admin/src/components/index.js" />
         <option value="$PROJECT_DIR$/admin/src/components/SettingTabs.js" />
@@ -211,10 +201,11 @@
         <option value="$PROJECT_DIR$/front/src/components/profile/UserAccountDetails.js" />
         <option value="$PROJECT_DIR$/admin/src/data/models.ts" />
         <option value="$PROJECT_DIR$/admin/src/assets/global.css" />
-        <option value="$PROJECT_DIR$/front/src/assets/styles/global.css" />
         <option value="$PROJECT_DIR$/front/public/site_setting/theme.css" />
         <option value="$PROJECT_DIR$/front/src/assets/styles/shards-dashboards.1.1.0.min.css" />
         <option value="$PROJECT_DIR$/front/src/components/checkout/GetDelivery.js" />
+        <option value="$PROJECT_DIR$/front/src/components/components-overview/AddToCardButton.js" />
+        <option value="$PROJECT_DIR$/front/src/assets/styles/global.css" />
       </list>
     </option>
   </component>
@@ -375,22 +366,23 @@
       <workItem from="1728384112311" duration="49702000" />
       <workItem from="1729261816387" duration="6586000" />
       <workItem from="1729339669375" duration="3536000" />
-      <workItem from="1729422079754" duration="5081000" />
+      <workItem from="1729422079754" duration="5593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169312000" />
+    <option name="totallyTimeSpent" value="169824000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.36659664" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.5" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32967034" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32983193" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32661784" />
@@ -486,13 +478,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/src/resource/order/List.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="28" selection-start-line="28" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/components/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -826,13 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/assets/styles/global.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="3180" column="33" lean-forward="true" selection-start-line="3180" selection-start-column="33" selection-end-line="3180" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/public/site_setting/theme.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -843,7 +821,7 @@
     <entry file="file://$PROJECT_DIR$/admin/src/assets/global.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
-          <caret line="810" column="11" lean-forward="true" selection-start-line="810" selection-start-column="11" selection-end-line="810" selection-end-column="11" />
+          <caret line="810" column="11" selection-start-line="810" selection-start-column="11" selection-end-line="810" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -858,6 +836,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="362" column="23" selection-start-line="362" selection-start-column="23" selection-end-line="362" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/AddToCardButton.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="90" column="14" lean-forward="true" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/assets/styles/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="3182" column="30" selection-start-line="3182" selection-start-column="30" selection-end-line="3182" selection-end-column="30" />
         </state>
       </provider>
     </entry>

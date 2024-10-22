@@ -3180,7 +3180,8 @@ td img {
 }
 .buy-button.kjhgfgh.btn.btn-primary.btn-md{
   display: flex;
-  justify-content: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 }
 .single-product .AddToCardButton .buy-button.kjhgfgh.btn.btn-primary.btn-md{
   justify-content: space-between;
