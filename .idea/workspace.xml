@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e40ee157-344c-45a6-9d21-5ecec48b1917" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/front/public/site_setting/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/public/site_setting/theme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/assets/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/assets/styles/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/components/components-overview/AddToCardButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/components-overview/AddToCardButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/assets/styles/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/assets/styles/rtl.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +18,8 @@
       <file leaf-file-name="global.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/src/assets/styles/global.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="3182" column="30" selection-start-line="3182" selection-start-column="30" selection-end-line="3182" selection-end-column="30" />
+            <state relative-caret-position="149">
+              <caret line="978" column="1" lean-forward="true" selection-start-line="978" selection-start-column="1" selection-end-line="978" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -26,8 +27,26 @@
       <file leaf-file-name="shards-dashboards.1.1.0.min.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/src/assets/styles/shards-dashboards.1.1.0.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="866" column="32" selection-start-line="866" selection-start-column="32" selection-end-line="866" selection-end-column="32" />
+            <state relative-caret-position="81">
+              <caret line="855" lean-forward="true" selection-start-line="855" selection-end-line="855" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theme.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/public/site_setting/theme.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rtl.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front/src/assets/styles/rtl.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="763" lean-forward="true" selection-start-line="763" selection-end-line="763" />
             </state>
           </provider>
         </entry>
@@ -45,16 +64,7 @@
         <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/AddToCardButton.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="90" column="14" lean-forward="true" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="theme.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/public/site_setting/theme.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="13" />
+              <caret line="90" column="14" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -91,8 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>user</find>
-      <find>orderExtraFields</find>
       <find>limit</find>
       <find>activate account</find>
       <find>962844</find>
@@ -121,6 +129,8 @@
       <find>&lt;ButtonGroup size=&quot;sm</find>
       <find>ثبت</find>
       <find>buy-button</find>
+      <find>.kjhgfgh</find>
+      <find>add-to-c</find>
     </findStrings>
     <replaceStrings>
       <replace>http://localhost:3002</replace>
@@ -155,7 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/front/src/views/Login.tsx" />
         <option value="$PROJECT_DIR$/admin/src/components/index.js" />
         <option value="$PROJECT_DIR$/admin/src/components/SettingTabs.js" />
         <option value="$PROJECT_DIR$/admin/src/layout/Menu.tsx" />
@@ -201,10 +210,11 @@
         <option value="$PROJECT_DIR$/front/src/components/profile/UserAccountDetails.js" />
         <option value="$PROJECT_DIR$/admin/src/data/models.ts" />
         <option value="$PROJECT_DIR$/admin/src/assets/global.css" />
-        <option value="$PROJECT_DIR$/front/public/site_setting/theme.css" />
         <option value="$PROJECT_DIR$/front/src/assets/styles/shards-dashboards.1.1.0.min.css" />
         <option value="$PROJECT_DIR$/front/src/components/checkout/GetDelivery.js" />
         <option value="$PROJECT_DIR$/front/src/components/components-overview/AddToCardButton.js" />
+        <option value="$PROJECT_DIR$/front/public/site_setting/theme.css" />
+        <option value="$PROJECT_DIR$/front/src/assets/styles/rtl.css" />
         <option value="$PROJECT_DIR$/front/src/assets/styles/global.css" />
       </list>
     </option>
@@ -366,12 +376,12 @@
       <workItem from="1728384112311" duration="49702000" />
       <workItem from="1729261816387" duration="6586000" />
       <workItem from="1729339669375" duration="3536000" />
-      <workItem from="1729422079754" duration="5593000" />
+      <workItem from="1729422079754" duration="6791000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169824000" />
+    <option name="totallyTimeSpent" value="171022000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -382,10 +392,10 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.5" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.5" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32967034" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32983193" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32661784" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32661784" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983193" />
@@ -478,13 +488,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/src/components/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/packages/server/src/controllers/index.mjs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -811,24 +814,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/public/site_setting/theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/assets/global.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="810" column="11" selection-start-line="810" selection-start-column="11" selection-end-line="810" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/assets/styles/shards-dashboards.1.1.0.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="866" column="32" selection-start-line="866" selection-start-column="32" selection-end-line="866" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -842,14 +831,35 @@
     <entry file="file://$PROJECT_DIR$/front/src/components/components-overview/AddToCardButton.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="90" column="14" lean-forward="true" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
+          <caret line="90" column="14" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/assets/styles/shards-dashboards.1.1.0.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="855" lean-forward="true" selection-start-line="855" selection-end-line="855" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/public/site_setting/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/assets/styles/rtl.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="763" lean-forward="true" selection-start-line="763" selection-end-line="763" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/src/assets/styles/global.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="3182" column="30" selection-start-line="3182" selection-start-column="30" selection-end-line="3182" selection-end-column="30" />
+        <state relative-caret-position="149">
+          <caret line="978" column="1" lean-forward="true" selection-start-line="978" selection-start-column="1" selection-end-line="978" selection-end-column="1" />
         </state>
       </provider>
     </entry>

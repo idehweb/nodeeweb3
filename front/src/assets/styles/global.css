@@ -955,7 +955,7 @@ body {
   display: block;
   margin: 0 auto 20px auto;
   padding: 0;
-  background-color: #f3f4f6;
+  background-color: var(--add-to-cart);
   color: #000;
   border-color: #eee;
   line-height: 30px;
@@ -965,10 +965,25 @@ body {
   background-color: var(--primary);
   border-color: var(--primary);
 }
+.buy-button{
+  color: var(--add-to-cart-text);
+  background-color: var(--add-to-cart);
 
+}
+.buy-button svg{
+
+}
+.single-product .AddToCardButton svg{
+  /*color: var(--add-to-cart-text);*/
+  /*background-color: var(--add-to-cart);*/
+}
+.single-product .AddToCardButton .buy-button:hover svg{
+  /*background-color: var(--add-to-cart-hover);*/
+
+}
 .AddToCardButton .kjhgfgh:hover {
-  background-color: #17c671;
-  border-color: #17c671;
+  background-color: var(--add-to-cart-hover);
+  border-color: var(--add-to-cart-hover);
 }
 
 .textAlignCenter .search_title {
@@ -2068,8 +2083,8 @@ body .ltr .mobilenone .sizeless.nav.sidecategories .nav-item {
   margin: auto !important;
   line-height: 40px;
   min-width: 130px;
-  background-color: #17c671 !important;
-  color: #fff;
+  /*background-color: #17c671 !important;*/
+  /*color: #fff;*/
   font-weight: bold;
   display: flex;
   flex-direction: row-reverse;
@@ -3182,6 +3197,8 @@ td img {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
 }
 .single-product .AddToCardButton .buy-button.kjhgfgh.btn.btn-primary.btn-md{
   justify-content: space-between;
