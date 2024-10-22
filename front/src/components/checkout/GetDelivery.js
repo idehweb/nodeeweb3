@@ -76,7 +76,7 @@ function GetDelivery(props) {
 
   const countDelivery = (sum, renTimes, hoverD = 0) => {
     console.log('countDelivery...', sum, renTimes, hoverD);
-    
+
     // let {address, hover} = state;
     // let {t} = this.props;
     return new Promise(function (resolve, reject) {
@@ -132,7 +132,7 @@ function GetDelivery(props) {
   };
 
   const getSettings = () => {
-    
+
     let ref = this;
     // console.log('getSettings...');
 
@@ -351,7 +351,7 @@ function GetDelivery(props) {
         </Col>
       </CardBody>
       <CardFooter className={'pd-1'}>
-        <ButtonGroup size="sm left">
+        <ButtonGroup size="md left">
           {!loading2 && <Row>{loader2}</Row>}
           {loading2 && [
             <Button

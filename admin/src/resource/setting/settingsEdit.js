@@ -283,6 +283,8 @@ const Form = ({children, ...props}) => {
                             />
                             <BooleanInput source="require"
                                           label={t("resources.settings.require")}/>
+                            <BooleanInput source="disabled"
+                                          label={t("resources.settings.disabled")}/>
 
                         </SimpleFormIterator>
                     </ArrayInput>
@@ -311,6 +313,7 @@ const Form = ({children, ...props}) => {
                             />
                             <BooleanInput source="require"
                                           label={t("resources.settings.require")}/>
+
 
                         </SimpleFormIterator>
                     </ArrayInput>

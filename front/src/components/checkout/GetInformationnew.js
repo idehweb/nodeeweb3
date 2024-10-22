@@ -240,7 +240,7 @@ class GetInformation extends React.Component {
           </Col>
         </CardBody>
         <CardFooter className={'pd-1'}>
-          <ButtonGroup size="sm left">
+          <ButtonGroup size="md left">
             <Button
               className={''}
               left={'true'}

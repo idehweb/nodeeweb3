@@ -22,6 +22,7 @@ export const ExcludeList = [
   'campaign',
   'notification',
   'media',
+  'comment',
   'post',
   'customer',
   'product',

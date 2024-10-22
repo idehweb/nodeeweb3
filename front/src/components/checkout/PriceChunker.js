@@ -30,7 +30,7 @@ function PriceChunker({ price, onPlaceOrder, children, t }) {
                 {p.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + t(' UZS')}
               </span>
 
-              <ButtonGroup size="sm left">
+              <ButtonGroup size="md left">
                 <Button
                   className={'place-order '}
                   left={'true'}

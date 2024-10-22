@@ -14,7 +14,7 @@ const Tabs = [
   { id: 'profile', label: 'profile' },
   { id: 'my-orders', label: 'my orders' },
   { id: 'transactions', label: 'transactions' },
-  { id: 'requests', label: 'requests' },
+  // { id: 'requests', label: 'requests' },
   // { id: 'myads', label: 'my ads' },
 ];
 

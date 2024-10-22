@@ -417,7 +417,7 @@ function GetAddress(props) {
         </Col>
       </CardBody>
       <CardFooter className={'pd-1'}>
-        <ButtonGroup size="sm left">
+        <ButtonGroup size="md left">
           <Button
             className={'back-to-checkout-part-information'}
             left={'true'}

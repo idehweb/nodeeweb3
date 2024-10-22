@@ -27,15 +27,21 @@
 // window.SHOP_URL = 'https://mahsaaz.idehweb.ir/';
 // window.THEME_URL = 'https://mahsaaz.idehweb.ir/theme';
 
+// window.BASE_URL = 'https://spinger.shop';
+// window.ADMIN_URL = 'https://spinger.shop';
+// window.ADMIN_ROUTE = 'https://spinger.shop/admin';
+// window.SHOP_URL = 'https://spinger.shop/';
+// window.THEME_URL = 'https://spinger.shop/theme';
+
+
 window.BASE_URL = 'https://spinger.shop';
 window.ADMIN_URL = 'https://spinger.shop';
 window.ADMIN_ROUTE = 'https://spinger.shop/admin';
 window.SHOP_URL = 'https://spinger.shop/';
 window.THEME_URL = 'https://spinger.shop/theme';
 
-
-// window.BASE_URL = 'https://spinger.shop';
-// window.ADMIN_URL = 'https://spinger.shop';
-// window.ADMIN_ROUTE = 'https://spinger.shop/admin';
-// window.SHOP_URL = 'https://spinger.shop/';
-// window.THEME_URL = 'https://spinger.shop/theme';
+// window.BASE_URL = 'https://aranonline.shop';
+// window.ADMIN_URL = 'https://aranonline.shop';
+// window.ADMIN_ROUTE = 'https://aranonline.shop/admin';
+// window.SHOP_URL = 'https://aranonline.shop/';
+// window.THEME_URL = 'https://aranonline.shop/theme';

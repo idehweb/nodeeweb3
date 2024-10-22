@@ -3178,6 +3178,13 @@ td img {
   font-weight: bold;
   font-size: 50px;
 }
+.buy-button.kjhgfgh.btn.btn-primary.btn-md{
+  display: flex;
+  justify-content: center;
+}
+.single-product .AddToCardButton .buy-button.kjhgfgh.btn.btn-primary.btn-md{
+  justify-content: space-between;
+}
 .login-register-form-wrapper{
   margin-bottom: 50px;
 }

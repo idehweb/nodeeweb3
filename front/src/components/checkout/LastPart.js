@@ -478,7 +478,7 @@ const LastPart = (props) => {
         </Col>
       </CardBody>
       <CardFooter className={'pd-1'}>
-        <ButtonGroup size="sm right">
+        <ButtonGroup size="md right">
           {prev == 'show' && (
             <Button
               className={'back-to-choose-address '}
@@ -491,7 +491,7 @@ const LastPart = (props) => {
         </ButtonGroup>
         {/*{amount}*/}
         {Boolean(amount <= LIMIT) && (
-          <ButtonGroup size="sm left">
+          <ButtonGroup size="md left">
             <Button
               className={'place-order '}
               left={'true'}

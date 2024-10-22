@@ -21,6 +21,7 @@ import { getMe, Logout, submitProfile } from '#c/functions';
 export default function UserAccountDetails({ title }) {
   const { t } = useTranslation();
   const st = store.getState().store.user;
+  const registerExtraFields= store.getState().store.themeData?.registerExtraFields;
 
   const [state, setState] = useState({
     filled: false,
@@ -28,10 +29,24 @@ export default function UserAccountDetails({ title }) {
     firstName: st.firstName,
     lastName: st.lastName,
     email: st.email,
+    editMode:false,
     data: {},
     internationalCode: st.internationalCode,
   });
+  const [stateregisterExtraFields, setStateregisterExtraFields] = useState(registerExtraFields);
 
+  const enableEditMode = () => {
+    setState({
+      ...state,
+      editMode:true
+    });
+  }
+  const disableEditMode = () => {
+    setState({
+      ...state,
+      editMode:false
+    });
+  }
   const submitForm = () => {
     const { phoneNumber, firstName, lastName, internationalCode, email } =
       state;
@@ -75,6 +90,7 @@ export default function UserAccountDetails({ title }) {
     lastName,
     internationalCode,
     email,
+    editMode,
     data = {},
   } = state;
 
@@ -97,6 +113,50 @@ export default function UserAccountDetails({ title }) {
           <Row>
             <Col>
               <Form>
+                {!editMode && <>
+                  {(firstName || lastName) && <Row form className={'row'}>
+                  {/* First Name */}
+                  <Col md="6" className="form-group">
+                    <label htmlFor="feFirstName">{t('name')}: {firstName}</label>
+
+                  </Col>
+                  {/* Last Name */}
+                  <Col md="6" className="form-group">
+                    <label htmlFor="feLastName">{t('last name')}: {lastName}</label>
+
+                  </Col>
+                </Row>}
+                  {(internationalCode || email) && <Row form className={'row'}>
+                  {/* First Name */}
+                    {internationalCode && <Col md="6" className="form-group">
+                    <label htmlFor="feFirstName">
+                      {t('International Code')}: {internationalCode}
+                    </label>
+
+                  </Col>}
+                  {/* Last Name */}
+                    {email && <Col md="6" className="form-group">
+                    <label htmlFor="feFirstName">{t('Email')}: {email}</label>
+
+                  </Col>}
+                </Row>}
+                  {phoneNumber && <Row form className={'row'}>
+                  {/* Password */}
+                  <Col md="12" className="form-group">
+                    <label htmlFor="feLastName">{t('phone number')}: {phoneNumber}</label>
+                  </Col>
+                </Row>}
+                  {registerExtraFields && <Row>{registerExtraFields.map((item)=>{
+                      if(item?.name!='internationalCode')
+                        return <Col md="6" className="form-group">
+                          <label htmlFor="feLastName">{item?.label} :{data[item?.name]}</label>
+
+                        </Col>
+
+                    }
+                  )}</Row>}
+                </>}
+                {editMode && <>
                 <Row form className={'row'}>
                   {/* First Name */}
                   <Col md="6" className="form-group">
@@ -180,19 +240,52 @@ export default function UserAccountDetails({ title }) {
                     />
                   </Col>
                 </Row>
+
+                  <Row form className={'row'}>
+                    {/* Password */}
+                    {/*{JSON.stringify(registerExtraFields)}*/}
+                    {registerExtraFields && registerExtraFields.map((item)=>{
+                    if(item?.name!='internationalCode')
+                      return <Col md="6" className="form-group">
+                      <label htmlFor="feLastName">{item?.label}</label>
+                      <FormInput
+                        placeholder={item?.label}
+                        value={data[item?.name]}
+                        disabled={item?.disabled}
+                        onChange={(e) => {
+                          let d={...data}
+                          d[item?.name]=e.target.value
+                          setState({
+                            ...state,
+                            data: {...d},
+                          });
+                        }}
+                      />
+                    </Col>
+
+                      }
+                    )}
+                  </Row>
+                </>}
                 <Row>
                   <Col className="mgt10"></Col>
                 </Row>
                 <Row className={'row'}>
                   <Col>
-                    <Button theme="accent" onClick={submitForm}>
+                    {editMode && <Button theme="accent" onClick={submitForm}>
                       {t('update')}
-                    </Button>
+                    </Button>}
+                    {!editMode && <Button theme="accent" onClick={enableEditMode}>
+                      {t('edit')}
+                    </Button>}
                   </Col>
                   <Col>
-                    <Button theme="error" className="dfg ml-2" onClick={Logout}>
+                    {!editMode && <Button theme="error" className="dfg ml-2" onClick={Logout}>
                       {t('logout')}
-                    </Button>
+                    </Button>}
+                    {editMode && <Button theme="error" className="dfg ml-2" onClick={disableEditMode}>
+                      {t('cancel')}
+                    </Button>}
                   </Col>
                 </Row>
               </Form>

@@ -222,7 +222,7 @@ export default () => ({
   arvandguarantee: 'گارانتی آروند',
   'International Code': 'کد ملی',
   'install game': 'نصب بازی',
-  'Place Order': 'ثبت سفارش و پرداخت',
+  'Place Order': 'ثبت و پرداخت',
   welcome: 'خوش آمدید',
   'check and pay': 'بررسی نهایی و پرداخت',
   'nothing found...': 'چیزی یافت نشد...',

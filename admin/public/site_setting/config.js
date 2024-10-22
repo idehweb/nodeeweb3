@@ -17,9 +17,9 @@ window.THEME_URL = 'https://spinger.shop/theme';
 // window.ADMIN_ROUTE = 'https://anilaraz.ir/admin';
 // window.SHOP_URL = 'https://anilaraz.ir/';
 // window.THEME_URL = 'https://anilaraz.ir/theme';
-
-// window.BASE_URL = 'https://aranonline.shop';
-// window.ADMIN_URL = 'https://aranonline.shop';
-// window.ADMIN_ROUTE = 'https://aranonline.shop/admin';
-// window.SHOP_URL = 'https://aranonline.shop/';
-// window.THEME_URL = 'https://aranonline.shop/theme';
+//
+// window.BASE_URL = 'https://new.aranonline.shop';
+// window.ADMIN_URL = 'https://new.aranonline.shop';
+// window.ADMIN_ROUTE = 'https://new.aranonline.shop/admin';
+// window.SHOP_URL = 'https://new.aranonline.shop/';
+// window.THEME_URL = 'https://new.aranonline.shop/theme';

@@ -796,6 +796,7 @@ export default {
             general: 'عمومی',
             delivery: 'ارسال',
             paymentActive: 'وضعیت پرداخت',
+            disabled: 'ویرایش غیر فعال در پروفایل',
             slug: 'نامک',
             crm: 'CRM',
             sms: 'SMS',

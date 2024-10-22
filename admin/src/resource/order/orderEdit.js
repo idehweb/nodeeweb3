@@ -244,17 +244,17 @@ export default function OrderEdit(props) {
               return v.toString().replace(/,/g, '');
             }}
           />
-            <FunctionField
-                label="extraFields"
-                className={"extraFields-width100"}
-                fullWidth
-                render={(record) =>{
-                    let extraFields=Object.keys(record?.extraFields)
-                  return <table className={'extraFields'}>{extraFields?.map((extraField)=>{
-                      return <tr><td>{extraField}</td><td>{record?.extraFields[extraField]}</td></tr>;
-                  })}</table>
-                }}
-            />
+            {/*<FunctionField*/}
+                {/*label="extraFields"*/}
+                {/*className={"extraFields-width100"}*/}
+                {/*fullWidth*/}
+                {/*render={(record) =>{*/}
+                    {/*let extraFields=Object.keys(record?.extraFields)*/}
+                  {/*return <table className={'extraFields'}>{extraFields?.map((extraField)=>{*/}
+                      {/*return <tr><td>{extraField}</td><td>{record?.extraFields[extraField]}</td></tr>;*/}
+                  {/*})}</table>*/}
+                {/*}}*/}
+            {/*/>*/}
           {/*<TextField source="status"/>*/}
           {/*<TextField source="sum"/>*/}
           {/*<TextField source="customer_data.country"/>*/}
