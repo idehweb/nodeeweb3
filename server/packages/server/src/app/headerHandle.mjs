@@ -27,6 +27,7 @@ const __dirname = path.resolve();
 const viewsFolder = __dirname;
 
 const headerHandle = (app) => {
+  console.log("headerHandle===>")
   app.use(function (req, res, next) {
     // pkgUp().then(e=>{
     //   console.log('eeee',e)

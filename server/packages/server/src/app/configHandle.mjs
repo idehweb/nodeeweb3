@@ -21,7 +21,9 @@ const themeFolder = path.join(__dirname, "./theme");
 // const adminFolder = path.join(__dirname, "./admin");
 
 let configHandle = async (express, app, props = {}) => {
-  await app.disable("x-powered-by");
+    console.log("configHandle===>")
+
+    await app.disable("x-powered-by");
   await app.use(logger("dev"));
   await siteMapHandle(express, app, props);
   await app.use(expressSitemapXml(getUrls, process.env.BASE_URL));

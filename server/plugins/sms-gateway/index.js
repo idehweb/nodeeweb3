@@ -6,7 +6,9 @@ export {json};
 
 
 export default (props) => {
-  function getReport({mongoose, global}, text = '') {
+    // console.log("SMSGateway",props);
+
+    function getReport({mongoose, global}, text = '') {
     console.log('getReport====>');
 
     return new Promise(function (resolve, reject) {
@@ -306,7 +308,7 @@ export default (props) => {
         if (setting.currency)
           params.currency = setting.currency;
         if (onUpdateTransactionByCustomer && status == 'update-transaction-by-customer') {
-          console.log('params', params)
+          // console.log('params', params)
 
           onUpdateTransactionByCustomer = washString(onUpdateTransactionByCustomer, params);
           publishToSms(req, phoneNumber, onUpdateTransactionByCustomer)

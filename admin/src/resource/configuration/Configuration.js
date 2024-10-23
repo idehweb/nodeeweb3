@@ -31,6 +31,9 @@ export default function Configuration(props) {
       secondaryColor: '#2d3488',
       textColor: '#000000',
       bgColor: '#ffffff',
+        addToCartTextColor: '#ffffff',
+        addToCartColor: '#ffffff',
+        addToCartHoverColor: '#ffffff',
       footerBgColor: '#ffffff',
     },
   });
@@ -131,6 +134,9 @@ export default function Configuration(props) {
       header_last: theData.header_last,
       body_first: theData.body_first,
       primaryColor: theData.primaryColor,
+        addToCartTextColor: theData.addToCartTextColor,
+        addToCartColor: theData.addToCartColor,
+        addToCartHoverColor: theData.addToCartHoverColor,
       secondaryColor: theData.secondaryColor,
       textColor: theData.textColor,
       bgColor: theData.bgColor,
@@ -162,6 +168,9 @@ export default function Configuration(props) {
     ADMIN_URL,
     home,
     primaryColor,
+      addToCartTextColor,
+      addToCartColor,
+      addToCartHoverColor,
     secondaryColor,
     bgColor,
     textColor,
@@ -204,65 +213,24 @@ export default function Configuration(props) {
                 </div>
               </div>
             </Box>
-            <Box>
-              <TextInput
-                autoFocus
-                fullWidth
-                label={translate('resources.settings.title')}
-                source={'title.' + lan}
-                disabled={loading}
-                defaultValue={title[lan]}
-                onChange={(event) => {
-                  handleChange('title.' + lan, event.target.value);
-                }}
-              />
-            </Box>
-            <Box>
-              <TextInput
-                autoFocus
-                fullWidth
-                label={translate('resources.settings.description')}
-                source={'description.' + lan}
-                disabled={loading}
-                defaultValue={description[lan]}
-                onChange={(event) => {
-                  handleChange('description.' + lan, event.target.value);
-                }}
-              />
-            </Box>
-            <Box>
-              <ReferenceInput
-                perPage={100}
-                label={translate('resources.settings.home')}
-                source="home"
-                reference="page"
-                alwaysOn>
-                <SelectInput
-                  optionText={'title.' + lan}
-                  defaultValue={home}
-                  onChange={(event) => {
-                    handleChange('home', event.target.value);
-                  }}
-                />
-              </ReferenceInput>
-              {/*<SelectInput optionText={"title."+translate("lan")}*/}
-              {/*defaultValue={defaultSiteLan}*/}
-              {/*onChange={(event) => {*/}
-              {/*handleChange("defaultSiteLan", event.target.value);*/}
-              {/*}}*/}
-              {/*/>*/}
-              {/*<TextInput*/}
-              {/*autoFocus*/}
-              {/*fullWidth*/}
-              {/*label={translate("resources.settings.home")}*/}
-              {/*source="home"*/}
-              {/*disabled={loading}*/}
-              {/*defaultValue={''}*/}
-              {/*onChange={(event) => {*/}
-              {/*handleChange("home", event.target.value);*/}
-              {/*}}*/}
-              {/*/>*/}
-            </Box>
+
+            {/*<Box>*/}
+              {/*<ReferenceInput*/}
+                {/*perPage={100}*/}
+                {/*label={translate('resources.settings.home')}*/}
+                {/*source="home"*/}
+                {/*reference="page"*/}
+                {/*alwaysOn>*/}
+                {/*<SelectInput*/}
+                  {/*optionText={'title.' + lan}*/}
+                  {/*defaultValue={home}*/}
+                  {/*onChange={(event) => {*/}
+                    {/*handleChange('home', event.target.value);*/}
+                  {/*}}*/}
+                {/*/>*/}
+              {/*</ReferenceInput>*/}
+             {/**/}
+            {/*</Box>*/}
             <Box>
               <TextInput
                 autoFocus
@@ -357,6 +325,46 @@ export default function Configuration(props) {
                     placement="right"
                   />
                 </div>
+                <div className={'col-md-2'}></div>
+              </div>
+              <div className={'row'}>
+                <div className={'col-md-4'}>
+                  <label className={'the-label2'}>
+                    {translate('resources.settings.addToCartTextColor')}
+                  </label>
+                  <ColorPicker
+                    className={'input-color'}
+                    source={'addToCartTextColor'}
+                    color={addToCartTextColor}
+                    onChangeComplete={(e) => setTheColor('addToCartTextColor', e)}
+                    placement="right"
+                  />
+                </div>
+                <div className={'col-md-4'}>
+                  <label className={'the-label2'}>
+                    {translate('resources.settings.addToCartColor')}
+                  </label>
+                  <ColorPicker
+                    className={'input-color'}
+                    source={'addToCartColor'}
+                    color={addToCartColor}
+                    onChangeComplete={(e) => setTheColor('addToCartColor', e)}
+                    placement="right"
+                  />
+                </div>
+                <div className={'col-md-4'}>
+                  <label className={'the-label2'}>
+                    {translate('resources.settings.addToCartHoverColor')}
+                  </label>
+                  <ColorPicker
+                    className={'input-color'}
+                    source={'addToCartHoverColor'}
+                    color={addToCartHoverColor}
+                    onChangeComplete={(e) => setTheColor('addToCartHoverColor', e)}
+                    placement="right"
+                  />
+                </div>
+
                 <div className={'col-md-2'}></div>
               </div>
             </Box>

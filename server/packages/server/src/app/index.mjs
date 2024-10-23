@@ -3,6 +3,7 @@ import "ignore-styles";
 import express from "express";
 import React from "react";
 
+import fs from "fs";
 import db from "#root/app/db";
 import handlePlugins from "#root/app/handlePlugins";
 import path from "path";
@@ -122,12 +123,17 @@ export default function BaseApp(theProps = {}) {
   handlePlugins(props, app).then((fsl) => {
     console.log("handlePlugins resolved()");
     db(props, app).then((e) => {
-      headerHandle(app);
-      configHandle(express, app, props);
+      headerHandle(app)
+          // .catch(e=>console.log("e",e));
+      configHandle(express, app, props).catch(e=>console.log("e",e));
       // props.global=global
-      if (theProps.server)
+      //   return
+
+        if (theProps.server)
         theProps.server.forEach((serv) => {
-          serv(app);
+            // console.log("serv",serv)
+
+            serv(app).catch(e=>console.log("e",e));
         });
       app.use(function (err, req, res, next) {
         // console.log('here....');
@@ -179,6 +185,7 @@ export default function BaseApp(theProps = {}) {
       Page.find({}, function (err, pages) {
         if (pages)
           pages.forEach((page) => {
+              console.log("page",page)
             if (page.path) {
               if (page.path.indexOf("product-category") > -1) {
                 routes.push({
@@ -194,7 +201,7 @@ export default function BaseApp(theProps = {}) {
                     let Settings = req.mongoose.model("Settings");
                     console.log("\n\nobj", obj);
                     Settings.findOne({}, "header_last", function (err, hea) {
-                      // console.log('hea', hea)
+                      console.log('hea', hea)
                       ProductCategory.findOne(
                         obj,
                         "name metadescription metatitle excerpt thumbnail photos slug _id",
@@ -395,6 +402,8 @@ export default function BaseApp(theProps = {}) {
       });
       // app.set("view engine", "pug");
       //         console.log('return app in BaseApp()')
+    }).catch(e=>{
+        console.log("db error at app/index.mjs line 399",e)
     });
   });
 

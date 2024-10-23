@@ -10,7 +10,7 @@ import fs from 'fs';
 let __dirname = path.resolve();
 
 export default (props) => {
-    // console.log(props);
+    // console.log("backup-gateway",props);
 
     function backup(req, res, next) {
         console.log('========== Running backup func ==========');

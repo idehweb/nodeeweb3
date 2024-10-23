@@ -2,6 +2,7 @@ import shell from 'shelljs';
 import path from "path";
 import fs from "fs";
 import _ from "lodash";
+import global from "#root/global";
 
 var self = ({
     functions: function (req, res, next) {
@@ -122,7 +123,7 @@ var self = ({
 
 
                 // console.log('setting.plugins[req.params.plugin]', setting.plugins[req.params.plugin])
-console.log('req.props[\'plugin\']',req.props['plugin'])
+                console.log('req.props[\'plugin\']', req.props['plugin'])
                 _.forEach(req.props['plugin'][req.params.plugin], (item, j) => {
                     if (setting.plugins[req.params.plugin]) {
 
@@ -162,6 +163,7 @@ console.log('req.props[\'plugin\']',req.props['plugin'])
 
     },
     configuration: function (req, res, next) {
+        console.log("edit configuration...")
         let Settings = req.mongoose.model('Settings');
 
         Settings.findOneAndUpdate({}, req.body, {new: true}, function (err, setting) {
@@ -178,7 +180,7 @@ console.log('req.props[\'plugin\']',req.props['plugin'])
 
             }
             // self.updateImportantFiles(res,setting);
-            // self.updateCssFile(res,setting);
+            self.updateCssFile(res, setting);
 
 
             // file.pipe(fstream);
@@ -189,6 +191,58 @@ console.log('req.props[\'plugin\']',req.props['plugin'])
 
         });
 
+    },
+    updateCssFile: function (res, setting) {
+        console.log("updateCssFile",setting)
+        let __dirname = path.resolve()
+        let css = ":root {\n" +
+            "    --blue: #674eec;\n" +
+            "    --primary: "+(setting?.primaryColor ? setting?.primaryColor : "#ff31b8")+";\n" +
+            "    --indigo: #674eec;\n" +
+            "    --purple: #8445f7;\n" +
+            "    --pink: #ff4169;\n" +
+            "    --red: #c4183c;\n" +
+            "    --orange: #fb7906;\n" +
+            "    --yellow: #ffb400;\n" +
+            "    --green: #17c671;\n" +
+            "    --teal: #1adba2;\n" +
+            "    --cyan: #00b8d8;\n" +
+            "    --white: #fff;\n" +
+            "    --gray: #868e96;\n" +
+            "    --gray-dark: #343a40;\n" +
+            "    --secondary: #00ccff;\n" +
+            "    --add-to-cart-text: "+(setting?.addToCartTextColor ? setting?.addToCartTextColor : "#fff")+";\n" +
+            "    --add-to-cart: "+(setting?.addToCartColor ? setting?.addToCartColor : "#00ccff")+";\n" +
+            "    --add-to-cart-hover: #ff31b8;\n" +
+            "    --success: #17c671;\n" +
+            "    --info: #00b8d8;\n" +
+            "    --warning: #ffb400;\n" +
+            "    --danger: #c4183c;\n" +
+            "    --light: #FBFBFB;\n" +
+            "    --dark: #212529;\n" +
+            "    --bg-color: #ffffff;\n" +
+            "    --footer-bg-color: #ffffff;\n" +
+            "    --text-color: #000000;\n" +
+            "    --breakpoint-xs: 0;\n" +
+            "    --breakpoint-sm: 576px;\n" +
+            "    --breakpoint-md: 768px;\n" +
+            "    --breakpoint-lg: 992px;\n" +
+            "    --breakpoint-xl: 1200px;\n" +
+            "    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n" +
+            "    --font-family-monospace: 'Roboto Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace\n" +
+            "}";
+        global.updateFile(
+            './theme/site_setting/',
+            'theme.css',
+            css,
+            __dirname
+        );
+        global.updateFile(
+            './public_media/site_setting/',
+            'theme.css',
+            css,
+            __dirname
+        );
     },
     last: function (req, res, next) {
         let Settings = req.mongoose.model('Settings');
@@ -311,6 +365,7 @@ console.log('req.props[\'plugin\']',req.props['plugin'])
         // res.json([]);
     },
     restart: function (req, res, next) {
+        return
         const _dirname = path.resolve();
         let site = process.env.SITE_NAME || "";
         site = site.toLowerCase();

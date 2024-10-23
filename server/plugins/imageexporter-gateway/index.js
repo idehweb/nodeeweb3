@@ -20,20 +20,20 @@ const Logger = (type = "log", ...arg) =>
     console[type]("[PLG-CRM]: ", ...arg);
 
 async function RegisterCustomer(customer) {
-    console.log('tapar', customer)
-    console.log('email', customer.email)
+    // console.log('tapar', customer)
+    // console.log('email', customer.email)
     // console.log('customerGroup',  customer.customerGroup)
     let Customer = mongoose.model("Customer");
     Customer.findOne({email: customer?.email}, function (err, response) {
         if (err) {
         }
         if (response) {
-            console.log('user ' + customer?.email + ' was in db before...');
+            // console.log('user ' + customer?.email + ' was in db before...');
             updateActivationCode(customer);
 
         } else {
             return
-            console.log('user ' + customer?.email + ' was not in db before...');
+            // console.log('user ' + customer?.email + ' was not in db before...');
 
             //we should create customer
             // console.log('customer',customer);
@@ -96,7 +96,7 @@ async function RegisterCustomer(customer) {
 function updateActivationCode(customer) {
     let Customer = mongoose.model("Customer");
 
-    console.log('companyName', customer?.companyName)
+    // console.log('companyName', customer?.companyName)
     Customer.findOneAndUpdate({email: customer?.email}, {$set: {"companyName": customer.companyName}},
         function (err, response) {
             if (err) {
@@ -258,7 +258,7 @@ function RegisterInItemN(it, j) {
                 if (!d)
                     d = {}
                 d['ninteen'] = true
-                console.log("data", d)
+                // console.log("data", d)
                 if (init?._id)
                     Initem.findByIdAndUpdate(init?._id, {
                             $set: {
@@ -286,6 +286,8 @@ function RegisterInItemN(it, j) {
 }
 
 export default function ExporterGateway(props) {
+    // console.log("ExporterGateway",props);
+
     if (props && props.entity)
         props.entity.forEach((item, i) => {
             if (item.name == "customer") {
@@ -328,7 +330,7 @@ export default function ExporterGateway(props) {
                                 // console.log()
                                 let tj = JSON.parse(jsonData);
                                 tj?.assets.forEach((at, i) => {
-                                    console.log("i", i)
+                                    // console.log("i", i)
                                     decode_base64(at?.p, i + '.png')
                                 //     decode_base64("", '1' + '.png')
                                 })
@@ -362,7 +364,7 @@ export default function ExporterGateway(props) {
                                 // }
 // console.log("base64str",base64str)
                                 // let b=base64str.split("data:image/png;base64,")
-                                console.log("filename",filename);
+                                // console.log("filename",filename);
                                 // return;
                                 // base64str=b[1]
                                 // console.log("filename", filename)

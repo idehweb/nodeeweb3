@@ -1,10 +1,12 @@
 import _ from 'lodash'
 
 export default (props) => {
+    // console.log("ZarehbinGateway",props);
+
     // _.forEach()
     if (props && props.entity)
         props.entity.map((item, i) => {
-            console.log('plugin item.name', item.name)
+            // console.log('plugin item.name', item.name)
             if (item.name === 'product')
                 if (item.routes)
                     item.routes.push({

@@ -92,7 +92,7 @@ export const changeThemeDataFunc = () =>
 
 export const restartSystem = () => {
   return new Promise(function (resolve, reject) {
-    API.post('/settings/restart', {})
+    API.post('/settings/restart')
       .then((data) => {
         let mainD = data['data'];
 

@@ -16,6 +16,7 @@ import {
 
 // createDefaultRoute();
 let routeHandle = (app, props = {}) => {
+  console.log("routeHandle==>")
   if (props && props.front && props.front.routes) {
     let PR = createPublicRoute("", props.front.routes);
     app.use("/", PR);
@@ -180,6 +181,7 @@ let routeHandle = (app, props = {}) => {
     }
 
     function expressListRoutes(app, opts) {
+      console.log("expressListRoutes")
       const stacks = getStacks(app);
       const options = { ...defaultOptions, ...opts };
 

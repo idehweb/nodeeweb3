@@ -127,7 +127,7 @@ const ssrParse = (req, res, next) => {
         // return res.send(
         //   res.locals.body
         // );
-      });
+      }).catch((e)=>console.log("e at ssr handle",e));
     });
   } else {
     console.log("no need to ssr...");

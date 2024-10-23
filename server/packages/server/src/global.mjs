@@ -41,9 +41,13 @@ let global = {
         // return str[0].toUpperCase() + str.slice(1)   // without template string
     },
     updateThemeConfig: (props = {}, __dirname = path.resolve()) => {
+        console.log("updateThemeConfig==>")
+
         global
             .theme('admin', {props}, null)
             .then((resp = {}) => {
+                console.log("global.theme==>")
+
                 global.updateFile(
                     './theme/site_setting/',
                     'config.js',
@@ -92,6 +96,8 @@ let global = {
                 );
             })
             .catch((e) => {
+                console.log("global.e==>")
+
                 global.updateFile(
                     './theme/site_setting/',
                     'config.js',
@@ -140,6 +146,7 @@ let global = {
         return typeof variable;
     },
     rules: (rules, req = {}) => {
+        console.log("rules==>")
         req.props.entity.forEach((en) => {
             let model = mongoose.model(en.modelName),
                 identifire = en.modelName.toLowerCase();
@@ -200,167 +207,183 @@ let global = {
             let Settings = mongoose.model('Settings');
             let Template = mongoose.model('Template');
             let Page = mongoose.model('Page');
-            Settings.findOne({}, 'currency tax taxAmount passwordAuthentication registerExtraFields orderExtraFields', function (err, setting) {
-                console.log('setting', setting)
-                Template.findOne({type: 'header'}, function (err, header) {
-                    Template.findOne({type: 'footer'}, function (err, footer) {
-                        let routes = [];
-                        Page.find({}, function (err, pages) {
-                            if (pages)
-                                pages.forEach((page) => {
-                                    if (page.path) {
-                                        routes.push({
-                                            path: page.path,
+            Settings.findOne({}, 'currency tax taxAmount passwordAuthentication registerExtraFields orderExtraFields', function (set_err, setting) {
+                // console.log('setting', setting)
+                if (set_err) {
+                    console.log("set_err", set_err)
+                }
+                if (setting && !set_err)
+                    Template.findOne({type: 'header'}, function (err_header, header) {
+                        if(err_header){
+                            console.log("Template.findOne header ./global.mjs line 218", err_header)
+
+                        }
+                        Template.findOne({type: 'footer'}, function (err_footer, footer) {
+                            if(err_footer){
+                                console.log("Template.findOne footer ./global.mjs line 223", err_footer)
+
+                            }
+                            let routes = [];
+                            Page.find({}, function (err_page, pages) {
+                                if(err_page){
+                                    console.log("Page.findOne ./global.mjs line 223", err_page)
+
+                                }
+                                if (pages)
+                                    pages.forEach((page) => {
+                                        if (page.path) {
+                                            routes.push({
+                                                path: page.path,
+                                                exact: true,
+                                                layout: 'DefaultLayout',
+                                                element: 'DynamicPage',
+                                                elements: page.elements || [],
+                                            });
+                                        }
+                                    });
+                                // console.log('footer error',err);
+                                // console.log('footer',footer);
+                                if (req.headers && req.headers.token) {
+                                }
+                                // let headerMaxWidth='100%';
+                                // if()
+                                let currency = 'rial';
+                                if (setting && setting.currency) {
+                                    currency = setting.currency;
+                                }
+
+                                let tax = false;
+                                if (setting && setting.tax) {
+                                    tax = setting.tax;
+                                }
+                                let passwordAuthentication = false;
+                                if (setting && setting.passwordAuthentication) {
+                                    passwordAuthentication = setting.passwordAuthentication;
+                                }
+                                let registerExtraFields = false;
+                                if (setting && setting.registerExtraFields) {
+                                    registerExtraFields = setting.registerExtraFields;
+                                }
+                                let orderExtraFields = false;
+                                if (setting && setting.orderExtraFields) {
+                                    orderExtraFields = setting.orderExtraFields;
+                                }
+                                let taxAmount = 0;
+                                if (setting && setting.taxAmount) {
+                                    taxAmount = setting.taxAmount;
+                                }
+                                let lastObj = {
+                                    taxAmount: taxAmount,
+                                    tax: tax,
+                                    passwordAuthentication: passwordAuthentication,
+                                    registerExtraFields: registerExtraFields,
+                                    orderExtraFields: orderExtraFields,
+                                    currency: currency,
+                                    header: {
+                                        maxWidth:
+                                            header && header.maxWidth ? header.maxWidth : '100%',
+                                        backgroundColor:
+                                            header && header.backgroundColor
+                                                ? header.backgroundColor
+                                                : '',
+                                        classes: header && header.classes ? header.classes : '',
+                                        padding: header && header.padding ? header.padding : '',
+                                        showInDesktop:
+                                            header && header.showInDesktop ? header.showInDesktop : '',
+                                        showInMobile:
+                                            header && header.showInMobile ? header.showInMobile : '',
+                                        elements: header ? header.elements : [],
+                                    },
+                                    body: [{name: 'MainContent'}],
+                                    footer: {
+                                        maxWidth:
+                                            footer && footer.maxWidth ? footer.maxWidth : '100%',
+                                        backgroundColor:
+                                            footer && footer.backgroundColor
+                                                ? footer.backgroundColor
+                                                : '',
+                                        classes: footer && footer.classes ? footer.classes : '',
+                                        padding: footer && footer.padding ? footer.padding : '',
+                                        elements: footer ? footer.elements : [],
+                                    },
+                                    routes: [
+                                        {
+                                            path: '/',
                                             exact: true,
                                             layout: 'DefaultLayout',
-                                            element: 'DynamicPage',
-                                            elements: page.elements || [],
-                                        });
-                                    }
-                                });
-                            // console.log('footer error',err);
-                            // console.log('footer',footer);
-                            if (req.headers && req.headers.token) {
-                            }
-                            // let headerMaxWidth='100%';
-                            // if()
-                            let currency = 'rial';
-                            if (setting && setting.currency) {
-                                currency = setting.currency;
-                            }
-
-                            let tax = false;
-                            if (setting && setting.tax) {
-                                tax = setting.tax;
-                            }
-                            let passwordAuthentication = false;
-                            if (setting && setting.passwordAuthentication) {
-                                passwordAuthentication = setting.passwordAuthentication;
-                            }
-                            let registerExtraFields = false;
-                            if (setting && setting.registerExtraFields) {
-                                registerExtraFields = setting.registerExtraFields;
-                            }
-                            let orderExtraFields = false;
-                            if (setting && setting.orderExtraFields) {
-                                orderExtraFields = setting.orderExtraFields;
-                            }
-                            let taxAmount = 0;
-                            if (setting && setting.taxAmount) {
-                                taxAmount = setting.taxAmount;
-                            }
-                            let lastObj = {
-                                taxAmount: taxAmount,
-                                tax: tax,
-                                passwordAuthentication: passwordAuthentication,
-                                registerExtraFields: registerExtraFields,
-                                orderExtraFields: orderExtraFields,
-                                currency: currency,
-                                header: {
-                                    maxWidth:
-                                        header && header.maxWidth ? header.maxWidth : '100%',
-                                    backgroundColor:
-                                        header && header.backgroundColor
-                                            ? header.backgroundColor
-                                            : '',
-                                    classes: header && header.classes ? header.classes : '',
-                                    padding: header && header.padding ? header.padding : '',
-                                    showInDesktop:
-                                        header && header.showInDesktop ? header.showInDesktop : '',
-                                    showInMobile:
-                                        header && header.showInMobile ? header.showInMobile : '',
-                                    elements: header ? header.elements : [],
-                                },
-                                body: [{name: 'MainContent'}],
-                                footer: {
-                                    maxWidth:
-                                        footer && footer.maxWidth ? footer.maxWidth : '100%',
-                                    backgroundColor:
-                                        footer && footer.backgroundColor
-                                            ? footer.backgroundColor
-                                            : '',
-                                    classes: footer && footer.classes ? footer.classes : '',
-                                    padding: footer && footer.padding ? footer.padding : '',
-                                    elements: footer ? footer.elements : [],
-                                },
-                                routes: [
-                                    {
-                                        path: '/',
-                                        exact: true,
-                                        layout: 'DefaultLayout',
-                                        element: 'Home',
-                                    },
-
-                                    {
-                                        path: '/chat',
-                                        exact: true,
-                                        layout: 'Nohf',
-                                        element: 'Chat',
-                                    },
-                                    {
-                                        path: '/transaction/:method',
-                                        exact: true,
-                                        layout: 'Nohf',
-                                        element: 'Transaction',
-                                    },
-                                    {
-                                        path: '/transaction',
-                                        exact: true,
-                                        layout: 'Nohf',
-                                        element: 'Transaction',
-                                    },
-                                    {
-                                        path: '/admin',
-                                        exact: true,
-                                        layout: 'Nohf',
-                                        element: 'Admin',
-                                    },
-                                    {
-                                        path: '/admin/:model',
-                                        exact: true,
-                                        layout: 'Nohf',
-                                        element: 'Admin',
-                                    },
-                                    {
-                                        path: '/admin/:model/:action',
-                                        exact: true,
-                                        layout: 'Nohf',
-                                        element: 'Admin',
-                                    },
-                                    {
-                                        path: '/admin/:model/:action/:_id',
-                                        exact: true,
-                                        layout: 'Nohf',
-                                        element: 'Admin',
-                                    },
-                                    {
-                                        path: '/a/:_entity/:_id/:_slug',
-                                        method: 'get',
-                                        access: 'customer_all',
-                                        controller: (req, res, next) => {
-                                            console.log(
-                                                'show front, go visit ',
-                                                process.env.SHOP_URL
-                                            );
-                                            res.show();
+                                            element: 'Home',
                                         },
-                                    },
-                                    ...routes,
-                                ],
-                                components: global.builderComponents([], {props: req.props}),
-                            };
-                            if (mode == 'admin') {
-                                let rules = {};
-                                rules = global.rules(rules, {props: req.props});
-                                // console.log('global.models',global.models)
-                                lastObj['models'] = global.models();
-                                lastObj['rules'] = JSON.parse(JSON.stringify(rules));
-                            }
-                            if (res) return res.json(lastObj);
-                            else return resolve(lastObj);
+
+                                        {
+                                            path: '/chat',
+                                            exact: true,
+                                            layout: 'Nohf',
+                                            element: 'Chat',
+                                        },
+                                        {
+                                            path: '/transaction/:method',
+                                            exact: true,
+                                            layout: 'Nohf',
+                                            element: 'Transaction',
+                                        },
+                                        {
+                                            path: '/transaction',
+                                            exact: true,
+                                            layout: 'Nohf',
+                                            element: 'Transaction',
+                                        },
+                                        {
+                                            path: '/admin',
+                                            exact: true,
+                                            layout: 'Nohf',
+                                            element: 'Admin',
+                                        },
+                                        {
+                                            path: '/admin/:model',
+                                            exact: true,
+                                            layout: 'Nohf',
+                                            element: 'Admin',
+                                        },
+                                        {
+                                            path: '/admin/:model/:action',
+                                            exact: true,
+                                            layout: 'Nohf',
+                                            element: 'Admin',
+                                        },
+                                        {
+                                            path: '/admin/:model/:action/:_id',
+                                            exact: true,
+                                            layout: 'Nohf',
+                                            element: 'Admin',
+                                        },
+                                        {
+                                            path: '/a/:_entity/:_id/:_slug',
+                                            method: 'get',
+                                            access: 'customer_all',
+                                            controller: (req, res, next) => {
+                                                console.log(
+                                                    'show front, go visit ',
+                                                    process.env.SHOP_URL
+                                                );
+                                                res.show();
+                                            },
+                                        },
+                                        ...routes,
+                                    ],
+                                    components: global.builderComponents([], {props: req.props}),
+                                };
+                                if (mode == 'admin') {
+                                    let rules = {};
+                                    rules = global.rules(rules, {props: req.props});
+                                    // console.log('global.models',global.models)
+                                    lastObj['models'] = global.models();
+                                    lastObj['rules'] = JSON.parse(JSON.stringify(rules));
+                                }
+                                if (res) return res.json(lastObj);
+                                else return resolve(lastObj);
+                            });
                         });
                     });
-                });
             });
         });
     },

@@ -1,4 +1,6 @@
 export default (props) => {
+    // console.log("ZibalGateway",props);
+
     // _.forEach()
     if (props && props.entity)
         props.entity.map((item, i) => {

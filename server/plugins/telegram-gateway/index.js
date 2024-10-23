@@ -6,6 +6,8 @@ export {json};
 
 
 export default (props) => {
+    // console.log("TelegramGateway");
+
     function getReport({mongoose,global}, text = '') {
         console.log('getReport====>');
 

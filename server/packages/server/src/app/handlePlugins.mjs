@@ -4,12 +4,14 @@ import fs from 'fs';
 import os from 'os';
 
 export default (props = {}, app) => {
+  console.log("handlePlugins")
   return new Promise(function (resolve, reject) {
     let __dirname = path.resolve();
     let pluginPath = path.join(__dirname, './plugins/');
     let p = 0;
     const getDirectories = (source, callback) =>
       fs.readdir(source, { withFileTypes: true }, (err, files) => {
+        console.log("callback")
         if (err) {
           callback(err);
         } else {

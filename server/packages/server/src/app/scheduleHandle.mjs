@@ -5,7 +5,7 @@ import axios from "axios";
 
 const initScheduledJobs2 = (props) => {};
 const initScheduledJobs = (props) => {
-  console.log("new time", new Date());
+  console.log("initScheduledJobs new time", new Date());
   if (!props.schedules) props.schedules = [];
   let scTemp = [];
   // CronJob.schedule("1 * * * * *", () => {
@@ -18,7 +18,7 @@ const initScheduledJobs = (props) => {
   // })
   // if(false)
   props.schedules.forEach((item, i) => {
-    // console.log('item.setting', item.setting)
+    console.log('item for schedule')
     // console.log('item.action', item.action)
     if (item.path && item.variable)
       global.getSetting("plugins").then((r) => {
@@ -48,7 +48,7 @@ const initScheduledJobs = (props) => {
         // .start();
         scTemp[i].start();
         // }
-      });
+      }).catch(e=>console.log("setting not found",e));
   });
   const scheduledJobFunction = CronJob.schedule(
     "0 0 0 * * *",

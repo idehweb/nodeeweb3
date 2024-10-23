@@ -1,5 +1,7 @@
 export default (props) => {
-  // _.forEach()
+    // console.log("GPTGateway",props);
+
+    // _.forEach()
   if (props && props.entity)
     props.entity.map((item, i) => {
       if (item.name === 'gateway')
@@ -9,7 +11,7 @@ export default (props) => {
             'method': 'post',
             'access': 'customer_all',
             'controller': (req, res, next) => {
-              console.log('req', req.body);
+              // console.log('req', req.body);
               let verify={}
               req.httpRequest({
                 method: "post",

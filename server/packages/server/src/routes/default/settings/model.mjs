@@ -41,6 +41,8 @@ export default (mongoose) => {
         ZIBAL_TOKEN: String,
         ZARINPAL_TOKEN: String,
         primaryColor: String,
+        addToCartTextColor: String,
+        addToCartColor: String,
         secondaryColor: String,
         textColor: String,
         bgColor: String,

@@ -285,6 +285,8 @@ function RegisterInItemN(it, j) {
 }
 
 export default function ExporterGateway(props) {
+    // console.log("ExporterGateway",props);
+
     if (props && props.entity)
         props.entity.forEach((item, i) => {
             if (item.name == "customer") {
@@ -1107,7 +1109,7 @@ export default function ExporterGateway(props) {
                     });
                 }
             }
-            console.log("item", item.routes)
+            // console.log("item", item.routes)
 
         });
 
